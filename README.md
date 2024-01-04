@@ -26,7 +26,7 @@ both (b), as indicated by their prefix in the file name.  In order to translate
 these files into scores and music, run the `compile-all` script that lies within
 the same folder, e.g. by calling
 
-    ```bash compile-all```
+   bash compile-all
 
 After running the script, the ./ly directory should contain various PDF and MIDI
 files, and, in addition to that, an OGG file for each MIDI file, so that the
