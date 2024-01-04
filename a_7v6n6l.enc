@@ -1,0 +1,56 @@
+% THIS FILE WAS AUTOMATICALLY GENERATED -- DO NOT EDIT
+
+%%AutoEnc_7v6n6lt6plaoj4ceonntqq646c
+% Encoding created by otftotfm on Wed Sep  6 21:29:42 2023
+% Command line follows encoding
+/AutoEnc_7v6n6lt6plaoj4ceonntqq646c [
+%00
+  /grave /acute /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%10
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%20
+  /.notdef /exclam /quotedbl /numbersign /dollar /percent /ampersand /.notdef
+  /parenleft /parenright /asterisk /plus /comma /hyphen /period /slash
+%30
+  /zero /one /two /three /four /five /six /seven
+  /eight /nine /colon /semicolon /less /equal /greater /question
+%40
+  /at /A /B /C /D /E /F /G
+  /H /I /J /K /L /M /N /O
+%50
+  /P /Q /R /S /T /U /V /W
+  /X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore
+%60
+  /.notdef /a /b /c /d /e /f /g
+  /h /i /j /k /l /m /n /o
+%70
+  /p /q /r /s /t /u /v /w
+  /x /y /z /braceleft /bar /braceright /asciitilde /hyphen
+%80
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%90
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%A0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%B0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%C0
+  /Agrave /Aacute /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /Egrave /Eacute /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+%D0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /Odieresis /.notdef
+  /.notdef /.notdef /.notdef /.notdef /Udieresis /.notdef /.notdef /.notdef
+%E0
+  /agrave /aacute /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+  /egrave /eacute /.notdef /.notdef /igrave /iacute /.notdef /.notdef
+%F0
+  /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /odieresis /.notdef
+  /.notdef /.notdef /.notdef /.notdef /udieresis /.notdef /.notdef /.notdef
+] def
+% Command line: 'otftotfm -V -e ec --directory=. HE.otf'

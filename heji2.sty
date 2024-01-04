@@ -1,0 +1,40 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{heij2}[2023/09/06 (Florian Kranhold) Provides various alteration glyphs from the HEJI2Text font.]
+
+\newcommand*{\HE@scale}{1}
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage{fontaxes}
+\RequirePackage{relsize}
+
+\pdfmapfile{=T1HEJI2Text.map}
+\newcommand{\HE}[1]{{\fontfamily{HEJI2Text-LF}\selectfont #1}}
+
+\renewcommand{\flat}     {\HE{e}}
+\renewcommand{\natural}  {\HE{n}}
+\renewcommand{\sharp}    {\HE{v}}
+\newcommand  {\dsharp}   {\HE{V}}
+\newcommand  {\dflat}    {\HE{E}}
+\newcommand  {\dflatm}   {\HE{D}}
+\newcommand  {\flatm}    {\HE{d}}
+\newcommand  {\naturalm} {\HE{m}}
+\newcommand  {\sharpm}   {\HE{u}}
+\newcommand  {\dsharpm}  {\HE{U}}
+\newcommand  {\dflatp}   {\HE{F}}
+\newcommand  {\flatp}    {\HE{f}}
+\newcommand  {\naturalp} {\HE{o}}
+\newcommand  {\sharpp}   {\HE{w}}
+\newcommand  {\dsharpp}  {\HE{W}}
+\newcommand  {\dflatmm}  {\HE{C}}
+\newcommand  {\flatmm}   {\HE{c}}
+\newcommand  {\naturalmm}{\HE{l}}
+\newcommand  {\sharpmm}  {\HE{t}}
+\newcommand  {\dsharpmm} {\HE{T}}
+\newcommand  {\dflatpp}  {\HE{G}}
+\newcommand  {\flatpp}   {\HE{g}}
+\newcommand  {\naturalpp}{\HE{p}}
+\newcommand  {\sharppp}  {\HE{x}}
+\newcommand  {\dsharppp} {\HE{Y}}
+\newcommand  {\septimal} {\HE{<}}
+
+\endinput

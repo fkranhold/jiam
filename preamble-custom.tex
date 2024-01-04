@@ -1,0 +1,40 @@
+\usepackage[size=tiny]{todonotes}
+\usepackage{multicol}
+%\setlength\columnseprule{.4pt}
+
+\usepackage{marginnote}
+\newcommand{\AS}[1]{\marginnote{\texttt{#1}}}
+\newcommand{\LY}[1]{\marginnote{\texttt{#1}}}
+
+%\usepackage{pgfplots}
+
+\usepackage{xparse}% http://ctan.org/pkg/xparse
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\newcounter{listtotal2}\newcounter{listcntr}%
+\NewDocumentCommand{\pitch}{o}{%
+  \setcounter{listtotal2}{0}\setcounter{listcntr}{-1}%
+  \renewcommand*{\do}[1]{\stepcounter{listtotal2}}%
+  \expandafter\docsvlist\expandafter{\pitcharray}%
+  \IfNoValueTF{#1}
+    {\pitcharray}% \pitch
+    {% \pitch[<index>]
+     \renewcommand*{\do}[1]{\stepcounter{listcntr}\ifnum\value{listcntr}=#1\relax##1\fi}%
+     \expandafter\docsvlist\expandafter{\pitcharray}}%
+}
+
+\newcommand{\rC}{\text{C}}
+\newcommand{\rD}{\text{D}}
+\newcommand{\rE}{\text{E}}
+\newcommand{\rF}{\text{F}}
+\newcommand{\rG}{\text{G}}
+\newcommand{\rA}{\text{A}}
+\newcommand{\rB}{\text{B}}
+
+\newcommand{\uP}{{\text{+}}}
+\newcommand{\uM}{{\text{\textminus}}}
+\newcommand{\uMM}{{\text{\textminus\textminus}}}
+
+\newcommand{\Hz}{\,\text{Hz}}
+
+\usepackage{heji2}
+\newcommand{\om}[1]{\mathrm{#1}}

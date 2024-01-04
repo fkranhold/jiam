@@ -1,0 +1,45 @@
+#!/bin/bash
+
+## This script compiles all .ly files in the directory in which it’s executed.
+## Arising PDFs will be cropped so that they have no margins and can be used
+## as figures in another main document.
+##
+## In a second step, it checks the directory for .midi files (which
+## usually arise from the compilation of the .ly files), and generates
+## an .ogg file (mono, normalised, with a small amount of silence
+## at the beginning).
+
+for i in *.ly; do
+    F=${i%.ly}
+    lilypond $i
+    if [[ -f "$F.pdf" ]]
+    then
+        pdfcrop "$F.pdf"
+        rm "$F.pdf"
+        mv "$F-crop.pdf" "$F.pdf"
+    fi; done
+
+for i in *.midi; do
+    F=${i%.midi}
+    
+    # Create wav
+    #   s = silence to be added
+    #   m = to be mixed to mono
+    #   n = to be normalised
+    timidity "$F.midi" -Ow2 -o "$F-smn.wav"
+    
+    # Add silence
+    sox "$F-smn.wav" "$F-mn.wav" pad .5@0
+    rm "$F-smn.wav"
+
+    # Stereo to mono
+    ffmpeg -i "$F-mn.wav" -ac 1 "$F-n.wav"
+    rm "$F-mn.wav"
+    
+    # Normalise
+    ffmpeg -i "$F-n.wav" -ar 44100 -filter:a "loudnorm=I=-16:LRA=10:TP=-1.5" "$F.wav"
+    rm "$F-n.wav"
+    
+    # Convert to OGG
+    ffmpeg -i "$F.wav" -c:a libvorbis -b:a 64k "$F.ogg"
+    rm "$F.wav"; done

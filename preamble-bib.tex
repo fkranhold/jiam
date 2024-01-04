@@ -1,0 +1,45 @@
+%%% commit: dc6a172
+
+\usepackage[backend      = biber,
+            style        = numeric,
+            maxbibnames  = 9,
+            maxcitenames = 9,
+            %doi          = false,
+            bibencoding  = utf8,
+            datamodel    = ext-eprint]{biblatex}
+
+% Oxford comma in Bibliography
+\DefineBibliographyExtras{british}{%
+  \renewcommand{\finalandcomma}{,}
+}
+
+\DeclareFieldFormat{doi}{\textsf{\href{https://doi.org/#1}{[DOI]}}}
+%\DeclareFieldFormat[misc]{title}{‘#1’}  % plain article title for arXiv
+
+%% Falls die Serifenlose zur Verfügung steht,
+%% dann setze auch die arXiv-Klasse [math.AT] damit.
+\makeatletter
+\IfFileExists{classico.sty}{
+\DeclareFieldFormat{eprint:arxiv}{%
+  arXiv\addcolon\space
+  \ifhyperref
+    {\href{http://arxiv.org/\abx@arxivpath/##1}{%
+       \nolinkurl{##1}%
+       \iffieldundef{eprintclass}
+     {}
+     {\addspace\textsf{\mkbibbrackets{\thefield{eprintclass}}}}}}
+    {\nolinkurl{##1}
+     \iffieldundef{eprintclass}
+       {}
+       {\addspace\textsf{\mkbibbrackets{\thefield{eprintclass}}}}}}
+}{}
+\makeatother
+
+%% Nicht in Von-Bis-Strichen umbrechen,
+%% z.B. bei den Seitenzahlen
+\DefineBibliographyExtras{british}{\protected\def\bibrangedash{\nobreakdash--}}
+\DefineBibliographyExtras{ngerman}{\protected\def\bibrangedash{\nobreakdash--}}
+
+%\AtBeginBibliography{\small}
+
+\bibliography{bibliography.bib}

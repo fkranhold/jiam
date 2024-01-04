@@ -1,0 +1,165 @@
+%% KOMA-Optionen (scrlttr2, sonst: scrartcl, scrbook)
+\KOMAoptions{headings=standardclasses,numbers=enddot}
+
+%% Encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sprache
+\usepackage{babel}
+\usepackage{csquotes} % Correct quotiation marks „…“ bzw. ‘…’
+
+%% Datumsformat (ngerman, british)
+\usepackage[cleanlook]{isodate}
+
+%% LModern ist ein besserer Fallback als Typewriter 
+\usepackage{lmodern}
+
+%% Palatino als Brotschrift
+%% (Um die Serifenlose kümmern wir uns unten)
+\usepackage[osf,sc]{mathpazo}
+
+%% In einigen Fällen passen Lining figures besser
+\newcommand{\LF}[1]{{\fontfamily{pplx}\selectfont #1}}
+
+%% Classico als Serifenlose, falls vorhanden
+%% Andernfalls ist der Fallback die LM Sans Serif,
+%% die wir unten nach Möglichkeit vermeiden werden.
+\IfFileExists{classico.sty}{\usepackage{classico}}{}
+
+%% Beramono als Dicktengleiche
+\usepackage[scaled=.85]{beramono}
+
+%% Palatino braucht mehr Platz
+\usepackage{setspace}
+\setstretch{1.07}
+\renewcommand{\arraystretch}{1.07} % Für tabular- und array-Umgebungen
+
+%% Mikrotypographie!
+\usepackage{ellipsis} % More space after dots
+\usepackage[babel,tracking=true]{microtype}
+
+%% microtype: Disable Footnote-Patching for ≥3.0
+\makeatletter
+\@ifpackagelater{microtype}{2020/12/08}
+  {\microtypesetup{nopatch=footnote}}
+  {}
+\makeatother
+
+%% microtype: Settings
+\UseMicrotypeSet[tracking]{smallcaps}
+\SetTracking{encoding=*,shape=sc}{30}
+
+%% Hurenkinder verbieten
+\makeatletter
+  \widowpenalty=\@M
+\makeatother
+
+%% Inline-Formeln NIE umbrechen
+\relpenalty=10000
+\binoppenalty=10000
+
+%% Less Looseness
+\everypar=\expandafter{\the\everypar\looseness=-1}
+
+%% Text nicht vertikal strecken oder stauchen
+\raggedbottom
+
+%% Akronyme
+\usepackage{relsize}
+\newcommand{\acr}[1]{\texorpdfstring{\textsmaller{\LF{#1}}}{#1}}
+
+%% Eigene Listing styles mit kurzer Definition
+\usepackage[shortlabels]{enumitem}
+
+% hyperref<7.00h replaces \C with the cyrillic letter \CYRDZE
+% See https://github.com/latex3/hyperref/issues/170
+% We want it to be the complex numbers, as previously defined.
+\let\COld\C
+
+%% Figures
+\usepackage{graphicx}
+\usepackage[margin    =20pt,
+            font      ={footnotesize,stretch=1.06},
+            format    =plain,
+            labelsep  =period,
+            labelfont =bf]{caption}
+  
+%% See above
+\let\C\COld
+
+%% Fancy tables
+\usepackage{booktabs}
+  
+%% Colours, e.g. for References
+\usepackage{xcolor}
+
+%% Einbinden anderen Präambeln (die auch Pakete einbinden),
+%% außer -env, was cleveref einbindet und deshalb zuletzt kommt.
+\IfFileExists{preamble-math.tex}  {\input{preamble-math.tex}}  {}
+\IfFileExists{preamble-bib.tex}   {\input{preamble-bib.tex}}   {}
+\IfFileExists{preamble-music.tex} {\input{preamble-music.tex}} {}
+\IfFileExists{preamble-custom.tex}{\input{preamble-custom.tex}}{}
+
+%% Footnote-Design
+\usepackage{footmisc}
+\renewcommand{\footnotelayout}{\setstretch{1.06}}
+\setlength{\footnotemargin}{1em}
+
+%% Kopfzeilen in geneigtem statt kursivem Palatino
+\addtokomafont{pagehead}{\fontfamily{ppl}\selectfont}
+
+%% Description mit SC, vor allem nicht als Sans
+\setkomafont{descriptionlabel}{\scshape}
+
+%% pazofrac (ähnlich nicefrac, aber besser auf mathpazo abgestimmt)
+%% z.B. um „4/4-Takt“ oder „1/2 Liter“ zu schreiben, deshalb
+%% von allgemeinem Interesse und nicht in header-math.tex
+\newcommand{\pazofrac}[2]%
+  {\leavevmode\kern.1em\raise.65ex\hbox{\scriptsize #1}%
+   \kern-.125em/\kern-.125em\lower-.05ex\hbox{\scriptsize #2}}
+
+%% Abstract ohne Einrückung des ersten Absatzes
+\usepackage{etoolbox}
+\ifundef{\abstract}{}{
+  \patchcmd{\abstract}{\quotation}{\quotation\noindent\ignorespaces}{}{}}
+
+%% hyperref should be the last package, except for cleveref.
+%% We load cleveref and amsthm later.
+\usepackage[pdfusetitle,%
+            bookmarksnumbered=true,%
+            unicode,%
+            hidelinks]{hyperref}
+            
+%% Wenn Classico nicht verfügbar ist, dann umgehen wir Serifenlose
+%% für URLs und Mailadressen und weichen auf Dicktengleiche aus.
+\IfFileExists{classico.sty}{
+  \let\mailfont\textsf
+  \urlstyle{sf}
+}{
+  \let\mailfont\texttt
+  \urlstyle{tt}
+}
+
+%% Mails
+\newcommand{\mail}[1]{\upshape\href{mailto:#1}{\mailfont{#1}}}
+
+%% Farben für Referenzen
+\hypersetup{
+  colorlinks,
+  linkcolor={black!45!red},   % Interne Referenzen
+  citecolor={black!55!green}, % Bibliographie
+  urlcolor ={black!45!blue}   % Externe Referenzen
+}
+
+%% Umgebungen und cleveref (lädt: amsthm, cleveref)
+\IfFileExists{preamble-env.tex}{\input{preamble-env.tex}}{}
+
+%% Adressen am Ende eines Artikels mit Lining Figures
+\newcommand{\addr}[2]{%
+  \paragraph{#1}
+  \LF{#2}
+} 
+
+%% Wir lassen KOMA den Satzspiegel selbst errechnen.
+\KOMAoptions{DIV=calc}

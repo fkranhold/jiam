@@ -1,0 +1,454 @@
+%%% commit: dc6a172
+
+%% Grundlegende mathematische Symbole
+\usepackage{amssymb,amsmath} % Standard
+\usepackage{mathtools}       % \coloneqq, \eqqcolon
+\usepackage{stmaryrd}        % \sslash, \Ydown, \llbracket
+
+%% TikZ and TikZ-CD
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usetikzlibrary{arrows,calc}
+
+%% Mini-Indizes (\scaleto{…}{3pt})
+\usepackage{scalerel}
+
+%% Some choices
+\let \le       \leqslant
+\let \ge       \geqslant
+\let \leq      \leqslant
+\let \geq      \geqslant
+\let \setminus \smallsetminus
+\let \emptyset \varnothing
+\let \epsilon  \varepsilon
+%\let \theta    \vartheta
+
+%% Bold
+\newcommand{\bm} [1]{\mathbold{#1}}
+
+%% Short for overline and operatorname
+\newcommand{\ol} [1]{\overline{#1}}
+\newcommand{\on} [1]{\mathrm{#1}}
+
+%% Fix the spacing of \left and \right
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+\renewcommand{\bigl}{\mathopen\big}
+\renewcommand{\bigr}{\mathclose\big}
+
+%% Brackets
+\newcommand{\lla}[1]{\mathopen{}\left\langle #1 \right\rangle\mathclose{}}      % <…>
+\newcommand{\ula}[1]{\langle #1\rangle}                                         % <…>   sm
+\newcommand{\llb}[1]{\mathopen{}\left\llbracket #1\right\rrbracket\mathclose{}} % [[…]]
+\newcommand{\ulb}[1]{\mathopen{}\left\llbracket #1\right\rrbracket\mathclose{}} % [[…]] sm
+
+%% Some operatornames
+\newcommand{\GL} {\on{GL}}
+\newcommand{\pr} {\on{pr}}
+\newcommand{\ob} {\on{ob}}
+\newcommand{\sg} {\on{sg}}
+\newcommand{\im} {\on{im}}
+\newcommand{\op} {{\on{op}}} % It is nearly always an exponent
+\newcommand{\Aut}{\on{Aut}}
+\newcommand{\Hom}{\on{Hom}}
+\newcommand{\map}{\on{map}}
+\newcommand{\Id} {\on{id}}   % The only one where the capitalisation has changed
+
+% colon on the right side
+\newcommand*\lon{%
+        \nobreak
+        \mskip6mu plus1mu
+        \mathpunct{}%
+        \nonscript
+        \mkern-\thinmuskip
+        {:}%
+        \mskip2mu
+        \relax
+}
+
+%% Some categories
+\newcommand{\Top}{\mathbf{Top}}
+\newcommand{\Sig}{\mathbf{\Sigma}}
+\newcommand{\Del}{\mathbf{\Delta}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Mod}{\mathbf{Mod}}
+\newcommand{\Alg}{\mathbf{Alg}}
+
+%% Miscellanea 
+\newcommand{\bEn}{\mathbb{1}}
+\newcommand{\RP}{\R\mathrm{P}}
+\newcommand{\CP}{\C\mathrm{P}}
+\newcommand{\Diff}{\on{Diff}{}}
+\newcommand{\hAut}{\on{hAut}}
+\newcommand{\dcup}{\,\dot\cup\,}
+\newcommand{\swr}{\kern.6px\wr\kern.6px}
+
+%% Integral sign
+\DeclareSymbolFont{eulargesymbols}{U}{zeuex}{m}{n}
+\DeclareMathSymbol{\intop}{\mathop}{eulargesymbols}{"52}
+
+%% TikZ: centerarc
+\def\centerarc[#1](#2)(#3:#4:#5)% Syntax: [draw options] (center) (initial angle:final angle:radius)
+    { \draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); }
+
+%\usepackage[scr=boondoxo,scrscaled=1,cal=euler]{mathalfa} % Calligraphic fonts
+
+% Zahlenbereiche
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+%% Small \vdots
+\usepackage{letltxmacro}
+\LetLtxMacro\orgvdots\vdots
+\LetLtxMacro\orgddots\ddots
+\makeatletter
+\DeclareRobustCommand\vdots{%
+  \mathpalette\@vdots{}%
+}
+\newcommand*{\@vdots}[2]{%
+  % #1: math style
+  % #2: unused
+  \sbox0{$#1\cdotp\cdotp\cdotp\m@th$}%
+  \sbox2{$#1.\m@th$}%
+  \vbox{%
+    \dimen@=\wd0 %
+    \advance\dimen@ -3\ht2 %
+    \kern.5\dimen@
+    % remove side bearings
+    \dimen@=\wd2 %
+    \advance\dimen@ -\ht2 %
+    \dimen2=\wd0 %
+    \advance\dimen2 -\dimen@
+    \vbox to \dimen2{%
+      \offinterlineskip
+      \copy2 \vfill\copy2 \vfill\copy2 %
+    }%
+  }%
+}
+\makeatother
+
+% Correct fracs
+\DeclareFontFamily{OMS}{zplm}{
+   \skewchar\font=48 % kept from the original file
+   \fontdimen 9\font=0.34\fontdimen6\font
+   \fontdimen 8\font=0.84\fontdimen6\font
+}
+\DeclareFontShape{OMS}{zplm}{m}{n}{<-> zplmr7y}{}
+\DeclareFontShape{OMS}{zplm}{b}{n}{<-> zplmb7y}{}
+\DeclareFontShape{OMS}{zplm}{bx}{n}{<->ssub * zplm/b/n}{}
+
+%%% The rest of this header file shortens the following letter sets:
+%%% bbA, bA, caA, scA, sca, bfA, bmA, frA, fra, tA
+
+%% Blackboard bold
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+%% Blackboard bold (shorter)
+\newcommand{\bA}{\mathbb{A}}
+\newcommand{\bB}{\mathbb{B}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bD}{\mathbb{D}}
+\newcommand{\bE}{\mathbb{E}}
+\newcommand{\bF}{\mathbb{F}}
+\newcommand{\bG}{\mathbb{G}}
+\newcommand{\bH}{\mathbb{H}}
+\newcommand{\bI}{\mathbb{I}}
+\newcommand{\bJ}{\mathbb{J}}
+\newcommand{\bK}{\mathbb{K}}
+\newcommand{\bL}{\mathbb{L}}
+\newcommand{\bM}{\mathbb{M}}
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\bO}{\mathbb{O}}
+\newcommand{\bP}{\mathbb{P}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bS}{\mathbb{S}}
+\newcommand{\bT}{\mathbb{T}}
+\newcommand{\bU}{\mathbb{U}}
+\newcommand{\bV}{\mathbb{V}}
+\newcommand{\bW}{\mathbb{W}}
+\newcommand{\bX}{\mathbb{X}}
+\newcommand{\bY}{\mathbb{Y}}
+\newcommand{\bZ}{\mathbb{Z}}
+
+%% Calligraphic
+\newcommand{\caA}{\mathcal{A}}
+\newcommand{\caB}{\mathcal{B}}
+\newcommand{\caC}{\mathcal{C}}
+\newcommand{\caD}{\mathcal{D}}
+\newcommand{\caE}{\mathcal{E}}
+\newcommand{\caF}{\mathcal{F}}
+\newcommand{\caG}{\mathcal{G}}
+\newcommand{\caH}{\mathcal{H}}
+\newcommand{\caI}{\mathcal{I}}
+\newcommand{\caJ}{\mathcal{J}}
+\newcommand{\caK}{\mathcal{K}}
+\newcommand{\caL}{\mathcal{L}}
+\newcommand{\caM}{\mathcal{M}}
+\newcommand{\caN}{\mathcal{N}}
+\newcommand{\caO}{\mathcal{O}}
+\newcommand{\caP}{\mathcal{P}}
+\newcommand{\caQ}{\mathcal{Q}}
+\newcommand{\caR}{\mathcal{R}}
+\newcommand{\caS}{\mathcal{S}}
+\newcommand{\caT}{\mathcal{T}}
+\newcommand{\caU}{\mathcal{U}}
+\newcommand{\caV}{\mathcal{V}}
+\newcommand{\caW}{\mathcal{W}}
+\newcommand{\caX}{\mathcal{X}}
+\newcommand{\caY}{\mathcal{Y}}
+\newcommand{\caZ}{\mathcal{Z}}
+
+%% Script large
+\newcommand{\scA}{\mathscr{A}}
+\newcommand{\scB}{\mathscr{B}}
+\newcommand{\scC}{\mathscr{C}}
+\newcommand{\scD}{\mathscr{D}}
+\newcommand{\scE}{\mathscr{E}}
+\newcommand{\scF}{\mathscr{F}}
+\newcommand{\scG}{\mathscr{G}}
+\newcommand{\scH}{\mathscr{H}}
+\newcommand{\scI}{\mathscr{I}}
+\newcommand{\scJ}{\mathscr{J}}
+\newcommand{\scK}{\mathscr{K}}
+\newcommand{\scL}{\mathscr{L}}
+\newcommand{\scM}{\mathscr{M}}
+\newcommand{\scN}{\mathscr{N}}
+\newcommand{\scO}{\mathscr{O}}
+\newcommand{\scP}{\mathscr{P}}
+\newcommand{\scQ}{\mathscr{Q}}
+\newcommand{\scR}{\mathscr{R}}
+\newcommand{\scS}{\mathscr{S}}
+\newcommand{\scT}{\mathscr{T}}
+\newcommand{\scU}{\mathscr{U}}
+\newcommand{\scV}{\mathscr{V}}
+\newcommand{\scW}{\mathscr{W}}
+\newcommand{\scX}{\mathscr{X}}
+\newcommand{\scY}{\mathscr{Y}}
+\newcommand{\scZ}{\mathscr{Z}}
+
+%% Script small
+\newcommand{\sca}{\mathscr{a}}
+\newcommand{\scb}{\mathscr{b}}
+\newcommand{\scc}{\mathscr{c}}
+\newcommand{\scd}{\mathscr{d}}
+\newcommand{\sce}{\mathscr{e}}
+\newcommand{\scf}{\mathscr{f}}
+\newcommand{\scg}{\mathscr{g}}
+\newcommand{\sch}{\mathscr{h}}
+\newcommand{\sci}{\mathscr{i}}
+\newcommand{\scj}{\mathscr{j}}
+\newcommand{\sck}{\mathscr{k}}
+\newcommand{\scl}{\mathscr{l}}
+\newcommand{\scm}{\mathscr{m}}
+\newcommand{\scn}{\mathscr{n}}
+\newcommand{\sco}{\mathscr{o}}
+\newcommand{\scp}{\mathscr{p}}
+\newcommand{\scq}{\mathscr{q}}
+\newcommand{\scr}{\mathscr{r}}
+\newcommand{\scs}{\mathscr{s}}
+\newcommand{\sct}{\mathscr{t}}
+\newcommand{\scu}{\mathscr{u}}
+\newcommand{\scv}{\mathscr{v}}
+\newcommand{\scw}{\mathscr{w}}
+\newcommand{\scx}{\mathscr{x}}
+\newcommand{\scy}{\mathscr{y}}
+\newcommand{\scz}{\mathscr{z}}
+
+%% Bold (but not italic)
+\newcommand{\bfA}{\mathbf{A}}
+\newcommand{\bfB}{\mathbf{B}}
+\newcommand{\bfC}{\mathbf{C}}
+\newcommand{\bfD}{\mathbf{D}}
+\newcommand{\bfE}{\mathbf{E}}
+\newcommand{\bfF}{\mathbf{F}}
+\newcommand{\bfG}{\mathbf{G}}
+\newcommand{\bfH}{\mathbf{H}}
+\newcommand{\bfI}{\mathbf{I}}
+\newcommand{\bfJ}{\mathbf{J}}
+\newcommand{\bfK}{\mathbf{K}}
+\newcommand{\bfL}{\mathbf{L}}
+\newcommand{\bfM}{\mathbf{M}}
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfO}{\mathbf{O}}
+\newcommand{\bfP}{\mathbf{P}}
+\newcommand{\bfQ}{\mathbf{Q}}
+\newcommand{\bfR}{\mathbf{R}}
+\newcommand{\bfS}{\mathbf{S}}
+\newcommand{\bfT}{\mathbf{T}}
+\newcommand{\bfU}{\mathbf{U}}
+\newcommand{\bfV}{\mathbf{V}}
+\newcommand{\bfW}{\mathbf{W}}
+\newcommand{\bfX}{\mathbf{X}}
+\newcommand{\bfY}{\mathbf{Y}}
+\newcommand{\bfZ}{\mathbf{Z}}
+
+%% Bold (but not italic)
+\newcommand{\bfa}{\mathbf{a}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfc}{\mathbf{c}}
+\newcommand{\bfd}{\mathbf{d}}
+\newcommand{\bfe}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bfg}{\mathbf{g}}
+\newcommand{\bfh}{\mathbf{h}}
+\newcommand{\bfi}{\mathbf{i}}
+\newcommand{\bfj}{\mathbf{j}}
+\newcommand{\bfk}{\mathbf{k}}
+\newcommand{\bfl}{\mathbf{l}}
+\newcommand{\bfm}{\mathbf{m}}
+\newcommand{\bfn}{\mathbf{n}}
+\newcommand{\bfo}{\mathbf{o}}
+\newcommand{\bfp}{\mathbf{p}}
+\newcommand{\bfq}{\mathbf{q}}
+\newcommand{\bfr}{\mathbf{r}}
+\newcommand{\bfs}{\mathbf{s}}
+\newcommand{\bft}{\mathbf{t}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfz}{\mathbf{z}}
+
+%% Bold and italic
+\newcommand{\bmA}{\bm{A}}
+\newcommand{\bmB}{\bm{B}}
+\newcommand{\bmC}{\bm{C}}
+\newcommand{\bmD}{\bm{D}}
+\newcommand{\bmE}{\bm{E}}
+\newcommand{\bmF}{\bm{F}}
+\newcommand{\bmG}{\bm{G}}
+\newcommand{\bmH}{\bm{H}}
+\newcommand{\bmI}{\bm{I}}
+\newcommand{\bmJ}{\bm{J}}
+\newcommand{\bmK}{\bm{K}}
+\newcommand{\bmL}{\bm{L}}
+\newcommand{\bmM}{\bm{M}}
+\newcommand{\bmN}{\bm{N}}
+\newcommand{\bmO}{\bm{O}}
+\newcommand{\bmP}{\bm{P}}
+\newcommand{\bmQ}{\bm{Q}}
+\newcommand{\bmR}{\bm{R}}
+\newcommand{\bmS}{\bm{S}}
+\newcommand{\bmT}{\bm{T}}
+\newcommand{\bmU}{\bm{U}}
+\newcommand{\bmV}{\bm{V}}
+\newcommand{\bmW}{\bm{W}}
+\newcommand{\bmX}{\bm{X}}
+\newcommand{\bmY}{\bm{Y}}
+\newcommand{\bmZ}{\bm{Z}}
+
+%% Fraktur large
+\newcommand{\frA}{\mathfrak{A}}
+\newcommand{\frB}{\mathfrak{B}}
+\newcommand{\frC}{\mathfrak{C}}
+\newcommand{\frD}{\mathfrak{D}}
+\newcommand{\frE}{\mathfrak{E}}
+\newcommand{\frF}{\mathfrak{F}}
+\newcommand{\frG}{\mathfrak{G}}
+\newcommand{\frH}{\mathfrak{H}}
+\newcommand{\frI}{\mathfrak{I}}
+\newcommand{\frJ}{\mathfrak{J}}
+\newcommand{\frK}{\mathfrak{K}}
+\newcommand{\frL}{\mathfrak{L}}
+\newcommand{\frM}{\mathfrak{M}}
+\newcommand{\frN}{\mathfrak{N}}
+\newcommand{\frO}{\mathfrak{O}}
+\newcommand{\frP}{\mathfrak{P}}
+\newcommand{\frQ}{\mathfrak{Q}}
+\newcommand{\frR}{\mathfrak{R}}
+\newcommand{\frS}{\mathfrak{S}}
+\newcommand{\frT}{\mathfrak{T}}
+\newcommand{\frU}{\mathfrak{U}}
+\newcommand{\frV}{\mathfrak{V}}
+\newcommand{\frW}{\mathfrak{W}}
+\newcommand{\frX}{\mathfrak{X}}
+\newcommand{\frY}{\mathfrak{Y}}
+\newcommand{\frZ}{\mathfrak{Z}}
+
+%% Fraktur small
+\newcommand{\fra}{\mathfrak{a}}
+\newcommand{\frb}{\mathfrak{b}}
+\newcommand{\frc}{\mathfrak{c}}
+\newcommand{\frd}{\mathfrak{d}}
+\newcommand{\fre}{\mathfrak{e}}
+\newcommand{\frf}{\mathfrak{f}}
+\newcommand{\frg}{\mathfrak{g}}
+\newcommand{\frh}{\mathfrak{h}}
+\newcommand{\fri}{\mathfrak{i}}
+\newcommand{\frj}{\mathfrak{j}}
+\newcommand{\frk}{\mathfrak{k}}
+\newcommand{\frl}{\mathfrak{l}}
+\newcommand{\frm}{\mathfrak{m}}
+\newcommand{\frn}{\mathfrak{n}}
+\newcommand{\fro}{\mathfrak{o}}
+\newcommand{\frp}{\mathfrak{p}}
+\ifdefined\frq\renewcommand{\frq}{\mathfrak{q}}\else \newcommand{\frq}{\mathfrak{q}}\fi
+\newcommand{\frr}{\mathfrak{r}}
+\newcommand{\frs}{\mathfrak{s}}
+\newcommand{\frt}{\mathfrak{t}}
+\newcommand{\fru}{\mathfrak{u}}
+\newcommand{\frv}{\mathfrak{v}}
+\newcommand{\frw}{\mathfrak{w}}
+\newcommand{\frx}{\mathfrak{x}}
+\newcommand{\fry}{\mathfrak{y}}
+\newcommand{\frz}{\mathfrak{z}}
+
+%% Tilde
+\newcommand{\tA}{\tilde{A}}
+\newcommand{\tB}{\tilde{B}}
+\newcommand{\tC}{\tilde{C}}
+\newcommand{\tD}{\tilde{D}}
+\newcommand{\tE}{\tilde{E}}
+\newcommand{\tF}{\tilde{F}}
+\newcommand{\tG}{\tilde{G}}
+\newcommand{\tH}{\tilde{H}}
+\newcommand{\tI}{\tilde{I}}
+\newcommand{\tJ}{\tilde{J}}
+\newcommand{\tK}{\tilde{K}}
+\newcommand{\tL}{\tilde{L}}
+\newcommand{\tM}{\tilde{M}}
+\newcommand{\tN}{\tilde{N}}
+\newcommand{\tO}{\tilde{O}}
+\newcommand{\tP}{\tilde{P}}
+\newcommand{\tQ}{\tilde{Q}}
+\newcommand{\tR}{\tilde{R}}
+\newcommand{\tS}{\tilde{S}}
+\newcommand{\tT}{\tilde{T}}
+\newcommand{\tU}{\tilde{U}}
+\newcommand{\tV}{\tilde{V}}
+\newcommand{\tW}{\tilde{W}}
+\newcommand{\tX}{\tilde{X}}
+\newcommand{\tY}{\tilde{Y}}
+\newcommand{\tZ}{\tilde{Z}}

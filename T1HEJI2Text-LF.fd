@@ -1,0 +1,13 @@
+\ProvidesFile{T1HEJI2Text-LF.fd}
+    [2023/09/06 (Florian Kranhold) Font definitions for T1/HEJI2Text-LF.]
+
+\expandafter\ifx\csname HE@scale\endcsname\relax
+    \let\HE@@scale\@empty
+\else
+    \edef\HE@@scale{s*[\csname HE@scale\endcsname]}%
+\fi
+
+\DeclareFontFamily{T1}{HEJI2Text-LF}{}
+\DeclareFontShape{T1}{HEJI2Text-LF}{m}{n}{
+      <-> \HE@@scale HEJI2Text--ec
+}{}

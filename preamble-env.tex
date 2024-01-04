@@ -1,0 +1,71 @@
+%%% commit: dc6a172
+
+%% Spätestens hier brauchen wir das amsthm-Paket.
+%% Womöglich wurde es aber schon über die header-custom
+%% eingebunden, etwa wenn individuelle Umgebungen definiert wurden.
+\makeatletter
+  \@ifpackageloaded{amsthm}{}{\usepackage{amsthm}}
+\makeatother
+
+%% cleveref has to be the last package,
+%% but it has to be introduced before we define
+%% individual theorem environments.
+\usepackage[capitalise,noabbrev]{cleveref}
+
+\theoremstyle{plain}
+\newtheorem{theo}   {Theorem}[section]
+\newtheorem{thm}    [theo]{Theorem}
+\newtheorem{lem}    [theo]{Lemma}
+\newtheorem{prop}   [theo]{Proposition}
+\newtheorem{cor}    [theo]{Corollary}
+\newtheorem{conj}   [theo]{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{defi}   [theo]{Definition}
+\newtheorem{probl}  [theo]{Problem}
+\newtheorem{expl}   [theo]{Example}
+\newtheorem{nota}   [theo]{Notation}
+\newtheorem{constr} [theo]{Construction}
+\newtheorem{outl}   [theo]{Outlook}
+\newtheorem{exer}   [theo]{Exercise}
+\newtheorem{rem}    [theo]{Remark} % Only for compatibility with old stuff
+\newtheorem{rmk}    [theo]{Remark}
+\newtheorem{rmd}    [theo]{Reminder}
+\newtheorem{idea}   [theo]{Idea}
+
+\crefname{theo}{Theorem}{Theorems}
+
+%% A command between two environments, which takes effect
+%% somewhere else (e.g. a figure that is placed on top of
+%% a page, or an \enlargethispage) will cause additional
+%% space between the environments. The following modified
+%% commands prevent this.
+
+%% Measure the intended distance
+\newlength{\intendedDistance}
+
+%% Wrap (e.g. \wrap{\enlargethispage{\baselineskip}})
+\newcommand{\wrap}[1]{
+  \setlength{\intendedDistance}{\lastskip}\addvspace{-\lastskip}
+  #1
+  \addvspace{\intendedDistance}
+}
+
+%% Repair top figures
+\newenvironment{t-figure}{
+  \setlength{\intendedDistance}{\lastskip}\addvspace{-\lastskip}
+  \begin{figure}[t]
+  }{
+  \end{figure}
+  \addvspace{\intendedDistance}
+}
+
+%% Repair top tables
+\newenvironment{t-table}{
+  \setlength{\intendedDistance}{\lastskip}\addvspace{-\lastskip}  
+  \begin{table}[t]
+  \centering
+  }{
+  \end{table}
+  \addvspace{\intendedDistance}
+}
