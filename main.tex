@@ -52,14 +52,14 @@ expect that this is the end of the story and the end of this treatise.  However,
 this tuning system turns out to be suboptimal when playing multiple pitches
 simultaneously in order to create a consonance: Physics tells us that multiple
 waves are mutually consonant if their frequencies form ratio with small, mutually
-coprime integers, e.g.\ $4:6:5:7$.  Now let us consider a major triad
-with minor seventh, which consists of a root pitch as well as a major third, a
-perfect fifth, and a minor seventh above it. As a major third comprises four, a
-perfect fifth seven, and a minor seventh ten semitones, the frequency ratio
-among these four simultaneously sounding notes is given by\looseness-1
+coprime integers, e.g.\ $4:6:5:7$.\todo{Warum nicht $4:5:6:7$? Ich hätte gedacht, dass wir Frequenzverhältnisse immer möglichst ordnen wollen.}
+Now let us consider a major triad with minor seventh, which consists of a root pitch
+as well as a major third, a perfect fifth, and a minor seventh above it. As a major
+third comprises four, a perfect fifth seven, and a minor seventh ten semitones, the
+frequency ratio among these four simultaneously sounding notes is given by\looseness-1
 \[1:2^{\frac4{12}}:2^{\frac7{12}}:2^{\frac{10}{12}}\approx
   1:1.260:1.498:1.781\]%
-The whole point of just intonation is the observation that this ratio is
+The whole point of just intonation is the observation that this ratio is\todo{Putting it like this certainly makes sense from today’s point of view (it is how \emph{we} got there after all), but historically speaking it was the other way around, right? First you had things like $2:3$ perfect fifths and then people noticed that by choosing other ratios that are ‘\emph{close}, but not \emph{exactly} the same’ you get other potentially desirable things.}
 \emph{close}, but not \emph{exactly} the same as $4:5:6:7$. The ‘errors’ are
 much smaller than a semitone, so in order to quantify them, we express it in
 terms of \emph{cents}, where $100\,\on{ct}$ is the same as an equally-tempered
@@ -87,9 +87,9 @@ consistently throughout an entire piece. We proceed in three steps:\looseness-1
   fifths to be of ratio $3:2$. This will lead to the phenomenon that, for
   example, \sharp G is slightly higher than \flat A; the error is called
   the \emph{Pythagorean comma}. However, as we are not bound to a key
-  instrument, this is not a problem: It just takes enharmonics seriously. Put
-  differently, the circle of fifths becomes an infinite \emph{line of
-    fifths}. From that point onwards, our preferred tuning system is the
+  instrument, this is not a problem: It just takes\todo{Nicht eher “It just \emph{requires us} to take enharmonics seriously.”?}
+  enharmonics seriously. Put differently, the circle of fifths becomes an infinite
+  \emph{line of fifths}. From that point onwards, our preferred tuning system is the
   Pythagorean one, e.g.\ E$_5$ corresponds to
   $\frac32\cdot 440\,\text{Hz}=660\,\text{Hz}$ rather than
   $659.26\,\text{Hz}$.\looseness-1
@@ -103,17 +103,17 @@ consistently throughout an entire piece. We proceed in three steps:\looseness-1
   are adjacent and form triangles. As (counter-)parallel triads correspond to
   adjacent triangles, this lattice is well-suited for classical tonal harmony,
   but it also explains the so-called \emph{comma drift} for certain chord
-  progressions: a common source for detonation (that is: loosing the original
-  base frequency).
-\item \todo{change that.} Even within the Euler lattice, a major triad with
+  progressions: a common source for detonation (that is: loosing\todo{Ist das Verb echt (to) loose intonation? Das ist ja fancy.}
+  the original base frequency).
+\item \todo{change that. – Why?} Even within the Euler lattice, a major triad with
   minor seventh that combines adjacent vertices of the lattice would be
   $36:45:54:64$ instead of $4:5:6:7$. The minor seventh is a bit too high; the
   error $\frac{64}{63}$ is called the \emph{septimal comma}. Using both the
   syntonic and the septimal comma, we then can discuss most of the tetrads
   appearing in Bach’s vocal music.
 \end{enumerate}
-This approach differs from the standard literature\todo{Welche?} in two aspects:
-First, we make the Pythagorean system the preferred one, and track all
+This approach differs from the standard literature\todo{Welche? – Das würde mich auch interessieren.}
+in two aspects: First, we make the Pythagorean system the preferred one, and track all
 deviations from it by syntonic and septimal commata, while classically, for each
 key, a so-called \emph{Ptolemaic scale} is used, in which the third, the sixth
 and the seventh are lowered \emph{per default} by a syntonic comma. The
@@ -131,7 +131,7 @@ minor seventh, once in equal temparament and once exactly $4:5:6:7$, as
 discussed above).  They have been written for the music engraving program
 \verb!lilypond! and encode either a \acr{PDF} file (then its file name starts
 with \verb!p-!), a \acr{MIDI} file (\verb!m-!), or both (\verb!b-!).  On
-\href{https://fkranhold.de/jiam/}{\textsf{fkranhold.de/jiam}}, you can find the
+\href{https://fkranhold.de/jiam/}{\textsf{fkranhold.de/jiam}}\todo{(Not yet though.)}, you can find the
 source files, the results of the compilation with \verb!lilypond!, and, in case
 the result contains a \acr{MIDI} file, an audio conversion to \acr{OGG}
 Vorbis. In \cref{sec:ly}, we explain how the source code is written, encouraging
@@ -141,11 +141,12 @@ the reader to start experimenting on their own.
 
 As already mentioned in the introduction, the first issue we want to address is
 the exact ratio for a perfect fifth. The difference, namely
-\[1{,}200\,\on{ct}\cdot \log_2(\tfrac32) - 700\,\on{ct} \approx 1.95\,\on{ct}\]%%
-is sometimes called \emph{Grad} and very small, yet still something we want to
-correct.  Without the restrictions of an instrument with discretised pitches,
-this can easily be achieved once we accept that enharmonically distinguished
-pitches can correspond to \emph{different} frequencies.
+\[1{,}200\,\on{ct}\cdot \log_2(\tfrac32) - 700\,\on{ct} \approx 1.96\,\on{ct}\]%%
+is sometimes called \emph{Grad}\todo{Man müsste eigentlich irgendwo mal sagen, dass das Grad $\frac{1}{12}$ des Pyth. Kommas ist. Und dass 12-EDO genau das tut: Das Pyth. Komma auf 12 Quinten aufteilen.}
+and very small, yet still something we want to correct.  Without the restrictions
+of an instrument with discretised pitches, this can easily be achieved once we accept
+that enharmonically distinguished pitches can correspond to \emph{different}
+frequencies.
 
 This might seem strange at first glance, but the reader might get convinced by
 comparing an augmented second (in an adequate harmonic context) to a minor third
@@ -178,7 +179,7 @@ frequency $(\frac32)^p\cdot 2^q\cdot 440\Hz$.  For example:\looseness-1
 The difference between these two frequencies, namely
 $3^{12}\cdot 2^{-19}\approx 23.46\,\on{ct}$, is called the \emph{Pythagorean
   comma}. Necessarily, a diminished sixth differs from a perfect fifth by a
-Pythagorean comma. A dimiinished sixth in Pythagorean tuning is sometimes called
+Pythagorean comma. A diminished sixth in Pythagorean tuning is sometimes called
 the \emph{wolf interval}, as it sounds very much off tune, see
 \cref{fig:pythComma}. In \cref{fig:spiral5}, you find an enharmonic-sensitive
 variation of the circle of fifth, which we may call the \emph{spiral of
@@ -226,13 +227,14 @@ a minor sixth corresponds to $792.18\,\on{ct}$.
 
 Henceforth, we interpret written notes via the Pythagorean tuning, and denote
 all deviations from it by certain symbols, which will be introduced when they
-become necessary.  Note that the difference between equal temparament and the
-Pythagorean tuning system is rather small. While all upcoming modifications
-(which aim to tune entire chords) come with the price of having multiple
-intonations for the very same pitch name, bare Pythagorean tuning only uses the
-information that are given to us by the written notes. It therefore also behaves
-well from a \emph{melodic} perspective, as the size of (horizontal) intervals
-does not depend on the vertical structure.
+become necessary.  Note that the difference between equal temperament and the
+Pythagorean tuning system is rather small.\todo{(Außer man schreibt verrückte Sachen wie \dflat B und \dsharp G. Die unterscheiden sich in 12-EDO nicht, aber in pyth. Stimmung um $46.9\,\on{ct}$.)}
+While all upcoming modifications (which aim to tune entire chords) come with the
+price of having multiple intonations for the very same pitch name, bare Pythagorean
+tuning only uses the information that are given to us by the written notes. It
+therefore\todo{Also ein Beweis ist das nicht, oder? Einen Grund dafür, dass pythagoreische Stimmung für sinnvolle Melodien sorgt, habe ich in der Rotation des Mikrotöne-Kurses auf der zweiten Hälfte vorgeführt bekommen: In pythagoreischer Stimmung gibt es \emph{diatonische} Skalen, also Skalen die nur zwei unterschiedliche Schrittweiten haben (i.e.\ Halbton und Ganzton). In der Rotation hat Georg so ein 22-EDO Beispiel vorgespielt mit $\text{GT}:\text{HT} = 4:1$. Das Beispiel produziert grauenhafte Dreiklänge, aber eine Tonleiter mit LLSLLLS hörte sich relativ melodisch an und war eindeutig Dur.}
+also behaves well from a \emph{melodic} perspective, as the size of (horizontal)
+intervals does not depend on the vertical structure.
 
 The only disadvantage of Pythagorean tuning that is not related to issues of
 realisability on a discretising instrument, but purely theoretical, is the fact
@@ -267,8 +269,8 @@ We start with the observation that in Pythagorean tuning, a major triad
 corresponds to the ratio $64:81:96$ instead of $4:5:6=64:80:96$, i.e.\ the major
 third is slightly too high (in the audio example, we first play a Pythagorean
 major triad, and then $4:5:6$).\LY{m-pyth456} The difference,
-$\frac{81}{80}\approx 21.51\,\on{ct}$, is called the \emph{syntonic comma}.  In
-other words, a Pythagorean major third $81:64$ is a syntonic comma larger then
+$\frac{81}{80}\approx 21.51\,\on{ct}$, is called the \emph{syntonic comma}.\todo{Hier wird einigen Leuten auffallen, dass das syntonische Komma und das pythagoreische fast gleich groß sind und sich nur um das \emph{Schisma} $\approx 1.95 \,\on{ct}$ unterscheiden (insbesondere ist D – \flat G – A ein fast reiner Durdreiklang). Da könnte man nun denken, dass das Schisma genau das \emph{Grad} ist, aber das stimmt nicht. Sie unterscheiden sich um $\approx 0.00128 \,\on{ct}$. Das heißt, dass das gleichstufige E (A + Quinte - Grad) und das \flatp F (A + Quinte - Schisma) eine Schwebungsperiode von 34 Minuten haben.}
+In other words, a Pythagorean major third $81:64$ is a syntonic comma larger then
 $4:5$, and accordingly, the Pythagorean minor third $27:32$ is a syntonic comma
 smaller than $5:6$, which is the complement of $4:5$ inside $2:3$ and hence the
 desired minor third. Henceforth, let us call the ratio $4:5$ a \emph{just} major
@@ -313,19 +315,19 @@ sixth, and seventh. The result is called the \emph{Ptolemaic scale}.  Fixing the
 frequency of the root of the scale, the frequencies of all notes appearing in
 the scale can be computed as
 $1,\frac98,\frac54,\frac43,\frac32,\frac53,\frac{15}8,2$. We decided against
-using that scale (in fact, we avoid the word ‘scale’ at all) for the following
+using that scale (in fact, we avoid the word ‘scale’ altogether) for the following
 reasons:
 \begin{enumerate}
 \item In the Ptolemaic scale, the fifth between the second and the sixth tone is
   not $2:3$, but $27:40$. Therefore, in order to play the parallel of the
   subdominant (e.g.\ D minor in C major), we again have to alter one of the
-  notes by a syntonic comma.
+  notes by a syntonic comma.\todo{Wichtig ist hier, dass die Sp ähnlich häufig ist wie die D. Wenn das nicht so wäre könnte man einfach sagen: „Naja, dafür sind halt Versetzungszeichen da. Denn das \flat E ist in F-Dur halt seltener als das E. Genauso ist das \natural E seltener als \naturalm E, weshalb es sinnvoll ist \naturalm E per default zu haben.“ Das Problem ist halt, dass das Argument bei dem zweiten Ton der Durskala nicht funktioniert.}
 \item The Ptolemaic scale only gives \emph{some} pitches a frequency. However,
   there are several pitches that are ‘closely related’ to a certain scale, even
   though they do not strictly belong to it (e.g.\ \sharp F in C major, as it
   is the major third of the double dominant).
 \item Our basic tuning system should not depend on the key of the piece,
-  but only on the concert pitch.
+  but only on the concert pitch.\todo{Ich bin mir nicht sicher ob ich diesen Punkt verstehe. Das Stimmungssystem ändert sich ja durch die Vorzeichen nicht, oder? Ich bin verwirrt.}
 \end{enumerate}
 Instead, we want to arrange all possible frequencies of a piece in a way that
 reflects harmonic proximity. This is typically achieved by the \emph{Euler
@@ -348,7 +350,7 @@ together with a number of syntonic commata applied to it.
 
 \begin{figure}[h]
   \input{tikz/latticeExcerpt}
-  \caption{A excerpt of the Euler lattice. We calculated all frequences as
+  \caption{An excerpt of the Euler lattice. We calculated all frequences as
     factors relative to C, octave-normalised so that they lie between $1$ and
     $2$.}\label{fig:latticeExcerpt}
 \end{figure}
@@ -390,7 +392,7 @@ a piece with a certain key signature, the usual decision which of the two
 possible triads are the tonic (e.g.\ C major or A minor) has an effect on how
 high the piece is supposed to be intonated.  This might sound strange, but
 follows once we agree that the root of the tonic should, as the centre of the
-piece, by derived directly from the concert pitch.
+piece, by derived directly from the concert pitch.\todo{Ein weiterer Grund: Wenn wir ein F-Dur Stück in \naturalm F schreiben, hat fast jeder Ton ein Versetzungszeichen und es wird unlesbar. Ich bin mir nicht sicher, ob ich den Grund mit dem Kammerton mag, aber wahrscheinlich denke ich zu praktisch darüber nach: Wenn ich für ein Stück in \flat B-Dur die Töne mit einer Stimmgabel angebe, dann kommt dabei eher sowas wie \flatp B-Dur heraus, denn ich werde an den $15:16$ Leitton denken und nicht das $243:256$ Limma.}
 
 \begin{figure}
   \centering
@@ -433,7 +435,7 @@ the holding voice.  The consequence is that the second chord (\textsc{v}) is
 lowered by a syntonic comma and the ensemble loses intonation, i.e.\ it
 \emph{detonates}, see the first part of \cref{fig:drift}.  This effect is called
 the \emph{comma drift}.  Note that if this phenomenon occurs five times, the
-amount of the denotation will be $5\cdot 21.51\,\on{ct}=107.55\,\on{ct}$, i.e.\
+amount of the detonation will be $5\cdot 21.51\,\on{ct}=107.55\,\on{ct}$, i.e.\
 the ensemble will have detonated by more than an equally-tempered semitone.
 
 The more desirable solution, which yet requires the singers to understand the
@@ -448,15 +450,15 @@ one that can cause comma drifts. The third part of \cref{fig:drift} shows a
 modulating chord progression that involves the double dominant. Here even two
 voices, which are a fifth apart from each other, have to adjust their
 intonation.  Note that the simultaneous adjustments assemble into a ‘movement’
-in parallel fifths, but that clearly does not violate the rules of classical
-counterpoint.
+in parallel fifths, but that clearly\todo{(For a person not well versed in classical counterpoint it \emph{might} just be helpful if you explained this anyway.)}
+does not violate the rules of classical counterpoint.
 
 We point out that the ‘correct’ intonation depends on the interpretation of the
 function that the triad represents.  For example, if one interprets, in the
 first part of \cref{fig:triadPiece}, the D minor chord as the variant of the
-double dominant (which would be absurd, but just for the sake of argument), then
-the chord would have to be played a syntonic comma higher, and the subtleties of
-the comma drift apply to the chord change
+double dominant (which would be absurd,\todo{Yes, it would be absurd. Can we create an example where it would \emph{really} be up for debate which syntonic level a chord should be assigned to?}
+but just for the sake of argument), then the chord would have to be played a syntonic
+comma higher, and the subtleties of the comma drift apply to the chord change
 \textsc{vi}\kern1px–\kern1px\textsc{ii} one beat earlier.
 
 \begin{figure}
@@ -475,7 +477,7 @@ the comma drift apply to the chord change
 
 \subsection{A word on prime numbers}
 
-…
+…\todo{Oh! Was soll hier hin kommen?}
 
 \section{Advanced harmonies}
 
@@ -489,9 +491,9 @@ most important variations of major and minor chords and how to tune them.
 The \emph{suspended fourth chord} consists of the root, the fourth and the
 fifth; and typically, the fourth leads into the (major or minor) third on the
 next beat.  The suspended fourth chord needs no correction by a syntonic comma;
-it corresponds to the ratio $6:8:9$ in bare Pythagorean tuning.  Resolving the
+it corresponds to the ratio $6:8:9$ in bare Pythagorean tuning.\todo{Note that the fourth is \emph{just} in Pythagorean tuning ($3:4$), also it requires no correction if the suspended fourth follows the subdominant where it was the root.} Resolving the
 fourth into the major third is a semitone of size
-$15:16\approx 111.73\,\on{ct}$, and resolving the fourth into the minor third is
+$15:16\approx 111.73\,\on{ct}$,\todo{Same sized step as leading note’s resolution. Maybe refer to \cref{sec:ln}?} and resolving the fourth into the minor third is
 a whole tone of size $9:10\approx 182.40\,\on{ct}$.\todo{Überbindung ohne korrektur.}
 
 In the \emph{extended ninth chord} consists of a (major or minor) chord,
@@ -499,7 +501,7 @@ together with an additional major ninth. This ninth lies a perfect fifth above
 the fifth of the triad, and hence has the same amount of commata as the root
 and the fifth. This chord then corresponds to the ratio $4:5:6:9$ in major, and
 to $20:24:30:45$ in minor. We note that the semitone between the major ninth and
-the minor third (plus an octave) equals $15:16$.
+the minor third (plus an octave) equals $15:16$.\todo{Maybe we could also argue why an other syntonisation of the ninth is rather undesirable (after all the ninth that is one syntonic comma lower is still reasonably close to the root of the chord in the Euler lattice so it might deserve to be looked at).}
 
 On \cref{fig:chordLines}, we have depicted the above chords as subcomplexes of
 the Euler lattice. We decided to not only mark the vertices, but also highlight
@@ -525,11 +527,12 @@ on the same comma level as root and fifth, and not the one a comma lower:
 \item \naturalm $6$ is not part of any triad in the harmonic proximity of the
   tonic; this is different in the major case.
 \item \natural $6$ of the subdominant coincides with \natural $5$ of the
-  dominant, so even if the subdominant sixth is followed by the dominant, with
-  one voice keeping the common note, no adjustment is necessary.
+  dominant, so even\todo{Am I missing something? Why “even”?}
+  if the subdominant sixth is followed by the dominant, with one voice keeping the 
+  common note, no adjustment is necessary.
 \item The tritone between \flatp $3$ and \naturalm $6$ is very small, namely
   $18:25\approx 568.71\,\on{ct}$, which is $31.29\,\on{ct}$ smaller than the
-  equally-tempered one.
+  equally-tempered one.\todo{Why is this an argument? Equal temperament has not been an argument before. Is it because the tritone is actually \emph{supposed} to be dissonant and therefore being close to $1:\sqrt{2}$ is desired?}
 \item The semitone that lies between \flatp $3$ of the tonic and \naturalm $6$
   of the subdominant is $25:27\approx 133.28\,\on{ct}$, which is way too
   large. In the third part of \cref{fig:496}, this large semitone appears as a
@@ -561,7 +564,7 @@ closer to the equally-tempered one ($600\,\on{ct}$) than $18:25$.\looseness-1
 \subsection{Dominant seventh}
 
 
-no tetrad in the Euler lattice could possibly contain the
+No tetrad in the Euler lattice could possibly contain the
 desired interval $4:7$ (just because only the primes $2$, $3$, and $5$ are
 involved).
 
@@ -582,8 +585,8 @@ involved).
     Major                     & $4$  & $5$  & $6$\\
     Minor                     & $10$ & $12$ & $15$\\
     Suspended fourth          & $6$  & $8$  & $9$\\
-    Extended ninth (major)   & $4$  & $5$  & $6$  & $9$\\
-    Extended ninth (minor)   & $20$ & $24$ & $30$ & $45$\\
+    Extended ninth (major)    & $4$  & $5$  & $6$  & $9$\\
+    Extended ninth (minor)    & $20$ & $24$ & $30$ & $45$\\
     Subdominant sixth (major) & $12$ & $15$ & $18$ & $20$\\
     Subdominant sixth (minor) & $80$ & $96$ & $120$ & $135$\\
     Dominant seventh          & $4$  & $5$  & $6$  & $7$\\
@@ -602,6 +605,7 @@ involved).
 Durchgänge, Wechselnoten
 
 \subsection{Leading-notes}
+\label{sec:ln}
 
 We point out that the third in triad belonging to the dominant (or some
 intermediate dominant) is lowered by a syntonic comma as well, which contradicts
