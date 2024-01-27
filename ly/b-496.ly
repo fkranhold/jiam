@@ -15,7 +15,7 @@ YT = \relative c'  { esP4 d    d2 esP1 }
 YB = \relative c   { c4   f    g2 c,1  }
 
 %% Content 3
-ZS = \relative c'' { c4^"not recommended" c~ c bM c1   }
+ZS = \relative c'' { c4^"nicht empfohlen" c~ c bM c1   }
 ZA = \relative c'' { g4                   asP  g2 g1   }
 ZT = \relative c'  { esP4                 dM   d2 esP1 }
 ZB = \relative c   { c4                   f    g2 c,1  }
