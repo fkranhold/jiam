@@ -421,7 +421,7 @@ Generalvorzeichen die Entscheidung, welcher der beiden möglichen Dreiklänge di
 Tonika ist (z.B.\ C-Dur oder a-Moll), Auswirkungen darauf, wie hoch das Stück
 intoniert werden soll. Das mag seltsam klingen, ergibt sich aber, wenn wir uns
 darauf einigen, dass der Grundton der Tonika als Zentrum des Stücks direkt vom
-Kammerton abgeleitet werden sollte.\todo{Ein weiterer Grund: Wenn wir ein F-Dur Stück in \naturalm F schreiben, hat fast jeder Ton ein Versetzungszeichen und es wird unlesbar. Ich bin mir nicht sicher, ob ich den Grund mit dem Kammerton mag, aber wahrscheinlich denke ich zu praktisch darüber nach: Wenn ich für ein Stück in \flat B-Dur die Töne mit einer Stimmgabel angebe, dann kommt dabei eher sowas wie \flatp B-Dur heraus, denn ich werde an den $15:16$ Leitton denken und nicht das $243:256$ Limma. –T}
+Kammerton abgeleitet werden sollte.\todo{Ein weiterer Grund: Wenn wir ein F-Dur Stück in \naturalm F schreiben, hat fast jeder Ton ein Versetzungszeichen und es wird unlesbar. Ich bin mir nicht sicher, ob ich den Grund mit dem Kammerton mag, aber wahrscheinlich denke ich zu praktisch darüber nach: Wenn ich für ein Stück in \flat H-Dur die Töne mit einer Stimmgabel angebe, dann kommt dabei eher sowas wie \flatp B-Dur heraus, denn ich werde an den $15:16$ Leitton denken und nicht das $243:256$ Limma. –T}
 
 \begin{figure}
   \centering
@@ -512,9 +512,10 @@ den Akkordwechsel \textsc{vi}\kern1px–\kern1px\textsc{ii} einen Schlag früher
 
 \subsection{Ein Wort zu Primzahlen}
 
-…\todo{Oh! Was soll denn hier hin kommen? Eine Erkläurng was $p$-limit harmony heißt und bedeutet? –T}
+…\todo{Oh! Was soll denn hier hin kommen? Eine Erklärung was $p$-limit harmony heißt und bedeutet? –T}
 
 \section{Erweiterte Harmonien}
+\label{sec:quad}
 
 In \cref{sec:tri} haben wir gelernt, wie man Stücke stimmt, bei denen jede Note
 Teil eines Dur- oder Molldreiklangs ist. Akkorde haben jedoch sehr oft andere
@@ -523,6 +524,7 @@ wir die wichtigsten Variationen von Dur- und Moll-Akkorden und wie sie gestimmt
 werden können.
 
 \subsection{Quartvorhalt and hinzugefügte None}
+\label{sec:49}
 
 Der Akkord mit Quartvorhalt besteht aus dem Grundton, der Quarte und der Quinte,
 wobei sich die Quarte in der Regel auf dem nächsten Schlag in die (große oder
@@ -535,12 +537,13 @@ die Auflösung der Quarte in die kleine Terz ist ein Ganzton im Verhältnis
 $9:10\approx 182.40\,\on{ct}$.\todo{Überbindung ohne korrektur.}
 
 
-Der \emph{erweiterte Nonakkord} besteht aus einem (Dur- oder Moll-)Akkord und
-einer zusätzlichen großen None. Die None liegt eine reine Quinte über der Quinte
-des Dreiklangs und hat daher die gleiche Anzahl an Kommata wie der Grundton und
-die Quinte. Dieser Akkord entspricht dem Verhältnis $4:5:6:9$ in Dur und
-$20:24:30:45$ in Moll. Wir stellen fest, dass der Halbton zwischen der großen
-None und der kleinen Terz (plus eine Oktave) wieder $15:16$ ist.
+Der \emph{erweiterte Nonakkord}\todo{Ich habe den jetzt manchmal mit „erweiterter Nonakkord“, manchmal mit „[Akkord mit] hinzugefügte[r] None“ und manchmal nur mit „Nonakkord“ übersetzt, weil ich tatsächlich nicht weiß wie der im Deutschen heißt. Wenn irgendwas davon falsch ist, kann ich das noch mal korrigieren. –T}
+besteht aus einem (Dur- oder Moll-)Akkord und einer zusätzlichen großen None.
+Die None liegt eine reine Quinte über der Quinte des Dreiklangs und hat daher
+die gleiche Anzahl an Kommata wie der Grundton und die Quinte. Dieser Akkord
+entspricht dem Verhältnis $4:5:6:9$ in Dur und $20:24:30:45$ in Moll. Wir
+stellen fest, dass der Halbton zwischen der großen None und der kleinen Terz
+(plus eine Oktave) wieder $15:16$ ist.
 
 In \cref{fig:chordLines} haben wir die obigen Akkorde als Unterkomplexe des
 Eulerschen Tonnetzes dargestellt. Wir markieren nicht nur die Eckpunkte, sondern
@@ -609,33 +612,124 @@ $32:45\approx 590.22\,\on{ct}$, was der gleichstufigen Stimmung
 
 Kein Vierklang im Eulerschen Tonnetz kann das gewünschte Intervall $4:7$
 enthalten (weil nur die Primzahlen $2$, $3$ und $5$ beteiligt
-sind).\todo{Allerdings haben wir (insbesondere du) auch mal gesagt, dass die Naturseptime nicht immer gut klingt. Deshalb sollten wir trotzdem die $9:16$ Septime als Alternative einführen. –T}
+sind).\todo{Allerdings haben wir (insbesondere du) auch mal gesagt, dass die Naturseptime nicht immer gut klingt. Deshalb sollten wir trotzdem die $9:16$ Septime als Alternative einführen. Ich schreibe mal ein Beispiel hier: –T}
+
+Dennoch wollen wir eine rein im Eulerschen Tonnetz beheimatete
+Intonationsmöglichkeit vorstellen. Der Dominantseptakkord besteht aus der
+Dominante mit einer kleinen Septime, die unabhängig vom Tongeschlecht
+leitereigen ist. In der harmonischen Nähe des Dominantakkordes (in C-Dur oder
+-Moll wäre das G-Dur) gibt es zwar zwei unterschiedliche kleine Septimen (im
+Beispiel \natural f und \naturalp f), aber nur die auf der syntonischen Höhe
+des Grundtons ist sinnvoll, denn falls die Septime beim Harmoniewechsel in
+einem Quartvorhalt vorenthalten wird ist keine Anpassung nötig und die andere
+kommt (als Terz der Doppeldominantvariante) in der Tonart praktisch nicht vor.
+Der so entstehende Akkord hat das Frequenzverhältnis $36:45:54:64$. Der Tritonus
+zwischen der großen Terz und der kleinen Septime ist
+$45:64\approx 609.78\,\on{ct}$ groß. Die Auflösung der Septime der Dominante in
+die große oder kleine Terz der Tonika erfolgt wie beim Quartvorhalt (siehe
+\cref{sec:49}) mit einem diatonischen Halbton $15:16$, oder einem kleinen
+Ganzton $9:10$.
 
 \subsection{Verminderter Septakkord}
 
+Auch für den Fall des verminderten Septakkordes werden wir in \cref{sec:sept}
+eine Alternative entwickeln, die wir aber nicht immer einsetzen wollen.
+
+Der verminderte Septakkord besteht aus der großen Terz, reinen Quinte, kleinen
+Septime und kleinen None eines (Zwischen-)Dominantakkordes (am Beispiel C-Dur
+oder -Moll: h, d, f und \flat a). Es ist also im Wesentlichen ein
+Dominantseptakkord, bei dem der Grundton (= die Oktave) durch eine kleine
+None ausgetauscht wird. Es ergibt also Sinn Terz, Quinte und Septime wie im
+vorherigen Fall zu intonieren. Für die None kommt in der harmonischen Nähe nur
+ein Kandidat in Frage, nämlich \flatp $9$. Diese None ist eine reine kleine Terz
+über der Septime (so, wie auch die Terz eine reine kleine Terz unter der Quinte
+ist) und bildet zur Quinte den gleichen Tritonus, den auch die Septime zur Terz
+bildet, der Akkord ist also in symmetrischen Terzen geschichtet: Terz zu Quinte
+$5:6$, Quinte zu Septime $27:32$ und Septime zu None $5:6$; insgesamt
+$45:54:64:\frac{384}5 = 225:270:320:384$. Die None wird ebenfalls mit dem
+diatonischen $15:16$ Halbton nach unten aufgelöst.
+
+Im Moll-Fall ist dieser Akkord ähnlich dem Sixte ajoutée in Dur auch eine
+Vermischung von zwei Dreiklängen (in c-Moll wäre der Akkord \naturalm h, d, f,
+\flatp a). Die Terz und die Quinte sind die Terz und die Quinte der Dominante
+(\naturalm h und d) und die Septime und None sind der Grundton und die Terz der
+Subdominante (f und \flatp a), was unsere Wahl der syntonischen Ebenen für die
+Septime und None ebenfalls bestätigt.
 
 \subsection{Septnonakkord}
 
 + Vergleich Septnon mit Sixte ajoutée in Moll
 
+\section{Septimen}
+\label{sec:sept}
+
+\subsection{Das septimale Komma}
+
+Mit der Einführung des syntonischen Kommas können wir nicht nur Dreiklänge
+(\cref{sec:tri}) sondern auch viele Vierklänge (\cref{sec:quad}) rein stimmen.
+Allerdings haben wir immer noch keine Möglichkeit die bereits mehrfach erwähnte
+kleine Septime mit der Größe $4:7=36:63\approx 968.83\,\on{ct}$ darzustellen.
+Dieses Intervall nennen wir \emph{Naturseptime}, da es in der Naturtonfolge als
+erste Septime vorkommt; es ist $31.18\,\on{ct}$ also fast ein Drittel \acr{HTS}
+kleiner als die gleichstufige kleine Septime und klingt deshalb auch deutlich
+anders, wie in dem Audiobeispiel nachzuhören ist\LY{m-4567} (zuerst erklingt
+ein gleichstufiger Dominantseptakkord, dann einer mit dem Frequenzverhältnis
+$4:5:6:7$). Die pythagoreische kleine Septime
+$9:16=36:64\approx 996.09\,\on{ct}$ ist $\frac{64}{63}\approx 27.26\,\on{ct}$
+größer als die Naturseptime, diesen Unterschied nennen wir das
+\emph{septimale Komma}.
+
+Eine Tiefalteration um ein septimales Komma notieren wir mit dem zusätzlichen
+\septimal\ Vorzeichen, es wird vor andere Versetzungszeichen gesetzt, wenn sie
+nötig sind. Wir werden keinen Ton um ein septimales Komma \emph{erhöhen},
+deshalb müssen wir dafür auch kein Zeichen einführen. Der Dominantseptakkord in
+D-Dur besteht also aus a, \sharpm c, e und \septimal g. Der erste und zweite
+Teil von \cref{fig:sept} zeigt ein Beispiel für einen Dominantseptakkord ohne
+und mit Naturseptime. Bei der Auflösung der Naturseptime um einen Halbton nach
+unten kommt es zu einem $20:21\approx 84.47\,\on{ct}$, bei einer Auflösung um
+einen Ganzton nach unten zu einem $32:35\approx 155.14\,\on{ct}$ großen Schritt.
+
+\begin{figure}
+	\centering
+	\LY{b-sept}
+	\includegraphics{ly/b-sept}
+	\caption{(1) Eine Schlusskadenz mit Dominantseptakkord. Die Septime im
+		Tenor wird pythagoreisch intoniert.
+		\quad(2) Die gleiche Kadenz mit Naturseptime im Tenor.
+		\quad(3) Ein Beispiel mit vermindertem Septakkord ohne Naturseptime.
+		\quad(4) Das gleiche Beispiel mit Naturseptime; die kleine None wird
+		auch um ein septimales Komma alteriert.}\label{fig:sept}
+\end{figure}
+
+\subsection{Verminderter Septakkord}
+
+Wie in \cref{sec:quad} stimmen wir die None als reine kleine Terz über der
+Septime, sodass der Akkord dem Frequenzverhältnis $5:6:7:42/5 = 25:30:35:42$
+entspricht. Der Unterschied zwischen den beiden Varianten ist im dritten und
+viertes Beispiel in \cref{fig:sept} zu sehen und zu hören. Diese Version des
+Akkords ist immer noch symmetrisch geschichtet, aber die mittlere der drei
+Terzen ist nicht mehr pythagoreisch ($27:32$), sondern septimal ($6:7$). In C besteht dieser Akkord beispielsweise aus \naturalm h, d, \septimal f und \septimal \flatp a.
+
+\subsection{Dominantseptnonakkord}
+
 \begin{table}
-  \centering
-  \begin{tabular}{lrrrrr}
-    \toprule
-    \textsc{Akkord} & \multicolumn{4}{l}{\textsc{Frequenzverhältnis}}\\
-    \midrule
-    Dur                         & $4$  & $5$  & $6$\\
-    Moll                        & $10$ & $12$ & $15$\\
-    Quartvorhalt                & $6$  & $8$  & $9$\\
-    Hinzugefügte None (Dur)     & $4$  & $5$  & $6$  & $9$\\
-    Hinzugefügte None (Moll)    & $20$ & $24$ & $30$ & $45$\\
-    Sixte ajoutée (Dur)         & $12$ & $15$ & $18$ & $20$\\
-    Sixte ajoutée (Moll)        & $80$ & $96$ & $120$ & $135$\\
-    Dominantseptakkord          & $4$  & $5$  & $6$  & $7$\\
-    Verminderter Septakkord     &      & $25$ & $30$ & $35$ & $42$\\
-    Septnonakkord               &      & $5$  & $6$  & $7$  & $9$\\
-    \bottomrule
-  \end{tabular}
+	\centering
+	\begin{tabular}{lrrrrr}
+		\toprule
+		\textsc{Akkord} & \multicolumn{4}{l}{\textsc{Frequenzverhältnis}}\\
+		\midrule
+		Dur                         & $4$  & $5$  & $6$\\
+		Moll                        & $10$ & $12$ & $15$\\
+		Quartvorhalt                & $6$  & $8$  & $9$\\
+		Hinzugefügte None (Dur)     & $4$  & $5$  & $6$  & $9$\\
+		Hinzugefügte None (Moll)    & $20$ & $24$ & $30$ & $45$\\
+		Sixte ajoutée (Dur)         & $12$ & $15$ & $18$ & $20$\\
+		Sixte ajoutée (Moll)        & $80$ & $96$ & $120$ & $135$\\
+		Dominantseptakkord          & $4$  & $5$  & $6$  & $7$\\
+		Verminderter Septakkord     &      & $25$ & $30$ & $35$ & $42$\\
+		Septnonakkord               &      & $5$  & $6$  & $7$  & $9$\\
+		\bottomrule
+	\end{tabular}
 \end{table}
 
 \section{Melodik gegen Harmonik}
