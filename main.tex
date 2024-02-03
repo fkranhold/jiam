@@ -22,8 +22,8 @@
   Grundlagen  der reinen Intonation für die klassische westliche Musik,
   einschließlich des pythagoreischen, syntonischen und septimalen Kommas, sowie
   des Eulerschen Tonnetzes. Darauf aufbauend stellen wir ein System zum
-  Microtunen von Vokalmusik vor. Unsere Herangehensweise ist theoretisch,
-  d.h.\ wir wollen uns nicht auf ein Instrument mit einer endlichen Anzahl an
+  „Microtunen“ von Vokalmusik vor. Unsere Herangehensweise ist theoretisch,
+  d.\,h. wir wollen uns nicht auf ein Instrument mit einer endlichen Anzahl an
   Tasten beschränken. Dieser Aufsatz wird von mehreren Audiobeispielen
   begleitet, die für den Open-Source-Interpreter LilyPond geschrieben sind. Wir
   erklären im Anhang, wie man sie kompiliert.
@@ -32,108 +32,129 @@
 \section{Einleitung und Überblick}
 \label{sec:int}
 
-Wir setzten vorraus, dass die Grundkonzepte klassischer
-Musiktheorie bekannt sind: Töne, Intervallnamen, Diatonische Skalen, Akkorde,
-Tonarten und der Quintenzirkel.
+Wir setzen folgende Grundkonzepte klassischer Musiktheorie als bekannt voraus:
+Töne, Intervallnamen, diatonische Skalen, Akkorde, Tonarten und der
+Quintenzirkel. Wir verwenden hierbei die Sprache von \cite{Skript}.
 
-Wenn ein Instrument (z.B.\ die menschliche Stimme) einen Ton erzeugt, schwingt
+Wenn ein Instrument (z.\,B. die menschliche Stimme) einen Ton erzeugt, schwingt
 ein „Material“ (wie eine Saite oder eine Luftsäule) mit einer gewissen Frequenz.
 Je höher die Frequenz ist, desto höher ist der Ton. Ein \emph{Stimmungssystem}
 weist jedem Ton eine Frequenz zu. Typischerweise beginnen wir mit der Fixierung
 des \emph{Kammertons}, der Frequenz des a’, heutzutage bei $440$\,Hz. Von dort
 leiten wir die anderen Tonhöhen wie folgt ab: Die einfachste Beziehung zwischen
 Tönen ist die der \emph{Oktave}, die einem Frequenzverhältnis von $1:2$
-entspricht, z.B.\ bekommt das a’’ die Frequenz $880$\,Hz zugewiesen. In dem
-modernen Stimmungssystem der \emph{gleichstufingen Stimmung} wird die Oktave in
-zwölf gleich große Schritte – genannt \emph{Halbtonschritte}, \acr{HTS} – 
-aufgeteilt. Ein \acr{HTS} entspricht also dem Frequenzverhältnis
+entspricht, z.\,B. bekommt das a’’ die Frequenz $880$\,Hz zugewiesen. In dem
+modernen Stimmungssystem der \emph{gleichstufigen Stimmung} wird die Oktave in
+zwölf gleich große Schritte – genannt \emph{Halbtonschritte} oder \acr{HTS} – 
+aufgeteilt. Ein Halbtonschritt entspricht also dem Frequenzverhältnis
 $1:2^{\smash{\frac1{12}}}$. Mit diesem Verhältnis kann nun jedem Ton eine
 Frequenz zugewiesen werden; beispielsweise wird dem e’’ sieben \acr{HTS}
 über dem a’ eine Frequenz von \looseness-1
-\[440\,\text{Hz}\cdot 2^{\frac7{12}} \approx 659.26\,\text{Hz}\] zugewiesen. Und
-hier könnte man erwarten, dass die Geschichte und dieser Aufsatz ihr Ende
-haben. Allerdings stellt sich dieses Stimmungssystem als nicht optimal heraus
-sobald mehrere Töne gleichzeitig erklingen. Die Physik™ lehrt uns, dass mehrere
-Wellen konsonieren wenn ihre Frequenzen im Verhältnis kleiner, paarweise
-teilerfremder Ganzzahlen stehen, z.B.\ $4:5:6:7$. Sehen wir uns nun einen
-Durakkord mit kleiner Septime bestehend aus Grundton, großer Terz, reiner Quinte
-und kleiner Septime an. Da eine große Terz aus four, eine reine Quinte aus
-sieben und eine kleine Septime aus zehn \acr{HTS} besteht (bestehen?)\todo{Es  ist so spät abends. Ich kann kein Deutsch mehr. –T}
-ist das Frequenverhältnis dieser vier gleichzeitig erklingenden Töne
-\looseness-1\[1:2^{\frac4{12}}:2^{\frac7{12}}:2^{\frac{10}{12}}\approx
-1:1.260:1.498:1.781.\]%
-Die Beobachtung der reinen Stimmung ist nun, dass dieses Verhältnis zwar
-\emph{ungefähr} aber nicht \emph{genau} $4:5:6:7$ ist.\todo{Historisch gesehen war die Entwicklung allerdings genau in die andere Richtung, oder? Erst hatte man Sachen woe $2:3$ und dann haben Leute bemerkt, dass man dadurch dass man Verhältnisse wählt die \emph{ungefähr} aber nicht \emph{genau} sind andere potentiell wünschenswerte Eigenschaften erhält. –T}
-Die „Unreinheiten“, die wir hier sehen, sind deutlich kleiner als ein
-\acr{HTS} deshalb drücken wir ihre Größe mit Hilfe der Einheit \emph{Cent} aus,
-wobei $100\,\on{ct}$ einem gleichstufigen \acr{HTS} entsprechen. Anders
-ausgedrückt: Die Oktave (d.h.\ die Multiplikation mit $2$) umfasst
-$1{,}200\,\on{ct}$. Wir können damit beispielsweise sehen, dass das Verhältnis
-$4:5$ einem Unterschied von
-\[1{,}200\,\on{ct}\cdot \log_2(\tfrac54) \approx 386.31\,\on{ct}\]%
+\[440\,\text{Hz}\cdot 2^{\frac7{12}} \approx 659{,}26\,\text{Hz}\]%
+zugewiesen. Hier könnte man erwarten, dass die Erzählung, und damit auch dieses
+Skript™, ihr Ende haben. Allerdings stellt sich dieses Stimmungssystem als
+suboptimal heraus sobald mehrere Töne gleichzeitig erklingen. Die Physik™ lehrt
+uns, dass mehrere Wellen konsonieren, wenn ihre Frequenzen im Verhältnis
+kleiner, paarweise teilerfremder Ganzzahlen stehen, z.\,B. $4:5:6:7$. Sehen wir
+uns nun einen Durakkord mit kleiner Septime bestehend aus Grundton, großer Terz,
+reiner Quinte und kleiner Septime an. Da eine große Terz aus vier, eine reine
+Quinte aus sieben und eine kleine Septime aus zehn \acr{HTS} bestehen, ist das
+Frequenverhältnis dieser vier gleichzeitig erklingenden Töne \looseness-1%
+\[1:2^{\frac4{12}}:2^{\frac7{12}}:2^{\frac{10}{12}}\approx
+  1:1{,}260:1{,}498:1{,}781.\]%
+Die Beobachtung,\footnote{Streng genommen erzählen wir hier die Geschichte nicht
+  in historisch korrekter Reihenfolge, denn es ist mitnichten so, dass im Laufe
+  der Musikgeschichte Defizite der gleichstufigen Stimmung erkannt und angepasst
+  wurden. Vielmehr kann die Idee ganzzahliger Frequenzverhältnisse als Beginn
+  der Musiktheorie gesehen werden, während heutzutage z.\,B. für
+  Tasteninstrumente die gleichstufige Stimmung aus Gründen der Praktikabilität
+  verwendet wird. Wir haben uns dennoch für diese Darstellung entschieden, weil
+  sie systematischer und zudem leichter zu verstehen ist.} die der Theorie der
+reinen Stimmung zugrunde liegt, ist nun, dass diese Verhältnis zwar
+\emph{ungefähr}, aber nicht \emph{exakt} $4:5:6:7$ ist. Die „Unreinheiten“, die
+wir hier sehen, sind deutlich kleiner als ein \acr{HTS}, weswegen wir ihre Größe
+mit Hilfe der Einheit \emph{Cent} ausdrücken, wobei $100\,\on{ct}$ einem
+gleichstufigen \acr{HTS} entsprechen. Anders ausgedrückt: Die Oktave (d.\,h. die
+Multiplikation mit $2$) umfasst $1{.}200\,\on{ct}$. Wir können damit
+beispielsweise sehen, dass das Verhältnis $4:5$ einem Unterschied von
+\[1{.}200\,\on{ct}\cdot \log_2(\tfrac54) \approx 386,31\,\on{ct}\]%
 entspricht, es also von dem vier \acr{HTS} ($400\,\on{ct}$) großen Intervall um
-$13.69\,\on{ct}$ abweicht. Diese Unterschiede „korrigiert“
-\emph{reine Intonation} dadurch Akkorde systematisch zu \emph{microtunen}, also
-die Töne ein kleines bisschen höher oder tiefer zu spielen je nach harmonischem
-Kontext. Das ist natürlich auf Musikinstumenten mit zwölf Tasten pro Oktave
-unmöglich; dort müssen andere Stimmungssysteme eingesetzt werden. Nur an der
-Theorie und nicht an praktischen Lösungsansätzen interessiert werden wir
+$13.69\,\on{ct}$ abweicht. Diese Unterschiede „korrigiert“ \emph{reine
+  Intonation}, indem sie Akkorde systematisch
+\emph{microtunt},\footnote{Deutsche Konjugation von Anglismen, immer wieder ein
+  Graus.} also die Töne je nach harmonischem Kontext ein kleines bisschen höher
+oder tiefer spielt. Das ist natürlich auf Musikinstrumenten mit zwölf Tasten pro
+Oktave unmöglich; dort müssen andere Stimmungssysteme eingesetzt werden. Nur an
+der Theorie und nicht an praktischen Lösungsansätzen interessiert, werden wir
 letztere hier nicht ausführen. Unabhängig davon \emph{ist} reine Intonation in
-der musikalischen Praxis durchaus einsetzbar, z.B.\ im a cappella Gesang:
-Menschen die professionell singen hören aufeinander um möglichst konsonant zu
-singen und microtunen ihre Akkorde \emph{intuitiv}.
+der musikalischen Praxis durchaus einsetzbar, z.\,B. im A-cappella-Gesang:
+Professionell ausgebildete Chorsänger:innen hören aufeinander, um möglichst
+konsonant zu singen, und microtunen daher ihre Akkorde
+\emph{intuitiv}, siehe etwa \cite{Maria} für einige empirische Untersuchungen.
 
-Dieser Aufsatz gibt die nötigen Microtunings explizit an und zeigt wie sie
-konsistent durch ein Stück hinweg eingesetzt werden können. Dabei gehen wir in
-drei Schritten vor:\looseness-1
+Dieses Skript gibt die erforderlichen Microtunings explizit an und zeigt, wie
+sie konsistent durch ein Stück hinweg eingesetzt werden können. Dabei gliedert
+es sich in folgende Abschnitte:\looseness-1
 
 \begin{enumerate}
+  \setcounter{enumi}{1}
 \item Mit der Einführung der \emph{pythagoreischen Stimmung} erreichen wir,
   dass alle reinen Quinten das Frequenzverhältnis von $2:3$ haben. Dies wird
   dazu führen, dass beispielsweise das \sharp G etwas höher wird als das
   \flat A; dieser Unterschied heißt \emph{pythagoreisches Komma}. Da wir aber 
   nicht an ein Tasteninstument \todo{(oder die Realität überhaupt, wie wir ja gerade erwähnt haben) –T}
-  gebunden sind, ist das kein Problem, es zwingt uns nur dazu Enharmonik ernst
+  gebunden sind, ist das kein Problem; es zwingt uns nur dazu, Enharmonik ernst
   zu nehmen. Der Quintenzirkel wird zu einer unendlichen \emph{Quintenreihe}.
   Von hier an ist unser Standardstimmungssystem das pytagoreische, das e’’ hat
   also eine Frequenz von $\frac32\cdot 440\,\text{Hz}=660\,\text{Hz}$ und nicht
-  mehr $659.26\,\text{Hz}$.\looseness-1
+  mehr $659{,}26\,\text{Hz}$.\looseness-1
 \item Selbst im pythagoreischen System sind Dreiklänge nicht optimal gestimmt,
-  z.B.\ wäre ein Dur-Dreiklang $64:81:96$ statt $4:5:6$. Die große Terz ist ein
+  z.\,B. wäre ein Dur-Dreiklang $64:81:96$ statt $4:5:6$. Die große Terz ist ein
   bisschen zu hoch; der Unterschied $\frac{81}{80}$ wird als \emph{syntonisches
   Komma} bezeichnet. Folglich bedeutet das Microtunen des Akkords eine
   Absenkung der großen Terz um ein syntonisches Komma. Wir erhalten eine zweite
   Quintenreihe, die um ein syntonisches Komma tiefer liegt. Wenn wir diesen
   Prozess in beide Richtungen wiederholen, können die entstehenden Reihen zum
-  Eulerschen Tonnetz zusammengesetzt werden, in dem die Bestandteile von (Dur-
+  \emph{Eulerschen Tonnetz} zusammengesetzt werden, in dem die Bestandteile von (Dur-
   und Moll-)Dreiklängen nebeneinander liegen und Dreiecke bilden. Da
-  (gegen-)parallele Dreiklänge benachbarten Dreiecken entsprechen, eignet sich
+  \mbox{(gegen-)}parallele Dreiklänge benachbarten Dreiecken entsprechen, eignet sich
   dieses Gitter gut für die klassische Harmonik, erklärt aber auch die so
   genannte \emph{Kommafalle} für bestimmte Akkordfolgen: eine häufige Quelle
   für Detonationen™ (das ist der Verlust der ursprünglichen Grundfrequenz).
-\item \todo{change that. – \{Was und warum?\} –T} Selbst innerhalb des 
-  Eulerschen Tonnetzes ist ein Dur-Dreiklang mit kleiner Septime, der
-  benachbarte Eckpunkte des Gitters verbindet, $36:45:54:64$ statt $4:5:6:7$.
-  Die kleine Septime ist ein bisschen zu hoch; der Fehler $\frac{64}{63}$ wird
-  als \emph{septimales Komma} bezeichnet. Mit Hilfe des syntonischen und des
-  septimalen Kommas können wir nun die meisten Vierklänge in Bachs Vokalmusik
-  beschreiben \todo{oder doch „besprechen“?}.
+\item Mithilfe des Eulerschen Tonnetzes lassen sich auch andere für die
+  klassische Musik übliche Akkorde (etwa die Subdominante mit sixte ajoutée)
+  sinnvoll ausstimmen. Wir werden den Versuch unternehmen, dies konsistent für
+  die meisten relevanten Harmonien zu tun.
+\item Zwar können wir nun sämtliche \emph{vertikale} Klänge über ein Stück
+  hinweg konsistent rein ausstimmen, allerdings ist dies an solchen
+  Stellen praxisfern, die \emph{horizontal} verstanden und musiziert werden. Wir
+  werden daher einige Situationen problematisieren, in denen sich diese beiden
+  Perspektiven widersprechen.
+\item Selbst innerhalb des Eulerschen Tonnetzes kann der oben beschriebene
+  Vierklang $4:5:6:7$ nicht realisiert werden – im Wesentlichen weil das Tonnetz
+  nur die Primzahlen $2$, $3$ und $5$ kennt. Ein Dur-Dreiklang mit kleiner
+  Septime im Eulerschen Tonnetz hat stattdessen das Verhältnis $36:45:54:64$.
+  Die kleine Septime ist also ein bisschen zu hoch; der Fehler $\frac{64}{63}$
+  wird als \emph{septimales Komma} bezeichnet. Wir werden einige (allerdings
+  ausgesprochen rar gesäte) Situationen in der klassischen Vokalmusik finden,
+  in denen durch die Zuhilfenahme des septimalen Kommas ein „besseres“
+  Klangergebnis erreicht werden kann.
 \end{enumerate}
 
-Dieser Ansatz unterscheidet sich in zwei Aspekten von der
-Standardliteratur:\todo{Welche? – \{Das würde mich auch interessieren.\} –T} 
-Erstens machen wir das pythagoreische System zum bevorzugten und verfolgen alle
-Abweichungen davon durch syntonische und septimale Kommata, während
-klassischerweise für jede Tonart eine sogenannte ptolemäische Skala verwendet
-wird, in der die Terz, die Sexte und die Septime standardmäßig um ein
-syntonisches Komma erniedrigt werden. Die Ptolemäische Skala hat den Vorteil,
-dass weniger Kommata verfolgt werden müssen; allerdings, werden wir darlegen,
-aus welchen systematischen Gründen wir uns gegen ihre Verwendung entschieden
-haben. Zweitens wird das septimale Komma in der Regel weggelassen,
-wahrscheinlich weil die durch den Tritonus verursachte Spannung (zwischen der
-kleinen Septime und der großen Terz) hörbar sein soll. Wir sind jedoch
-überzeugt, dass die Beachtung des septimalen Kommas zu einem saubereren System
-führt.
+% Dieser Ansatz unterscheidet sich in zwei Aspekten von der
+% Standardliteratur:\todo{Welche? – \{Das würde mich auch interessieren.\} –T} 
+% Erstens machen wir das pythagoreische System zum bevorzugten und verfolgen alle
+% Abweichungen davon durch syntonische und septimale Kommata, während
+% klassischerweise für jede Tonart eine sogenannte ptolemäische Skala verwendet
+% wird, in der die Terz, die Sexte und die Septime standardmäßig um ein
+% syntonisches Komma erniedrigt werden. Die Ptolemäische Skala hat den Vorteil,
+% dass weniger Kommata verfolgt werden müssen; allerdings, werden wir darlegen,
+% aus welchen systematischen Gründen wir uns gegen ihre Verwendung entschieden
+% haben. Zweitens wird das septimale Komma in der Regel weggelassen,
+% wahrscheinlich weil die durch den Tritonus verursachte Spannung (zwischen der
+% kleinen Septime und der großen Terz) hörbar sein soll. Wir sind jedoch
+% überzeugt, dass die Beachtung des septimalen Kommas zu einem saubereren System
+% führt.
 
 Bevor wir diesen Prozess beginnen, weisen wir darauf hin, dass diese Abhandlung
 mit mehreren musikalischen Beispielen versehen ist, die am Seitenrand dieses
@@ -143,11 +164,10 @@ und einmal genau $4:5:6:7$, wie oben beschrieben). Diese Beispiele wurden mit
 dem Notensatzprogramm \verb!lilypond! geschrieben und kodieren entweder eine
 \acr{PDF}-Datei (dann beginnt ihr Dateiname mit \verb!p-!), eine
 \acr{MIDI}-Datei (\verb!m-!) oder beides (\verb!b-!). Auf
-\href{https://fkranhold.de/jiam/}{\textsf{fkranhold.de/jiam}} sind die
-Quelldateien, die Kompilate und, falls eine \acr{MIDI}-Datei unter diesen ist,
-eine Audio-Konvertierung nach \acr{OGG} Vorbis zu finden. In \cref{sec:ly}
-erklären wir, wie der Quellcode geschrieben ist und ermutigen alle, selbst zu
-experimentieren.
+\href{https://github.com/fkranhold/jiam/}{\textsf{github.com/fkranhold/jiam}}
+sind die Quelldateien, die Kompilate und, falls eine \acr{MIDI}-Datei unter
+diesen ist, eine Audio-Konvertierung nach \acr{OGG} Vorbis zu finden. Wir
+ermutigen alle, mit diesen Quelldateien selbst zu experimentieren.
 
 \section{Reine Quinten und die pythagoreische Stimmung}
 \label{sec:pyth}
@@ -214,10 +234,10 @@ Spirale, verschiebt sich die Tonhöhe um ein pythagoreisches Komma.\todo{Hier ei
 
 Für jedes Intervall können wir das entsprechende Verhältnis berechnen, siehe
 \cref{tab:1}. Man beachte, dass, wenn ein bestimmtes Intervall das Verhältnis
-$a:b$ hat, sein \emph{Komplementärintervall} das Verhältnis $b:2a$ hat, z.B.\
+$a:b$ hat, sein \emph{Komplementärintervall} das Verhältnis $b:2a$ hat, z.\,B.\
 eine kleine Sexte entspricht dem Verhältnis $81:128$. Ähnlich verhält es sich,
 wenn ein Intervall die Größe $c$ in Cent hat: Dann hat sein
-Komplementärintervall die Größe $1{,}200\,\on{ct}-c$, z.B.\ eine kleine Sexte
+Komplementärintervall die Größe $1{,}200\,\on{ct}-c$, z.\,B. eine kleine Sexte
 entspricht $792.18\,\on{ct}$.
 
 \begin{figure}
@@ -252,7 +272,7 @@ Akkorde zu stimmen) den Preis haben werden, dass es mehrere Frequenzen für
 denselben Tonnamen gibt, verwendet die bare pythagoreische Stimmung nur die
 Informationen, die uns durch die geschriebenen Noten gegeben werden. Sie verhält
 sich aus \emph{melodischer} Perspektive also gut™, da die Größe der 
-(horizontalen) Intervalle nicht von der vertikalen Struktur abhängt.\todo{Also ein Beweis ist das nicht, oder? Falsche Schlussrichtung oder so … Einen Grund dafür, dass pythagoreische Stimmung für sinnvolle Melodien sorgt, habe ich in der Rotation des Mikrotöne-Kurses auf der zweiten Hälfte vorgeführt bekommen: In pythagoreischer Stimmung gibt es \emph{diatonische} Skalen, also Skalen die nur zwei unterschiedliche Schrittweiten haben (i.e.\ Halbton und Ganzton). In der Rotation hat Georg so ein 22-EDO Beispiel vorgespielt mit $\acr{GT}:\acr{HT} = 4:1$. Das Beispiel produziert grauenhafte Dreiklänge, aber eine Tonleiter mit LLSLLLS hörte sich relativ melodisch an und war eindeutig Dur. –T}
+(horizontalen) Intervalle nicht von der vertikalen Struktur abhängt.\todo{Also ein Beweis ist das nicht, oder? Falsche Schlussrichtung oder so … Einen Grund dafür, dass pythagoreische Stimmung für sinnvolle Melodien sorgt, habe ich in der Rotation des Mikrotöne-Kurses auf der zweiten Hälfte vorgeführt bekommen: In pythagoreischer Stimmung gibt es \emph{diatonische} Skalen, also Skalen die nur zwei unterschiedliche Schrittweiten haben (i.e. Halbton und Ganzton). In der Rotation hat Georg so ein 22-EDO Beispiel vorgespielt mit $\acr{GT}:\acr{HT} = 4:1$. Das Beispiel produziert grauenhafte Dreiklänge, aber eine Tonleiter mit LLSLLLS hörte sich relativ melodisch an und war eindeutig Dur. –T}
 
 Der einzige Nachteil der pythagoreischen Stimmung, der nichts mit der
 Realisierbarkeit auf einem diskretisierenden Instrument zu tun hat, sondern rein
@@ -287,7 +307,7 @@ $21.51\,\on{ct}$. Dieser Fehler ist Gegenstand des nächsten Abschnitts.
 
 Wir beginnen mit der Beobachtung, dass in der pythagoreischen Stimmung ein
 Dur-Dreiklang dem Verhältnis $64:81:96$ statt $4:5:6=64:80:96$ entspricht,
-d.h.\ die große Terz etwas zu hoch ist (im Hörbeispiel hören wir zuerst einen
+d.\,h. die große Terz etwas zu hoch ist (im Hörbeispiel hören wir zuerst einen
 pythagoreischen Dur-Dreiklang und dann $4:5:6$).\LY{m-pyth456} Der Unterschied,
 $\frac{81}{80}\approx 21.51\,\on{ct}$, heißt das
 \emph{syntonische Komma}.\todo{Hier wird einigen Leuten auffallen (naja, vllt. auch nicht, aber egal), dass das syntonische Komma und das pythagoreische fast gleich groß sind und sich nur um das \emph{Schisma} $\approx 1.95 \,\on{ct}$ unterscheiden (insbesondere ist d – \flat g – a ein fast reiner Durdreiklang). Da könnte man nun denken, dass das Schisma genau das \emph{Grad} ist, aber das stimmt nicht. Sie unterscheiden sich um $\approx 0.00128 \,\on{ct}$. Das heißt, dass das gleichstufige e’’ (a’ + Quinte - Grad) und das \flatp f’’ (a’ + Quinte - Schisma) eine Schwebungsperiode von ~34 Minuten haben. –T}
@@ -310,10 +330,10 @@ Bei einer Partitur fügen wir die zusätzliche Information, dass bestimmte Noten
 um ein oder mehrere syntonische Kommata abgesenkt oder angehoben werden müssen,
 durch die Einführung weiterer Vorzeichen in der Tradition von Helmholtz und
 Ellis \cite{HE} hinzu: Die Vorzeichen \dsharpp, \sharpp, \naturalp, \flatp, und
-\dflatp\ bedeuten die Erhöhung des Tons um ein syntonisches Komma; genauso
-bedeuten \dsharppp, \sharppp, \naturalpp, \flatpp, und \dflatpp\ zwei Kommata
+\dflatp bedeuten die Erhöhung des Tons um ein syntonisches Komma; genauso
+bedeuten \dsharppp, \sharppp, \naturalpp, \flatpp, und \dflatpp zwei Kommata
 und so weiter. In die andere Richtung benutzen wir \dsharpm, \sharpm, \naturalm,
-\flatm, und \dflatm\ für Noten die um ein syntonisches Komma tiefer erklingen
+\flatm, und \dflatm für Noten die um ein syntonisches Komma tiefer erklingen
 sollen. Ein Beispiel ist in \cref{fig:HE} zu sehen. Wie üblich gelten Vorzeichen
 für einen ganzen Takt; wenn also ein einzelner Takt erst \naturalm a' und dann
 \natural a' enthält, sind beide Vorzeichen verpflichtend. Aus Gründen, die im
@@ -344,11 +364,11 @@ uns aus den folgenden Gründen gegen die Verwendung dieser Skala entschieden
 \begin{enumerate}
 \item In der ptolemäischen Skala beträgt die Quinte zwischen dem zweiten und dem
   sechsten Ton nicht $2:3$, sondern $27:40$. Um die Subdominantparallele
-  (z.B.\ d-Moll in C-Dur) zu spielen, müssen wir wieder eine der Noten um ein
+  (z.\,B. d-Moll in C-Dur) zu spielen, müssen wir wieder eine der Noten um ein
   syntonisches Komma ändern.\todo{Ich würde sagen, dass hier Wichtig ist, dass die Sp ähnlich häufig ist wie die D. Wenn das nicht so wäre könnte man einfach sagen: „Naja, dafür sind halt Versetzungszeichen da. Denn das \flat E ist in F-Dur halt seltener als das E. Genauso ist das \natural E seltener als \naturalm E, weshalb es sinnvoll ist \naturalm E per default zu haben.“ Das Problem ist halt, dass das Argument bei dem zweiten Ton der Durskala nicht funktioniert weil zwei unterschiedliche Syntonisierungen ähnlich häufig sind. –T}
 \item Die ptolemäische Skala weist nur einigen Tonhöhen eine Frequenz zu. Es 
   gibt einige Tonhöhen, die mit einer Tonleiter „eng verwandt“ sind, auch wenn
-  sie technisch gesehen nicht zu ihr gehören (z.B.\ das \sharp F in C-Dur, da
+  sie technisch gesehen nicht zu ihr gehören (z.\,B. das \sharp F in C-Dur, da
   es™ die große Terz der Doppeldominante ist).
 \item Unser Stimmungssystem sollte nicht von der Tonart des Stücks, sondern nur
   vom Kammerton abhängen.\todo{Ich bin mir nicht sicher ob ich diesen Punkt verstehe. Das Stimmungssystem ändert sich ja durch die Vorzeichen nicht, oder? Ich bin verwirrt. –T}
@@ -370,7 +390,7 @@ Frequenzen um ein syntonisches Komma erhöht sind. Wenn wir diesen Prozess in
 beide Richtungen wiederholen, erhalten wir ein Tonhöhengitter (siehe
 \cref{fig:latticeExcerpt}), bei dem eine Bewegung der Form ‚$\to$‘ einer reinen
 Quinte, ‚$\searrow$‘ einer reinen großen Terz und ‚$\nearrow$’ einer reinen
-kleinen Terz entspricht. Jede (Enharmonik beachtende) Tonklasse (d.h.\ ihre
+kleinen Terz entspricht. Jede (Enharmonik beachtende) Tonklasse (d.\,h. ihre
 Oktave ignorierend) kommt in jeder Zeile genau einmal vor, so dass ein Knoten im
 Gitter einer Tonklasse zusammen mit einer Anzahl von darauf angewandten
 syntonischen Kommata entspricht.
@@ -385,20 +405,20 @@ syntonischen Kommata entspricht.
 In diesem Netz umfasst ein Dreieck der Form $\triangledown$ die Bestandteile 
 eines rein intonierten Dur-Akkords ($4:5:6$), während ein Dreieck $\vartriangle$
 die Bestandteile eines Mollakkords ($10:12:15$) erfasst. Benachbarte Dreiecke
-teilen entweder eine Quinte, d.h. sie sind \emph{Varianten} voneinander, oder
-eine Terz, d.h. sie stehen in \emph{paralleler}
+teilen entweder eine Quinte, d.\,h. sie sind \emph{Varianten} voneinander, oder
+eine Terz, d.\,h. sie stehen in \emph{paralleler}
 ($\vartriangle\!\!\!\triangledown$) oder \emph{gegenparalleler}
 ($\triangledown\!\!\!\vartriangle$) Beziehung zueinander. Legt man ein Dreieck
 als Tonika eines Stücks fest, lassen sich die Standardfunktionen wie
 (Sub-)Dominante sowie ihre (Gegen-)Parallelen und sogar Zwischendominanten
 leicht ermitteln: Für ein gegebenes Dreieck ist seine Zwischendominante das
-Dur-Dreieck, das die Quinte rechts neben dem gegebenen Dreieck enthält (z.B.\
+Dur-Dreieck, das die Quinte rechts neben dem gegebenen Dreieck enthält (z.\,B.\
 ist die Doppeldominante von C-Dur der D-Dur-Dreiklang in der Mitte rechts in
 \cref{fig:latticeExcerpt}, nicht der unten links).
 
 \subsection{Mikrotuning funktionaler Harmonien}
 
-Bei einem Musikstück (z.B.\ \cref{fig:triadPiece}) bestimmt man zunächst seine
+Bei einem Musikstück (z.\,B. \cref{fig:triadPiece}) bestimmt man zunächst seine
 Tonart (hier: e-Moll). Dann wird das Tonika-Dreieck im Eulerschen Tonnetz
 eindeutig durch den Modus (Dur oder Moll) und die Bedingung bestimmt, dass der
 Grundton (hier: E) nicht durch ein Komma verändert wird. Für jeden Ton bestimmen
@@ -418,7 +438,7 @@ a-Moll-Dreiklangs um ein syntonisches Komma herabgesetzt wird, während dies bei
 einem Stück in a-Moll eindeutig nicht der Fall ist - auch wenn das Stück
 dieselben Vorzeichen hat. Daher hat bei einem Stück mit gegebenen
 Generalvorzeichen die Entscheidung, welcher der beiden möglichen Dreiklänge die
-Tonika ist (z.B.\ C-Dur oder a-Moll), Auswirkungen darauf, wie hoch das Stück
+Tonika ist (z.\,B. C-Dur oder a-Moll), Auswirkungen darauf, wie hoch das Stück
 intoniert werden soll. Das mag seltsam klingen, ergibt sich aber, wenn wir uns
 darauf einigen, dass der Grundton der Tonika als Zentrum des Stücks direkt vom
 Kammerton abgeleitet werden sollte.\todo{Ein weiterer Grund: Wenn wir ein F-Dur Stück in \naturalm F schreiben, hat fast jeder Ton ein Versetzungszeichen und es wird unlesbar. Ich bin mir nicht sicher, ob ich den Grund mit dem Kammerton mag, aber wahrscheinlich denke ich zu praktisch darüber nach: Wenn ich für ein Stück in \flat H-Dur die Töne mit einer Stimmgabel angebe, dann kommt dabei eher sowas wie \flatp B-Dur heraus, denn ich werde an den $15:16$ Leitton denken und nicht das $243:256$ Limma. –T}
@@ -465,10 +485,10 @@ Interpretation des Haltens einer Note darin besteht, sie—offensichtlich—nich
 verändern, und die übrigen Stimmen, die sich bewegen müssen, ihre richtige
 Intonation im Verhältnis zum gehaltenen Ton suchen. Die Folge ist, dass der
 zweite Akkord (\textsc{v}) um ein syntonisches Komma absinkt und das Ensemble
-an Intonation verliert, d.h.\ es detoniert, siehe den ersten Teil von
+an Intonation verliert, d.\,h. es detoniert, siehe den ersten Teil von
 \cref{fig:drift}. Dieser Effekt wird als \emph{Kommafalle} bezeichnet. Wenn
 dieses Phänomen fünfmal auftritt, beträgt die Detonation
-$5\cdot 21.51\,\on{ct}=107.55\,\on{ct}$, d.h.\ das Ensemble ist um mehr als
+$5\cdot 21.51\,\on{ct}=107.55\,\on{ct}$, d.\,h. das Ensemble ist um mehr als
 einen gleichstufigen Halbton gesackt.
 
 Die wünschenswertere Lösung, die jedoch von den Singenden ein Verständnis der
@@ -554,7 +574,7 @@ Form $2:3$, $4:5$ oder $5:6$ innerhalb des jeweiligen Akkordes steht.
 
 Sehr oft kommt der Subdominantakkord (sowohl in Dur als auch in Moll) mit der
 großen Sexte über dem Grundton des Akkords zusammen vor
-(z.B.\ $\rF:\rA:\rC:\rD$ in C-Dur oder $\rF:\text{\flat A}:\rC:\rD$ in c-Moll).
+(z.\,B. $\rF:\rA:\rC:\rD$ in C-Dur oder $\rF:\text{\flat A}:\rC:\rD$ in c-Moll).
 Im Fall von Dur ist dieser Akkord eine Verschmelzung von zwei Dreiklängen, die
 sich eine Terz teilen (im Beispiel: F-Dur und d-Moll). Dementsprechend verwenden
 wir die Ecken der benachbarten Dreiecke $\vartriangle\!\!\!\triangledown$, um
@@ -577,7 +597,7 @@ die Quinte und nicht ein Komma tiefer:
   gemeinsamen Ton hält, keine Anpassung nötig.
 \item The Tritonus zwischen \flatp $3$ und \naturalm $6$ ist sehr klein, nämlich
   $18:25\approx 568.71\,\on{ct}$, also $31.29\,\on{ct}$ kleiner als der
-  gleichstufige.\todo{Warum ist das ein Argument? Gleichstufige Stimmung war vorher noch nie ein Argument. Ist das evtl.\ weil der Tritonus anders als andere Intervalle dissonant sein \emph{soll} und deshalb Nähe zu $1:\sqrt{2}$ erwünscht ist? –T}
+  gleichstufige.\todo{Warum ist das ein Argument? Gleichstufige Stimmung war vorher noch nie ein Argument. Ist das evtl. weil der Tritonus anders als andere Intervalle dissonant sein \emph{soll} und deshalb Nähe zu $1:\sqrt{2}$ erwünscht ist? –T}
 \item Der Halbton zwischen der \flatp $3$ der Tonika und der \naturalm $6$
   der Subdominante ist $25:27\approx 133.28\,\on{ct}$, was viel zu groß ist. In
   dem dritten Teil von \cref{fig:496}, taucht dieser große Halbton als
@@ -680,7 +700,7 @@ größer als die Naturseptime, diesen Unterschied nennen wir das
 \emph{septimale Komma}.
 
 Eine Tiefalteration um ein septimales Komma notieren wir mit dem zusätzlichen
-\septimal\ Vorzeichen, es wird vor andere Versetzungszeichen gesetzt, wenn sie
+\septimal Vorzeichen, es wird vor andere Versetzungszeichen gesetzt, wenn sie
 nötig sind. Wir werden keinen Ton um ein septimales Komma \emph{erhöhen},
 deshalb müssen wir dafür auch kein Zeichen einführen. Der Dominantseptakkord in
 D-Dur besteht also aus a, \sharpm c, e und \septimal g. Der erste und zweite
@@ -746,7 +766,7 @@ Durchgänge, Wechselnoten
 Wir weisen darauf hin, dass die Terz im Dreiklang, die zur Dominante (oder einer
 Zwischendominante) gehört, ebenfalls um ein syntonisches Komma abgesenkt wird,
 was der gängigen Praxis widerspricht, Leittöne etwas höher zu intonieren, um die
-Spannung zu erhöhen, siehe z.B. […]\todo{Literatur}. Wir sind der Überzeugung,
+Spannung zu erhöhen, siehe z.\,B. […]\todo{Literatur}. Wir sind der Überzeugung,
 dass die Dominante ein eigenständiger, stabiler Dur-Dreiklang sein sollte, aber
 in dieser Frage kann man anderer Meinung sein als wir. In diesem Fall schlagen
 wir vor, den Leitton um ein syntonisches Komma zu erhöhen, wodurch der Dreiklang
@@ -765,18 +785,16 @@ dass sie eine reine Terz haben.
   	Leitton.}\label{fig:lead}
 \end{figure}
 
-\appendix
-
-\section{Wie der LilyPond Code funktioniert}
-\label{sec:ly}
-
+% \appendix
+% \section{Wie der LilyPond Code funktioniert}
+% \label{sec:ly}
 % We give them as source code, written in the audio
 % programming language \texttt{csound}, for which an interpreter is freely
 % available \cite{csound}. We explain in \cref{sec:ly} how the code can be
 % compiled, but here is already a short explanation how one can make sense of it:
 % There are two ways of prescribing specific frequencies: The first way (encoded
 % by \verb!i1!) corresponds to \emph{equal temparament}: a pitch is given by a
-% \emph{root frequency} (the once fixed base of a piece, e.g.\ $330$\,Hz for the
+% \emph{root frequency} (the once fixed base of a piece, e.g. $330$\,Hz for the
 % Pythagorean $\text{E}_4$) and the difference to that root, expressed as a number
 % of semitones. The second way (encoded by \verb!i2!)  sets frequencies by a root
 % frequency and a \emph{fraction}, consisting of a numerator and a denominator,
@@ -804,7 +822,7 @@ dass sie eine reine Terz haben.
 
 % Each of the following lines stands for a single note. In every line, the first
 % entry after \verb!i1! or \verb!i2! gives the starting beat, while the second
-% entry gives the duration, e.g.\ the first note starts at time $0$ and lasts $6$
+% entry gives the duration, e.g. the first note starts at time $0$ and lasts $6$
 % beats. In total, we hear two tetrads, with a slow arpeggio.
 
 % The third entry sets the root frequency (once mentioned for the first note; then
@@ -822,13 +840,5 @@ dass sie eine reine Terz haben.
 % specific file is denoted at the page margin, as above \texttt{ex01.sco}.
 
 \printbibliography[heading=bibintoc]
-
-% Adressen der Autoren
-\addr{Florian Kranhold}{%
-  Karlsruhe Institute of Technology,
-  Englerstraße 2,
-  76131 Karlsruhe,
-  Germany,
-  \mail{kranhold@kit.edu}.}
 
 \end{document}
