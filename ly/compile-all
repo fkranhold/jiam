@@ -11,13 +11,7 @@
 
 for i in *.ly; do
     F=${i%.ly}
-    lilypond $i
-    if [[ -f "$F.pdf" ]]
-    then
-        pdfcrop "$F.pdf"
-        rm "$F.pdf"
-        mv "$F-crop.pdf" "$F.pdf"
-    fi; done
+    bash ./lilycrop $F ; done
 
 for i in *.midi; do
     F=${i%.midi}
