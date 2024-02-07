@@ -50,17 +50,14 @@
 \UseMicrotypeSet[tracking]{smallcaps}
 \SetTracking{encoding=*,shape=sc}{30}
 
-%% Hurenkinder verbieten
-\makeatletter
-  \widowpenalty=\@M
-\makeatother
-
-%% Inline-Formeln NIE umbrechen
-\relpenalty=10000
-\binoppenalty=10000
+%% Einige Typographische Präferenzen
+\widowpenalty =10000  % Keine Hurenkinder
+\relpenalty   =10000  % Inline-Formeln nicht umbrechen
+\binoppenalty =10000  % Inline-Formeln nicht umbrechen
+\hyphenpenalty=0      % Nach Lust und Laune Wörter trennen
 
 %% Less Looseness
-\everypar=\expandafter{\the\everypar\looseness=-1}
+\everypar=\expandafter{\the\everypar\looseness-1}
 
 %% Text nicht vertikal strecken oder stauchen
 \raggedbottom
