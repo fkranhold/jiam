@@ -1,0 +1,236 @@
+
+\subsection{Das syntonische Komma}
+
+Wir beginnen mit der Beobachtung, dass in der pythagoreischen Stimmung ein
+Dur-Dreiklang dem Verhältnis $64:81:96$ statt $4:5:6=64:80:96$ entspricht,
+d.\,h. die große Terz etwas zu hoch ist (im Hörbeispiel hören wir zuerst einen
+pythagoreischen Dur-Dreiklang und dann $4:5:6$).\LY{m-pyth456} Der Unterschied,
+$\frac{81}{80}\approx 21.51\,\on{ct}$, heißt das
+\emph{syntonische Komma}.\todo{Hier wird einigen Leuten auffallen (naja, vllt. auch nicht, aber egal), dass das syntonische Komma und das pythagoreische fast gleich groß sind und sich nur um das \emph{Schisma} $\approx 1.95 \,\on{ct}$ unterscheiden (insbesondere ist d – \flat g – a ein fast reiner Durdreiklang). Da könnte man nun denken, dass das Schisma genau das \emph{Grad} ist, aber das stimmt nicht. Sie unterscheiden sich um $\approx 0.00128 \,\on{ct}$. Das heißt, dass das gleichstufige e’’ (a’ + Quinte - Grad) und das \flatp f’’ (a’ + Quinte - Schisma) eine Schwebungsperiode von ~34 Minuten haben. –T}
+In anderen Worten: Die große pythagoreische Terz $64:81$ ist um ein syntonisches
+Komma größer als $4:5$, und die kleine pythagoreische Terz $27:32$ ist ein um
+ein syntonisches Komma kleiner als $5:6$, denn $5:6$ ist das Komplement von
+$4:5$ in $2:3$ und damit die gewünschte kleine Terz. Von nun an nennen wir das
+Verhältnis $4:5$ eine \emph{reine} große Terz und $5:6$ eine \emph{reine} kleine
+Terz. Folglich nennen wir ihre zur Oktave komplementären Intervalle $5:8$ und
+$3:5$ die \emph{reine} kleine bzw. große Sexte.\looseness-1
+
+Wenn man versucht, Tonhöhen um ein syntonisches Komma zu alterieren, um die
+Stimmung zu verbessern, stößt man auf das Problem, dass jeder Ton prinzipiell
+die große Terz, aber auch der Grundton eines Dreiklangs sein kann. Das bedeutet:
+Es hängt vom harmonischen Kontext ab, ob eine Tonhöhe alteriert werden muss
+oder nicht, und das lässt sich leider nicht aus dem bloßen (Enharmonik
+beachtenden) Tonnamen herauslesen.\looseness-1
+
+Bei einer Partitur fügen wir die zusätzliche Information, dass bestimmte Noten
+um ein oder mehrere syntonische Kommata abgesenkt oder angehoben werden müssen,
+durch die Einführung weiterer Vorzeichen in der Tradition von Helmholtz und
+Ellis \cite{HE} hinzu: Die Vorzeichen \dsharpp, \sharpp, \naturalp, \flatp, und
+\dflatp bedeuten die Erhöhung des Tons um ein syntonisches Komma; genauso
+bedeuten \dsharppp, \sharppp, \naturalpp, \flatpp, und \dflatpp zwei Kommata
+und so weiter. In die andere Richtung benutzen wir \dsharpm, \sharpm, \naturalm,
+\flatm, und \dflatm für Noten die um ein syntonisches Komma tiefer erklingen
+sollen. Ein Beispiel ist in \cref{fig:HE} zu sehen. Wie üblich gelten Vorzeichen
+für einen ganzen Takt; wenn also ein einzelner Takt erst \naturalm a' und dann
+\natural a' enthält, sind beide Vorzeichen verpflichtend. Aus Gründen, die im
+nächsten Unterabschnitt erläutert werden, verwenden wir überhaupt keine
+Generalvorzeichen.\looseness-1
+
+\begin{figure}\centering
+  \includegraphics{ly/p-HE}
+  \LY{p-HE}
+  \caption{Im ersten Takt ist das \sharp f’ um ein syntonisches Komma 
+    tiefalteriert, sodass wir einen Dur-Dreiklang $4:5:6$ erhalten. Im zweiten
+    Takt wird das g’ um ein, das \flat e’’ um zwei syntonische Kommata hoch
+    alteriert, sodass sich eine reine kleine Sexte $5:8$ ergibt.}\label{fig:HE}
+\end{figure}
+
+\subsection{Das Eulersche Tonnetz}
+
+Versuchen wir nun, syntonische Kommata konsequent in einem ganzen Musikstück
+einzusetzen: Ein klassischer Ansatz besteht darin, die Dur-Tonleiter zu
+verändern indem die Töne, die am ehesten als große Terzen eines Dreiklangs
+auftreten, nämlich Terz, Sexte und Septime, um ein syntonisches Komma erniedrigt
+werden. Das Ergebnis nennt man die \emph{ptolemäische Skala}. Legt man die
+Frequenz des Grundtons der Skala als $1$ fest, lassen sich die Frequenzen aller
+in der Skala vorkommenden Noten als 
+$1,\frac98,\frac54,\frac43,\frac32,\frac53,\frac{15}8,2$ berechnen. Wir haben
+uns aus den folgenden Gründen gegen die Verwendung dieser Skala entschieden
+(wir vermeiden das Wort „Skala“ sogar ganz):
+\begin{enumerate}
+\item In der ptolemäischen Skala beträgt die Quinte zwischen dem zweiten und dem
+  sechsten Ton nicht $2:3$, sondern $27:40$. Um die Subdominantparallele
+  (z.\,B. d-Moll in C-Dur) zu spielen, müssen wir wieder eine der Noten um ein
+  syntonisches Komma ändern.\todo{Ich würde sagen, dass hier Wichtig ist, dass die Sp ähnlich häufig ist wie die D. Wenn das nicht so wäre könnte man einfach sagen: „Naja, dafür sind halt Versetzungszeichen da. Denn das \flat E ist in F-Dur halt seltener als das E. Genauso ist das \natural E seltener als \naturalm E, weshalb es sinnvoll ist \naturalm E per default zu haben.“ Das Problem ist halt, dass das Argument bei dem zweiten Ton der Durskala nicht funktioniert weil zwei unterschiedliche Syntonisierungen ähnlich häufig sind. –T}
+\item Die ptolemäische Skala weist nur einigen Tonhöhen eine Frequenz zu. Es 
+  gibt einige Tonhöhen, die mit einer Tonleiter „eng verwandt“ sind, auch wenn
+  sie technisch gesehen nicht zu ihr gehören (z.\,B. das \sharp F in C-Dur, da
+  es™ die große Terz der Doppeldominante ist).
+\item Unser Stimmungssystem sollte nicht von der Tonart des Stücks, sondern nur
+  vom Kammerton abhängen.\todo{Ich bin mir nicht sicher ob ich diesen Punkt verstehe. Das Stimmungssystem ändert sich ja durch die Vorzeichen nicht, oder? Ich bin verwirrt. –T}
+\end{enumerate}
+Stattdessen wollen wir alle möglichen Frequenzen eines Stücks in einer Weise
+anordnen, die ihre harmonische Nähe zueinander widerspiegelt. Dies wird
+typischerweise durch das \emph{Eulersche Tonnetz} erreicht, siehe
+\cref{fig:latticeExcerpt}: Wir beginnen mit der Quintenspirale aus
+\cref{sec:pyth}, die wir jetzt als horizontale Gerade schreiben, und unterteilen
+jeden Schritt ($2:3$) in eine reine große Terz ($4:5$) und eine reine kleine
+Terz ($5:6$). Dieser Zwischenton wird ersten und dem zweiten aber etwas weiter
+unten notiert. Wenn wir alle Schritte unterteilen, erhalten wir eine
+vollständige neue Zeile, die wieder aus reinen Quinten besteht, aber jetzt sind
+die Frequenzen in dieser Zeile um ein syntonisches Komma erniedrigt. Dasselbe
+lässt sich auch in der anderen Richtung machen, indem man die Reihenfolge von
+kleiner und großer Terz vertauscht und die Zwischentöne etwas höher als die
+Ursprungsgerade schreibt. Wir erhalten eine neue Quintenreihe, in der alle
+Frequenzen um ein syntonisches Komma erhöht sind. Wenn wir diesen Prozess in
+beide Richtungen wiederholen, erhalten wir ein Tonhöhengitter (siehe
+\cref{fig:latticeExcerpt}), bei dem eine Bewegung der Form ‚$\to$‘ einer reinen
+Quinte, ‚$\searrow$‘ einer reinen großen Terz und ‚$\nearrow$’ einer reinen
+kleinen Terz entspricht. Jede (Enharmonik beachtende) Tonklasse (d.\,h. ihre
+Oktave ignorierend) kommt in jeder Zeile genau einmal vor, so dass ein Knoten im
+Gitter einer Tonklasse zusammen mit einer Anzahl von darauf angewandten
+syntonischen Kommata entspricht.
+
+\begin{figure}[h]
+  \input{tikz/latticeExcerpt}
+  \caption{Ein Ausschnitt des Eulerschen Tonnetzes. Wir berechnen
+  	Frequenzfaktoren relativ zum C; oktav-normiert, sodass sie zwischen $1$
+  	und $2$ liegen.}\label{fig:latticeExcerpt}
+\end{figure}
+
+In diesem Netz umfasst ein Dreieck der Form $\triangledown$ die Bestandteile 
+eines rein intonierten Dur-Akkords ($4:5:6$), während ein Dreieck $\vartriangle$
+die Bestandteile eines Mollakkords ($10:12:15$) erfasst. Benachbarte Dreiecke
+teilen entweder eine Quinte, d.\,h. sie sind \emph{Varianten} voneinander, oder
+eine Terz, d.\,h. sie stehen in \emph{paralleler}
+($\vartriangle\!\!\!\triangledown$) oder \emph{gegenparalleler}
+($\triangledown\!\!\!\vartriangle$) Beziehung zueinander. Legt man ein Dreieck
+als Tonika eines Stücks fest, lassen sich die Standardfunktionen wie
+(Sub-)Dominante sowie ihre (Gegen-)Parallelen und sogar Zwischendominanten
+leicht ermitteln: Für ein gegebenes Dreieck ist seine Zwischendominante das
+Dur-Dreieck, das die Quinte rechts neben dem gegebenen Dreieck enthält (z.\,B.\
+ist die Doppeldominante von C-Dur der D-Dur-Dreiklang in der Mitte rechts in
+\cref{fig:latticeExcerpt}, nicht der unten links).
+
+\subsection{Mikrotuning funktionaler Harmonien}
+
+Bei einem Musikstück (z.\,B. \cref{fig:triadPiece}) bestimmt man zunächst seine
+Tonart (hier: e-Moll). Dann wird das Tonika-Dreieck im Eulerschen Tonnetz
+eindeutig durch den Modus (Dur oder Moll) und die Bedingung bestimmt, dass der
+Grundton (hier: E) nicht durch ein Komma verändert wird. Für jeden Ton bestimmen
+wir dann, indem wir alle Stimmen betrachten, den Dreiklang, zu dem er gehört
+(der vierte Ton des Tenors, a, ist Teil eines D-Dur-Dreiklangs), bestimmen die
+Funktion des Dreiklangs (Zwischendominante zur Tonikaparallele) und finden das
+entsprechende Dreieck im Eulerschen Tonnetz (siehe \cref{fig:chordsLattice} für
+die Verortung aller in \cref{fig:triadPiece} vorkommen Dreiklänge im Eulerschen
+Tonnetz). Daraus ergibt sich dann genau, wie viele Kommata wir auf die Note
+anwenden müssen (hier: a muss um eins erhöht werden). Seine absolute Frequenz
+beträgt $\frac{81}{80}\cdot 220\,\text{Hz}=222.75\,\text{Hz}$, und relativ zum
+nächsttieferen Grundtons, e, entspricht er dem Faktor
+$\frac{81}{80}\cdot\frac{4}{3}=\frac{27}{20}$.
+
+Wir weisen darauf hin, dass bei einem Stück in C-Dur der Grundton eines
+a-Moll-Dreiklangs um ein syntonisches Komma herabgesetzt wird, während dies bei
+einem Stück in a-Moll eindeutig nicht der Fall ist - auch wenn das Stück
+dieselben Vorzeichen hat. Daher hat bei einem Stück mit gegebenen
+Generalvorzeichen die Entscheidung, welcher der beiden möglichen Dreiklänge die
+Tonika ist (z.\,B. C-Dur oder a-Moll), Auswirkungen darauf, wie hoch das Stück
+intoniert werden soll. Das mag seltsam klingen, ergibt sich aber, wenn wir uns
+darauf einigen, dass der Grundton der Tonika als Zentrum des Stücks direkt vom
+Kammerton abgeleitet werden sollte.\todo{Ein weiterer Grund: Wenn wir ein F-Dur Stück in \naturalm F schreiben, hat fast jeder Ton ein Versetzungszeichen und es wird unlesbar. Ich bin mir nicht sicher, ob ich den Grund mit dem Kammerton mag, aber wahrscheinlich denke ich zu praktisch darüber nach: Wenn ich für ein Stück in \flat H-Dur die Töne mit einer Stimmgabel angebe, dann kommt dabei eher sowas wie \flatp B-Dur heraus, denn ich werde an den $15:16$ Leitton denken und nicht das $243:256$ Limma. –T}
+
+\begin{figure}
+  \centering
+  \LY{b-triadPiece}
+  \includegraphics{ly/b-triadPiece}
+  \caption{Ein schematisches vierstimmiges Stück in e-Moll (nur aus
+  	Dreiklängen), mit eingebauten syntonischen Kommata. Es gibt zwei
+  	Audioausgaben des Stücks, eine in reiner pythagoreischer Stimmung und eine,
+  	die die syntonischen Kommata zur Korrektur
+  	verwendet.\looseness-1}\label{fig:triadPiece}
+\end{figure}
+
+\begin{figure}
+  \input{tikz/chordsLattice}
+  \caption{Die Dreiklänge die in \cref{fig:triadPiece} auftauchen, verortet im
+  	Eulerschen Tonnetz.}\label{fig:chordsLattice}
+\end{figure}
+
+\subsection{Die Kommafalle}
+
+Wenn wir einen erneuten Blick auf den Ausschnitt des Eulerschen Tonnetzes in
+\cref{fig:latticeExcerpt} werfen, so finden wir den Ton D an zwei Stellen in der
+Nähe von C, nämlich \naturalm $\rD\,(\frac{10}9)$ and $\rD\,(\frac98)$. Beide
+erscheinen als Eckpunkte von Dreiecken, die Funktionen in C-Dur entsprechen: Der
+erste als Grundton von d-Moll (Subdominantparallele, oder \textsc{ii} in der
+Stufentheorie) und der zweite als Quinte von G-Dur (Dominante, oder \textsc{v}).
+Stellt man sich nun ein Stück vor, das die Funktionen \textsc{ii} und \textsc{v}
+direkt hintereinander enthält, und eine Stimme die den Grundton der \textsc{ii}
+hat und hält, während er zur Quinte von \textsc{v} wird (siehe
+\cref{fig:drift}). Dann gibt es zwei Möglichkeiten:
+
+
+\begin{enumerate}[itemsep=0em]
+\item Einer der Akkorde wird um ein syntonisches Komma transponiert.
+\item Die haltende Stimme muss die Tonhöhe beim Harmoniewechsel 
+  \emph{nachjustieren}.
+\end{enumerate}%
+%
+In der Vokalmusik geschieht typischerweise das Erste, weil die übliche
+Interpretation des Haltens einer Note darin besteht, sie—offensichtlich—nicht zu
+verändern, und die übrigen Stimmen, die sich bewegen müssen, ihre richtige
+Intonation im Verhältnis zum gehaltenen Ton suchen. Die Folge ist, dass der
+zweite Akkord (\textsc{v}) um ein syntonisches Komma absinkt und das Ensemble
+an Intonation verliert, d.\,h. es detoniert, siehe den ersten Teil von
+\cref{fig:drift}. Dieser Effekt wird als \emph{Kommafalle} bezeichnet. Wenn
+dieses Phänomen fünfmal auftritt, beträgt die Detonation
+$5\cdot 21.51\,\on{ct}=107.55\,\on{ct}$, d.\,h. das Ensemble ist um mehr als
+einen gleichstufigen Halbton gesackt.
+
+Die wünschenswertere Lösung, die jedoch von den Singenden ein Verständnis der
+harmonischen Situation verlangt, ist die zweite, die im zweiten Teil von
+\cref{fig:drift} dargestellt ist. Dies ist ein eindrucksvolles Beispiel, das
+zeigt, dass das theoretische Bewusstsein der reinen Intonation (das, wie wir
+behauptet haben, Chorsänger:innen eher intuitiv nutzen) dabei helfen kann, die
+Ursache für ein sehr praktisches und häufiges Problem aufzuspüren, nämlich das
+des Intonationsverlusts.
+
+Die Akkordfolge \textsc{ii}\kern1px–\kern1px \textsc{v} ist nicht die einzige,
+die Kommaabweichungen verursachen kann. Der dritte Teil von \cref{fig:drift}
+zeigt eine modulierende Akkordfolge, die die Doppeldominante einbezieht. Hier
+müssen sogar zwei Stimmen, die eine Quinte voneinander entfernt sind, ihre
+Intonation anpassen. Die gleichzeitigen Anpassungen ergeben zusammen eine
+„Bewegung“ paralleler Quinten; diese verstößt aber eindeutig nicht gegen die
+Regeln des klassischen Kontrapunkts.\todo{(Für jemanden wie mich, der sich mit klassischem Kontrapunkt nicht so gut auskennt, wäre es \emph{vielleicht} hilfreich, es trotzdem zu erklären). –T}
+
+Wir weisen darauf hin, dass die „richtige“ Intonation von der Interpretation der
+Funktion abhängt, die der Dreiklang darstellt. Wenn man zum Beispiel im ersten
+Teil von \cref{fig:triadPiece} den d-Moll-Akkord als Variante der
+Doppeldominante interpretiert (was absurd wäre,\todo{Ja, das wäre absurd. Können wir ein Beispiel konstruieren, bei dem es \emph{wirklich} zur Debatte steht, welcher syntonischen Ebene ein Akkord zuzuordnen ist? –T}
+aber nehmen wir es nur der Argumentation halber an), dann müsste der Akkord ein
+syntonisches Komma höher gespielt werden, und die Kommaanpassungen gelten für
+den Akkordwechsel \textsc{vi}\kern1px–\kern1px\textsc{ii} einen Schlag früher.
+
+\begin{figure}
+  \centering
+  \LY{b-drift}
+  \includegraphics{ly/b-drift}
+  \caption{(1) Eine Akkordfolge, bei der alle wiederholten Tonhöhen auf die   
+  	gleiche Weise intoniert werden, wodurch eine Detonation um ein syntonisches
+  	Komma entsteht.%
+  	\quad(2) Dieselbe Akkordfolge mit der notwendigen Anpassung (durch eine
+  	Zick-Zack-Linie gekennzeichnet): Zwischen dem dritten und dem vierten Akkord
+  	muss der Sopran das d’’ anpassen.%
+  	\quad(3) Eine ähnliche Situation, in der sogar zwei Stimmen eine Anpassung
+  	vornehmen müssen, was eine Komma-Bewegung in „parallelen Quinten“
+  	verursacht.}\label{fig:drift}
+\end{figure}
+
+\subsection{Ein Wort zu Primzahlen}
+
+…\todo{Oh! Was soll denn hier hin kommen? Eine Erklärung was $p$-limit harmony heißt und bedeutet? –T}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:

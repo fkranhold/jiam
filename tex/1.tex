@@ -1,0 +1,142 @@
+
+Wir setzen folgende Grundkonzepte klassischer Musiktheorie als bekannt voraus:
+Töne, Intervallnamen, diatonische Skalen, Akkorde, Tonarten und der
+Quintenzirkel. Wir verwenden hierbei die Sprache von \cite{Skript}.
+
+Wenn ein Instrument (z.\,B. die menschliche Stimme) einen Ton erzeugt, schwingt
+ein „Material“ (wie eine Saite oder eine Luftsäule) mit einer gewissen Frequenz.
+Je höher die Frequenz ist, desto höher ist der Ton. Ein \emph{Stimmungssystem}
+weist jedem Ton eine Frequenz zu. Typischerweise beginnen wir mit der Fixierung
+des \emph{Kammertons}, der Frequenz des a’, heutzutage bei $440$\,Hz. Von dort
+leiten wir die anderen Tonhöhen wie folgt ab: Die einfachste Beziehung zwischen
+Tönen ist die der \emph{Oktave}, die einem Frequenzverhältnis von $1:2$
+entspricht, z.\,B. bekommt das a’’ die Frequenz $880$\,Hz zugewiesen. In dem
+modernen Stimmungssystem der \emph{gleichstufigen Stimmung} wird die Oktave in
+zwölf gleich große Schritte – genannt \emph{Halbtonschritte} oder \acr{HTS} – 
+aufgeteilt. Ein Halbtonschritt entspricht also dem Frequenzverhältnis
+$1:2^{\smash{\frac1{12}}}$. Mit diesem Verhältnis kann nun jedem Ton eine
+Frequenz zugewiesen werden; beispielsweise wird dem e’’ sieben \acr{HTS}
+über dem a’ eine Frequenz von \looseness-1
+\[440\,\text{Hz}\cdot 2^{\frac7{12}} \approx 659{,}26\,\text{Hz}\]%
+zugewiesen. Hier könnte man erwarten, dass die Erzählung, und damit auch dieses
+Skript™, ihr Ende haben. Allerdings stellt sich dieses Stimmungssystem als
+suboptimal heraus sobald mehrere Töne gleichzeitig erklingen. Die Physik™ lehrt
+uns, dass mehrere Wellen konsonieren, wenn ihre Frequenzen im Verhältnis
+kleiner, paarweise teilerfremder Ganzzahlen stehen, z.\,B. $4:5:6:7$. Sehen wir
+uns nun einen Durakkord mit kleiner Septime bestehend aus Grundton, großer Terz,
+reiner Quinte und kleiner Septime an. Da eine große Terz aus vier, eine reine
+Quinte aus sieben und eine kleine Septime aus zehn \acr{HTS} bestehen, ist das
+Frequenverhältnis dieser vier gleichzeitig erklingenden Töne \looseness-1%
+\[1:2^{\frac4{12}}:2^{\frac7{12}}:2^{\frac{10}{12}}\approx
+  1:1{,}260:1{,}498:1{,}781.\]%
+Die Beobachtung,\footnote{Streng genommen erzählen wir hier die Geschichte nicht
+  in historisch korrekter Reihenfolge, denn es ist mitnichten so, dass im Laufe
+  der Musikgeschichte Defizite der gleichstufigen Stimmung erkannt und angepasst
+  wurden. Vielmehr kann die Idee ganzzahliger Frequenzverhältnisse als Beginn
+  der Musiktheorie gesehen werden, während heutzutage z.\,B. für
+  Tasteninstrumente die gleichstufige Stimmung aus Gründen der Praktikabilität
+  verwendet wird. Wir haben uns dennoch für diese Darstellung entschieden, weil
+  sie systematischer und zudem leichter zu verstehen ist.} die der Theorie der
+reinen Stimmung zugrunde liegt, ist nun, dass diese Verhältnis zwar
+\emph{ungefähr}, aber nicht \emph{exakt} $4:5:6:7$ ist. Die „Unreinheiten“, die
+wir hier sehen, sind deutlich kleiner als ein \acr{HTS}, weswegen wir ihre Größe
+mit Hilfe der Einheit \emph{Cent} ausdrücken, wobei $100\,\on{ct}$ einem
+gleichstufigen \acr{HTS} entsprechen. Anders ausgedrückt: Die Oktave (d.\,h. die
+Multiplikation mit $2$) umfasst $1{.}200\,\on{ct}$. Wir können damit
+beispielsweise sehen, dass das Verhältnis $4:5$ einem Unterschied von
+\[1{.}200\,\on{ct}\cdot \log_2(\tfrac54) \approx 386,31\,\on{ct}\]%
+entspricht, es also von dem vier \acr{HTS} ($400\,\on{ct}$) großen Intervall um
+$13.69\,\on{ct}$ abweicht. Diese Unterschiede „korrigiert“ \emph{reine
+  Intonation}, indem sie Akkorde systematisch
+\emph{microtunt},\footnote{Deutsche Konjugation von Anglismen, immer wieder ein
+  Graus.} also die Töne je nach harmonischem Kontext ein kleines bisschen höher
+oder tiefer spielt. Das ist natürlich auf Musikinstrumenten mit zwölf Tasten pro
+Oktave unmöglich; dort müssen andere Stimmungssysteme eingesetzt werden. Nur an
+der Theorie und nicht an praktischen Lösungsansätzen interessiert, werden wir
+letztere hier nicht ausführen. Unabhängig davon \emph{ist} reine Intonation in
+der musikalischen Praxis durchaus einsetzbar, z.\,B. im A-cappella-Gesang:
+Professionell ausgebildete Chorsänger:innen hören aufeinander, um möglichst
+konsonant zu singen, und microtunen daher ihre Akkorde
+\emph{intuitiv}, siehe etwa \cite{Maria} für einige empirische Untersuchungen.
+
+Dieses Skript gibt die erforderlichen Microtunings explizit an und zeigt, wie
+sie konsistent durch ein Stück hinweg eingesetzt werden können. Dabei gliedert
+es sich in folgende Abschnitte:\looseness-1
+
+\begin{enumerate}
+  \setcounter{enumi}{1}
+\item Mit der Einführung der \emph{pythagoreischen Stimmung} erreichen wir,
+  dass alle reinen Quinten das Frequenzverhältnis von $2:3$ haben. Dies wird
+  dazu führen, dass beispielsweise das \sharp G etwas höher wird als das
+  \flat A; dieser Unterschied heißt \emph{pythagoreisches Komma}. Da wir aber 
+  nicht an ein Tasteninstument \todo{(oder die Realität überhaupt, wie wir ja gerade erwähnt haben) –T}
+  gebunden sind, ist das kein Problem; es zwingt uns nur dazu, Enharmonik ernst
+  zu nehmen. Der Quintenzirkel wird zu einer unendlichen \emph{Quintenreihe}.
+  Von hier an ist unser Standardstimmungssystem das pytagoreische, das e’’ hat
+  also eine Frequenz von $\frac32\cdot 440\,\text{Hz}=660\,\text{Hz}$ und nicht
+  mehr $659{,}26\,\text{Hz}$.\looseness-1
+\item Selbst im pythagoreischen System sind Dreiklänge nicht optimal gestimmt,
+  z.\,B. wäre ein Dur-Dreiklang $64:81:96$ statt $4:5:6$. Die große Terz ist ein
+  bisschen zu hoch; der Unterschied $\frac{81}{80}$ wird als \emph{syntonisches
+  Komma} bezeichnet. Folglich bedeutet das Microtunen des Akkords eine
+  Absenkung der großen Terz um ein syntonisches Komma. Wir erhalten eine zweite
+  Quintenreihe, die um ein syntonisches Komma tiefer liegt. Wenn wir diesen
+  Prozess in beide Richtungen wiederholen, können die entstehenden Reihen zum
+  \emph{Eulerschen Tonnetz} zusammengesetzt werden, in dem die Bestandteile von (Dur-
+  und Moll-)Dreiklängen nebeneinander liegen und Dreiecke bilden. Da
+  \mbox{(gegen-)}parallele Dreiklänge benachbarten Dreiecken entsprechen, eignet sich
+  dieses Gitter gut für die klassische Harmonik, erklärt aber auch die so
+  genannte \emph{Kommafalle} für bestimmte Akkordfolgen: eine häufige Quelle
+  für Detonationen™ (das ist der Verlust der ursprünglichen Grundfrequenz).
+\item Mithilfe des Eulerschen Tonnetzes lassen sich auch andere für die
+  klassische Musik übliche Akkorde (etwa die Subdominante mit sixte ajoutée)
+  sinnvoll ausstimmen. Wir werden den Versuch unternehmen, dies konsistent für
+  die meisten relevanten Harmonien zu tun.
+\item Zwar können wir nun sämtliche \emph{vertikale} Klänge über ein Stück
+  hinweg konsistent rein ausstimmen, allerdings ist dies an solchen
+  Stellen praxisfern, die \emph{horizontal} verstanden und musiziert werden. Wir
+  werden daher einige Situationen problematisieren, in denen sich diese beiden
+  Perspektiven widersprechen.
+\item Selbst innerhalb des Eulerschen Tonnetzes kann der oben beschriebene
+  Vierklang $4:5:6:7$ nicht realisiert werden – im Wesentlichen weil das Tonnetz
+  nur die Primzahlen $2$, $3$ und $5$ kennt. Ein Dur-Dreiklang mit kleiner
+  Septime im Eulerschen Tonnetz hat stattdessen das Verhältnis $36:45:54:64$.
+  Die kleine Septime ist also ein bisschen zu hoch; der Fehler $\frac{64}{63}$
+  wird als \emph{septimales Komma} bezeichnet. Wir werden einige (allerdings
+  ausgesprochen rar gesäte) Situationen in der klassischen Vokalmusik finden,
+  in denen durch die Zuhilfenahme des septimalen Kommas ein „besseres“
+  Klangergebnis erreicht werden kann.
+\end{enumerate}
+
+% Dieser Ansatz unterscheidet sich in zwei Aspekten von der
+% Standardliteratur:\todo{Welche? – \{Das würde mich auch interessieren.\} –T} 
+% Erstens machen wir das pythagoreische System zum bevorzugten und verfolgen alle
+% Abweichungen davon durch syntonische und septimale Kommata, während
+% klassischerweise für jede Tonart eine sogenannte ptolemäische Skala verwendet
+% wird, in der die Terz, die Sexte und die Septime standardmäßig um ein
+% syntonisches Komma erniedrigt werden. Die Ptolemäische Skala hat den Vorteil,
+% dass weniger Kommata verfolgt werden müssen; allerdings, werden wir darlegen,
+% aus welchen systematischen Gründen wir uns gegen ihre Verwendung entschieden
+% haben. Zweitens wird das septimale Komma in der Regel weggelassen,
+% wahrscheinlich weil die durch den Tritonus verursachte Spannung (zwischen der
+% kleinen Septime und der großen Terz) hörbar sein soll. Wir sind jedoch
+% überzeugt, dass die Beachtung des septimalen Kommas zu einem saubereren System
+% führt.
+
+Bevor wir diesen Prozess beginnen, weisen wir darauf hin, dass diese Abhandlung
+mit mehreren musikalischen Beispielen versehen ist, die am Seitenrand dieses
+Dokuments angegeben sind\LY{m-4567} (dies ist ein erstes Beispiel, in dem ein
+Dur-Akkord mit kleiner Septime zu hören ist, einmal in gleichstufiger Stimmung
+und einmal genau $4:5:6:7$, wie oben beschrieben). Diese Beispiele wurden mit
+dem Notensatzprogramm \verb!lilypond! geschrieben und kodieren entweder eine
+\acr{PDF}-Datei (dann beginnt ihr Dateiname mit \verb!p-!), eine
+\acr{MIDI}-Datei (\verb!m-!) oder beides (\verb!b-!). Auf
+\href{https://github.com/fkranhold/jiam/}{\textsf{github.com/fkranhold/jiam}}
+sind die Quelldateien, die Kompilate und, falls eine \acr{MIDI}-Datei unter
+diesen ist, eine Audio-Konvertierung nach \acr{OGG} Vorbis zu finden. Wir
+ermutigen alle, mit diesen Quelldateien selbst zu experimentieren.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:

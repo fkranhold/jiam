@@ -1,0 +1,71 @@
+Mit der Einführung des syntonischen Kommas können wir nicht nur Dreiklänge
+(\cref{sec:tri}) sondern auch viele Vierklänge (\cref{sec:quad}) rein stimmen.
+Allerdings haben wir immer noch keine Möglichkeit die bereits mehrfach erwähnte
+kleine Septime mit der Größe $4:7=36:63\approx 968.83\,\on{ct}$ darzustellen.
+Dieses Intervall nennen wir \emph{Naturseptime}, da es in der Naturtonfolge als
+erste Septime vorkommt; es ist $31.18\,\on{ct}$ also fast ein Drittel \acr{HTS}
+kleiner als die gleichstufige kleine Septime und klingt deshalb auch deutlich
+anders, wie in dem Audiobeispiel nachzuhören ist\LY{m-4567} (zuerst erklingt
+ein gleichstufiger Dominantseptakkord, dann einer mit dem Frequenzverhältnis
+$4:5:6:7$). Die pythagoreische kleine Septime
+$9:16=36:64\approx 996.09\,\on{ct}$ ist $\frac{64}{63}\approx 27.26\,\on{ct}$
+größer als die Naturseptime, diesen Unterschied nennen wir das
+\emph{septimale Komma}.
+
+Eine Tiefalteration um ein septimales Komma notieren wir mit dem zusätzlichen
+\septimal Vorzeichen, es wird vor andere Versetzungszeichen gesetzt, wenn sie
+nötig sind. Wir werden keinen Ton um ein septimales Komma \emph{erhöhen},
+deshalb müssen wir dafür auch kein Zeichen einführen. Der Dominantseptakkord in
+D-Dur besteht also aus a, \sharpm c, e und \septimal g. Der erste und zweite
+Teil von \cref{fig:sept} zeigt ein Beispiel für einen Dominantseptakkord ohne
+und mit Naturseptime. Bei der Auflösung der Naturseptime um einen Halbton nach
+unten kommt es zu einem $20:21\approx 84.47\,\on{ct}$, bei einer Auflösung um
+einen Ganzton nach unten zu einem $32:35\approx 155.14\,\on{ct}$ großen Schritt.
+
+\begin{figure}
+	\centering
+	\LY{b-sept}
+	\includegraphics{ly/b-sept}
+	\caption{(1) Eine Schlusskadenz mit Dominantseptakkord. Die Septime im
+		Tenor wird pythagoreisch intoniert.
+		\quad(2) Die gleiche Kadenz mit Naturseptime im Tenor.
+		\quad(3) Ein Beispiel mit vermindertem Septakkord ohne Naturseptime.
+		\quad(4) Das gleiche Beispiel mit Naturseptime; die kleine None wird
+		auch um ein septimales Komma alteriert.}\label{fig:sept}
+\end{figure}
+
+\subsection{Verminderter Septakkord}
+
+Wie in \cref{sec:quad} stimmen wir die None als reine kleine Terz über der
+Septime, sodass der Akkord dem Frequenzverhältnis $5:6:7:\frac{42}5 = 25:30:35:42$
+entspricht. Der Unterschied zwischen den beiden Varianten ist im dritten und
+viertes Beispiel in \cref{fig:sept} zu sehen und zu hören. Diese Version des
+Akkords ist immer noch symmetrisch geschichtet, aber die mittlere der drei
+Terzen ist nicht mehr pythagoreisch ($27:32$), sondern septimal ($6:7$). In C besteht dieser Akkord beispielsweise aus \naturalm h, d, \septimal f und \septimal \flatp a.
+
+\subsection{Dominantseptnonakkord}
+
+\begin{table}
+	\centering
+	\begin{tabular}{lrrrrr}
+		\toprule
+		\textsc{Akkord} & \multicolumn{4}{l}{\textsc{Frequenzverhältnis}}\\
+		\midrule
+		Dur                         & $4$  & $5$  & $6$\\
+		Moll                        & $10$ & $12$ & $15$\\
+		Quartvorhalt                & $6$  & $8$  & $9$\\
+		Hinzugefügte None (Dur)     & $4$  & $5$  & $6$  & $9$\\
+		Hinzugefügte None (Moll)    & $20$ & $24$ & $30$ & $45$\\
+		Sixte ajoutée (Dur)         & $12$ & $15$ & $18$ & $20$\\
+		Sixte ajoutée (Moll)        & $80$ & $96$ & $120$ & $135$\\
+		Dominantseptakkord          & $4$  & $5$  & $6$  & $7$\\
+		Verminderter Septakkord     &      & $25$ & $30$ & $35$ & $42$\\
+		Septnonakkord               &      & $5$  & $6$  & $7$  & $9$\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../main"
+%%% End:
