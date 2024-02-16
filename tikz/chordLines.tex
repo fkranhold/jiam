@@ -1,119 +1,149 @@
 \begin{tikzpicture}[scale=.7]
-  %% {sqrt(3)}=sqrt(3)
-  \draw[white] (1,-{sqrt(3)}) circle (.3);
+  %% Suspended fourth major
+  %  Euler lattice
   \draw[black!50] (0, 0) -- (4, 0);
   \draw[black!50] (1, {sqrt(3)}) -- (3, {sqrt(3)});
   \draw[black!50] (1,-{sqrt(3)}) -- (3,-{sqrt(3)});
   \draw[black!50] (0,0) -- (1, {sqrt(3)}) -- (2,0) -- (3, {sqrt(3)}) -- (4,0);
   \draw[black!50] (0,0) -- (1,-{sqrt(3)}) -- (2,0) -- (3,-{sqrt(3)}) -- (4,0);
-  %% 
+  %  Just third and fifth relations
   \draw[black,line width=1mm] (0,0) -- (4,0);
-  \draw[fill=white] (0,0) circle (.3);
-  \draw[fill=white] (2,0) circle (.3);
-  \draw[fill=white] (4,0) circle (.3);
+  %  Circles for chord notes labels
+  \draw[fill=white] (0,0)          circle (.3);
+  \draw[fill=white] (2,0)          circle (.3);
+  \draw[fill=white] (4,0)          circle (.3);
   \draw[fill=white] (3,-{sqrt(3)}) circle (.3);
-  % \draw[fill=white] (3,+{sqrt(3)}) circle (.3);
-  \node at (0,0) {\scriptsize $4$};
-  \node at (2,0) {\scriptsize $1$};
-  \node at (4,0) {\scriptsize $5$};
-  \node at (3,-{sqrt(3)}) {\scriptsize $3$};
-  \draw[white,line width=1mm] (.3,{-sqrt(3)*1/10)}) -- (2.7,{-sqrt(3)*9/10});
-  % \draw[white,line width=1mm] (.3,{+sqrt(3)*1/10)}) -- (2.7,{+sqrt(3)*9/10});
-  \draw[-stealth] (.3,{-sqrt(3)*1/10)}) -- (2.7,{-sqrt(3)*9/10});
-  % \draw[-stealth] (.3,{+sqrt(3)*1/10)}) -- (2.7,{+sqrt(3)*9/10});
-  \node at (2,2.5) {\small $\strut$Quartvorhalt};
-  %% {sqrt(3)}=sqrt(3)
+  %  Chord notes labels
+  \node at (0,0)              {\scriptsize $4$};
+  \node at (2,0)              {\scriptsize $1$};
+  \node at (4,0)              {\scriptsize $5$};
+  \node at (3,-{sqrt(3)})     {\scriptsize $3$};
+  %  Semitone resolutions
+  \draw[white,line width=1mm] (.3,{-sqrt(3)*1/10}) -- (2.7,{-sqrt(3)*9/10});
+  \draw[-stealth]             (.3,{-sqrt(3)*1/10}) -- (2.7,{-sqrt(3)*9/10});
+  %  Label of chord
+  \node[rotate=0] at (-1.5,0) {\small $\strut$Dur}; % For rotated text set rotate option to 90 instead of 0
+  \node at (2,2.5)            {\small $\strut$Quartvorhalt};
+  
+  
+  %% Extended ninth major
+  %  Euler lattice
   \draw[shift={(5.5,0)},black!50] (0, 0) -- (4, 0);
   \draw[shift={(5.5,0)},black!50] (1, {sqrt(3)}) -- (3, {sqrt(3)});
   \draw[shift={(5.5,0)},black!50] (1,-{sqrt(3)}) -- (3,-{sqrt(3)});
   \draw[shift={(5.5,0)},black!50] (0,0) -- (1, {sqrt(3)}) -- (2,0) -- (3, {sqrt(3)}) -- (4,0);
   \draw[shift={(5.5,0)},black!50] (0,0) -- (1,-{sqrt(3)}) -- (2,0) -- (3,-{sqrt(3)}) -- (4,0);
-  %% 
+  %  Just third and fifth relations
   \draw[shift={(5.5,0)},line width=1mm] (0,0) -- (4,0);
   \draw[shift={(5.5,0)},line width=1mm] (0,0) -- (1,-{sqrt(3)}) -- (2,0);
-  \draw[shift={(5.5,0)},fill=white] (0,0)      circle (.3);
-  \draw[shift={(5.5,0)},fill=white] (2,0)      circle (.3);
+  %  Circles for chord notes labels
+  \draw[shift={(5.5,0)},fill=white] (0,0)          circle (.3);
+  \draw[shift={(5.5,0)},fill=white] (2,0)          circle (.3);
   \draw[shift={(5.5,0)},fill=white] (1,-{sqrt(3)}) circle (.3);
-  \draw[shift={(5.5,0)},fill=white] (4,0)      circle (.3);
-  \node[shift={(3.85,0)}] at (0,0) {\scriptsize $1$};
+  \draw[shift={(5.5,0)},fill=white] (4,0)          circle (.3);
+  %  Chord notes labels
+  \node[shift={(3.85,0)}] at (0,0)          {\scriptsize $1$};
   \node[shift={(3.85,0)}] at (1,-{sqrt(3)}) {\scriptsize $3$};
-  \node[shift={(3.85,0)}] at (2,0) {\scriptsize $5$};
-  \node[shift={(3.85,0)}] at (4,0) {\scriptsize $9$};
-  \node[shift={(3.85,0)}] at (2,2.5) {\small $\strut$Hinzugefügte None};
-  %% {sqrt(3)}=sqrt(3)
+  \node[shift={(3.85,0)}] at (2,0)          {\scriptsize $5$};
+  \node[shift={(3.85,0)}] at (4,0)          {\scriptsize $9$};
+  %  Label of chord
+  \node[shift={(3.85,0)}] at (2,2.5)        {\small $\strut$Hinzugefügte None};
+  
+  
+  %% Sixte ajoutée major
+  %  Euler lattice
   \draw[shift={(11,0)},black!50] (0, 0) -- (4, 0);
   \draw[shift={(11,0)},black!50] (1, {sqrt(3)}) -- (3, {sqrt(3)});
   \draw[shift={(11,0)},black!50] (1,-{sqrt(3)}) -- (3,-{sqrt(3)});
   \draw[shift={(11,0)},black!50] (0,0) -- (1, {sqrt(3)}) -- (2,0) -- (3, {sqrt(3)}) -- (4,0);
   \draw[shift={(11,0)},black!50] (0,0) -- (1,-{sqrt(3)}) -- (2,0) -- (3,-{sqrt(3)}) -- (4,0);
-  %% 
+  %  Just third and fifth relations
   \draw[shift={(11,0)},line width=1mm] (2,0) -- (4,0);
   \draw[shift={(11,0)},line width=1mm] (1,-{sqrt(3)}) -- (3,-{sqrt(3)});
   \draw[shift={(11,0)},line width=1mm] (1,-{sqrt(3)}) -- (2,0) -- (3,-{sqrt(3)}) -- (4,0);
+  %  Circles for chord notes labels
   \draw[shift={(11,0)},fill=white] (1,-{sqrt(3)}) circle (.3);
   \draw[shift={(11,0)},fill=white] (2,0)          circle (.3);
   \draw[shift={(11,0)},fill=white] (3,-{sqrt(3)}) circle (.3);
   \draw[shift={(11,0)},fill=white] (4,0)          circle (.3);
-  \node[shift={(7.7,0)}] at (2,0) {\scriptsize $1$};
+  %  Chord notes labels
+  \node[shift={(7.7,0)}] at (2,0)          {\scriptsize $1$};
   \node[shift={(7.7,0)}] at (3,-{sqrt(3)}) {\scriptsize $3$};
-  \node[shift={(7.7,0)}] at (4,0) {\scriptsize $5$};
+  \node[shift={(7.7,0)}] at (4,0)          {\scriptsize $5$};
   \node[shift={(7.7,0)}] at (1,-{sqrt(3)}) {\scriptsize $6$};
-  \node[shift={(7.7,0)}] at (2,2.5) {\small $\strut$Sixte ajoutée};
-  %% {sqrt(3)}=sqrt(3)
-  \draw[shift={(0,-4.5)},white] (1,-{sqrt(3)}) circle (.3);
+  %  Label of chord
+  \node[shift={(7.7,0)}] at (2,2.5)        {\small $\strut$Sixte ajoutée};
+  
+  %% Suspended fourth minor
+  %  Euler lattice
   \draw[shift={(0,-4.5)},black!50] (0, 0) -- (4, 0);
   \draw[shift={(0,-4.5)},black!50] (1, {sqrt(3)}) -- (3, {sqrt(3)});
   \draw[shift={(0,-4.5)},black!50] (1,-{sqrt(3)}) -- (3,-{sqrt(3)});
   \draw[shift={(0,-4.5)},black!50] (0,0) -- (1, {sqrt(3)}) -- (2,0) -- (3, {sqrt(3)}) -- (4,0);
   \draw[shift={(0,-4.5)},black!50] (0,0) -- (1,-{sqrt(3)}) -- (2,0) -- (3,-{sqrt(3)}) -- (4,0);
-  %% 
+  %  Just third and fifth relations
   \draw[shift={(0,-4.5)},black,line width=1mm] (0,0) -- (4,0);
-  \draw[shift={(0,-4.5)},fill=white] (0,0) circle (.3);
-  \draw[shift={(0,-4.5)},fill=white] (2,0) circle (.3);
-  \draw[shift={(0,-4.5)},fill=white] (4,0) circle (.3);
-  % \draw[fill=white] (3,-{sqrt(3)}) circle (.3);
+  %  Circles for chord notes labels
+  \draw[shift={(0,-4.5)},fill=white] (0,0)          circle (.3);
+  \draw[shift={(0,-4.5)},fill=white] (2,0)          circle (.3);
+  \draw[shift={(0,-4.5)},fill=white] (4,0)          circle (.3);
   \draw[shift={(0,-4.5)},fill=white] (3,+{sqrt(3)}) circle (.3);
-  \node[shift={(0,-3.15)}] at (0,0) {\scriptsize $4$};
-  \node[shift={(0,-3.15)}] at (2,0) {\scriptsize $1$};
-  \node[shift={(0,-3.15)}] at (4,0) {\scriptsize $5$};
-  % \node at (3,-{sqrt(3)}) {\tiny $3$};
+  %  Semitone resolutions
+  \draw[shift={(0,-4.5)},white,line width=1mm] (.3,{+sqrt(3)*1/10}) -- (2.7,{+sqrt(3)*9/10});
+  \draw[shift={(0,-4.5)},-stealth]             (.3,{+sqrt(3)*1/10}) -- (2.7,{+sqrt(3)*9/10});
+  %  Chord notes labels
+  \node[shift={(0,-3.15)}] at (0,0)          {\scriptsize $4$};
+  \node[shift={(0,-3.15)}] at (2,0)          {\scriptsize $1$};
+  \node[shift={(0,-3.15)}] at (4,0)          {\scriptsize $5$};
   \node[shift={(0,-3.15)}] at (3,+{sqrt(3)}) {\scriptsize \flat $3$};
-  \draw[shift={(0,-4.5)},white,line width=1mm] (.3,{+sqrt(3)*1/10)}) -- (2.7,{+sqrt(3)*9/10});
-  \draw[shift={(0,-4.5)},-stealth] (.3,{+sqrt(3)*1/10)}) -- (2.7,{+sqrt(3)*9/10});
-  %%%%%%%%%%%% 
+  %  Label of chord
+  \node[rotate=0]          at (-1.5,-4.5)    {\small $\strut$Moll}; % For rotated text set rotate option to 90 instead of 0
+  
+  
+  %% Extended ninth minor
+  %  Euler lattice
   \draw[shift={(5.5,-4.5)},black!50] (0, 0) -- (4,0);
   \draw[shift={(5.5,-4.5)},black!50] (1, {sqrt(3)}) -- (3, {sqrt(3)});
   \draw[shift={(5.5,-4.5)},black!50] (1,-{sqrt(3)}) -- (3,-{sqrt(3)});
   \draw[shift={(5.5,-4.5)},black!50] (0,0) -- (1, {sqrt(3)}) -- (2,0) -- (3, {sqrt(3)}) -- (4,0);
   \draw[shift={(5.5,-4.5)},black!50] (0,0) -- (1,-{sqrt(3)}) -- (2,0) -- (3,-{sqrt(3)}) -- (4,0);
+  %  Just third and fifth relations
   \draw[shift={(5.5,-4.5)},line width=1mm] (0,0) -- (4,0);
   \draw[shift={(5.5,-4.5)},line width=1mm] (0,0) -- (1,+{sqrt(3)}) -- (2,0);
-  \draw[shift={(5.5,-4.5)},fill=white] (0,0)      circle (.3);
-  \draw[shift={(5.5,-4.5)},fill=white] (2,0)      circle (.3);
+  %  Circles for chord notes labels
+  \draw[shift={(5.5,-4.5)},fill=white] (0,0)          circle (.3);
+  \draw[shift={(5.5,-4.5)},fill=white] (2,0)          circle (.3);
   \draw[shift={(5.5,-4.5)},fill=white] (1,+{sqrt(3)}) circle (.3);
-  \draw[shift={(5.5,-4.5)},fill=white] (4,0)      circle (.3);
-  \node[shift={(3.85,-3.15)}] at (0,0) {\scriptsize $1$};
+  \draw[shift={(5.5,-4.5)},fill=white] (4,0)          circle (.3);
+  %  Chord notes labels
+  \node[shift={(3.85,-3.15)}] at (0,0)          {\scriptsize $1$};
   \node[shift={(3.85,-3.15)}] at (1,+{sqrt(3)}) {\scriptsize \flat $3$};
-  \node[shift={(3.85,-3.15)}] at (2,0) {\scriptsize $5$};
-  \node[shift={(3.85,-3.15)}] at (4,0) {\scriptsize $9$};
-  %%%%%%%%%%%% 
+  \node[shift={(3.85,-3.15)}] at (2,0)          {\scriptsize $5$};
+  \node[shift={(3.85,-3.15)}] at (4,0)          {\scriptsize $9$};
+  
+  
+  %% Sixte ajoutée minor
+  %  Euler lattice
   \draw[shift={(11,-4.5)},black!50] (0, 0) -- (6, 0);
   \draw[shift={(11,-4.5)},black!50] (1, {sqrt(3)}) -- (5, {sqrt(3)});
   \draw[shift={(11,-4.5)},black!50] (1,-{sqrt(3)}) -- (5,-{sqrt(3)});
   \draw[shift={(11,-4.5)},black!50] (0,0) -- (1, {sqrt(3)}) -- (2,0) -- (3, {sqrt(3)}) -- (4,0) -- (5, {sqrt(3)}) -- (6,0);
   \draw[shift={(11,-4.5)},black!50] (0,0) -- (1,-{sqrt(3)}) -- (2,0) -- (3,-{sqrt(3)}) -- (4,0) -- (5,-{sqrt(3)}) -- (6,0);
-  %% 
-  \draw[shift={(11,-4.5)},line width=1mm] (2,0) -- (0,0);
+  %  Just third and fifth relations
+  \draw[shift={(11,-4.5)},line width=1mm]                (2,0) -- (0,0);
+  \draw[shift={(11,-4.5)},line width=1mm]                (2,0) -- (1,+{sqrt(3)}) -- (0,0);
+  %  8:9 whole tone relations
   \draw[shift={(11,-4.5)},line width=1mm,densely dashed] (2,0) -- (6,0);
-  \draw[shift={(11,-4.5)},line width=1mm] (2,0) -- (1,+{sqrt(3)}) -- (0,0);
-  \draw[shift={(11,-4.5)},fill=white] (6,0) circle (.3);
+  %  Circles for chord notes labels
+  \draw[shift={(11,-4.5)},fill=white] (6,0)          circle (.3);
   \draw[shift={(11,-4.5)},fill=white] (0,0)          circle (.3);
   \draw[shift={(11,-4.5)},fill=white] (1,+{sqrt(3)}) circle (.3);
   \draw[shift={(11,-4.5)},fill=white] (2,0)          circle (.3);
-  \node[shift={(7.7,-3.15)}] at (0,0) {\scriptsize $1$};
+  %  Chord notes labels
+  \node[shift={(7.7,-3.15)}] at (0,0)          {\scriptsize $1$};
   \node[shift={(7.7,-3.15)}] at (1,+{sqrt(3)}) {\scriptsize \flat $3$};
-  \node[shift={(7.7,-3.15)}] at (2,0) {\scriptsize $5$};
-  \node[shift={(7.7,-3.15)}] at (6,0) {\scriptsize $6$};
+  \node[shift={(7.7,-3.15)}] at (2,0)          {\scriptsize $5$};
+  \node[shift={(7.7,-3.15)}] at (6,0)          {\scriptsize $6$};
 \end{tikzpicture}%
 
 %%% Local Variables:
