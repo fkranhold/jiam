@@ -1,35 +1,250 @@
-\subsection{Schritte als horizontale Intervalle}
+Das kontextabhängige Mikroalterieren von Tönen in einem Stück hat nicht nur
+Einfluss auf die vertikale Struktur eines Satzes (also die aus den Tönen
+bestehenden \emph{Akkorde}), sondern auch auf die horizontale Strukur (also die
+aus den Tönen bestehenden \emph{Melodien}). Wir wollen diese Effekte explizit
+machen.
 
-\subsection{Durchgangs- und Wechselnoten}
+\subsection{Schritte}
+\label{sec:steps}
 
-Durchgänge, Wechselnoten
+In der klassischen Musiktheorie ist ein \emph{Schritt} ein horizontales
+Intervall, das 1\,\acr{HTS} oder 2\,\acr{HTS} umfasst.  Klammern wir den
+Extremfall einer verminderten Terz aus, kann dies auf drei Weisen enharmonisch
+präzise realisiert werden:
+\begin{itemize}[itemsep=0em]
+\item als übermäßige Prime (etwa c\,–\,\sharp c, 1\,\acr{HTS}), genannt
+  \emph{chromatischer \acr{HTS}},
+\item als kleine Sekunde (etwa h\,–\,c, 1\,\acr{HTS}), genannt
+  \emph{diatonischer \acr{HTS}}.
+\item als große Sekunde (etwa c\,–\,d, 2\,\acr{HTS}), genannt
+  \emph{Ganztonschritt (\acr{GTS})}.
+\end{itemize}
+In gleichstufiger Stimmung sind chromatischer und diatonischer Halbtonschritt
+beide genau $100\ct$ und der Ganztonschritt $200\ct$ groß.  Schon in
+pythagoreischer Stimmung spielt die Enharmonik eine Rolle; hier ist der
+chromatische \acr{HTS} ($113{,}69\ct$) ein pythagoreisches Komma größer als der
+diatonische ($90{,}22\ct$).
+
+Im harmonischen Kontext und unter Verwendung des Eulerschen Tonnetzes sieht das
+nochmal anders aus: \Cref{fig:steps} zeigt einige typische Akkordfolgen in
+C-Dur, bei denen verschiedene Schritte in der obersten Stimme
+auftreten:\footnote{Die
+  \href{https://en.wikipedia.org/wiki/Semitone\#Just_intonation}{englische
+    Wikipedia} ist an dieser Stelle irreführend und stellenweise mathematisch
+  inkorrekt. Ferner ist uns (jedenfalls mit Dreiklängen) keine Situation
+  eingefallen, in der der dort genannte „large diatonic semitone“ realisiert
+  würde.}
+\begin{enumerate}
+\item \emph{Kleiner chromatischer Halbtonschritt}\\
+  Wechselt man vom Grundton der Tonika (c) mit einem chromatischen \acr{HTS} in
+  die Terz der Zwischendominante zur Subdominantparallele (\sharpmm c), so
+  verliert man im Vergleich zum pythagoreischen chromatischen \acr{HTS} ganze
+  zwei syntonische Kommata. Der entstehende Halbtonschritt ($70{,}67\ct$)
+  entspricht dem Verhältnis $24:25$ und ist sehr klein. Dieser Halbtonschritt
+  ist der gleiche wie der zwischen Mollterz (\flatp e) und Durterz
+  (\naturalm e) zueinander varianter Dreiklänge.
+\item \emph{Großer chromatischer Halbtonschritt}\\
+  Wechselt man vom Grundton der Subdominante (f) mit einem chromatischen
+  \acr{HTS} in die Terz der Doppeldominante (\sharpm f), so verliert man diesmal
+  nur ein syntonisches Komma.  Der entstehende Halbtonschritt
+  ($92{,}18\,\on{ct}$) ist recht nah am gleichstufigen, allerdings
+  noch immer etwas kleiner.\looseness-1
+\item \emph{Diatonischer Halbtonschritt}\\
+  Wechselt man von der Terz der Dominante (\naturalm h) mit einem diatonischen
+  \acr{HTS} in den Grundton der Tonika (c), so gewinnt man im Vergleich zum
+  pythagoreischen diatonischen \acr{HTS} ein syntonisches Komma.  Der
+  entstehende Halbtonschritt entspricht dem recht einfachen Verhältnis $15:16$
+  und beträgt $111{,}73\ct$.  Wir bemerken, dass dieser Schritt in jedem
+  Dominante-Tonika-Verhältnis, also auch bei Zwischendominanten, so auftaucht,
+  siehe auch \cref{sec:ln}.
+\item \emph{Kleiner Ganztonschritt}\\
+  Wechselt man von der Quinte der Tonika mit einem Ganztonschritt in die Terz
+  der Subdominante (\naturalm a), so verliert man im Vergleich zur
+  pythagoreischen großen Sekunde ein syntonisches Komma. Der entstehende Schritt
+  entspricht dem recht einfachen Verhältnis \mbox{$9:10$} und beträgt $182{,}40\ct$,
+  ist also recht deutlich unterhalb des gleichstufigen.
+\item \emph{Großer Ganztonschritt}\\
+  Wechselt man zum Beispiel von der Terz der Subdominante (\naturalm a) zur Terz
+  der Dominante (\naturalm h), so bleibt man auf derselben Kommahöhe. Es
+  entsteht also ein rein pythagoreischer Ganztonschritt, der dem Verhältnis
+  $8:9$ entspricht und $203{,}91\ct$ (also gleichstufiger Ganztonschritt plus
+  $2$ Grad) entspricht.  Selbiges gilt für den Wechsel vom Grundton der
+  Subdominante zum Grundton der Dominante, eine typische Bassbewegung.
+\end{enumerate}
+Diese fünf Schritte, ihre Verhältnisse und Großen sind in \cref{tab:steps} noch
+einmal kurz und bündig zusammengefasst.  Wir bemerken, dass in allen
+auftretenden Situationen chromatische Halbtonschritte anders im pythagoreischen
+Fall stets \emph{kleiner} als diatonische Halbtonschritte sind.  Dies liegt
+daran, dass in den Situationen, in denen sie auftreten, die Verteilung der
+syntonischer Kommata genau entgegengesetzt ist und das pythagoreische Komma
+überkompensiert.
+
+Als eine Moral dieses Unterabschnitts könnte man festhalten:
+\emph{Halbtonschritt ist nicht gleich Halbtonschritt.}  Dies liefert eine
+mathematische Begründung für das Phänomen, dass Laienchöre bei chromatischen
+Linien oft detonieren: Es liegt nahe, zu glauben, dass Halbtonschritte stets
+gleich groß seien, und auch, dass die Stimme, die die Chromatik singt, die
+einfachste Aufgabe habe – schließlich bewegt sie sich ja immer um die „kleinste
+Einheit“. Alles an dieser auf den ersten Blick einleuchtenden Vermutung
+widerspricht obiger Berechnung.  Stattdessen muss sich die sich chromatisch
+bewegende Stimme an den sie umgebenden Harmonien orientieren.\looseness-1
+
+\begin{figure}
+  \centering
+  \includegraphics{ly/b-steps}\LY{b-steps}
+  \caption{Verschiedene Schritte in der Oberstimme: (1) Kleiner chromatischer
+    \acr{HTS} c\,–\,\sharpmm c vom Grundton der T zur Terz der Zwischendominante
+    zur Sp.\quad (2) Großer chromatischer \acr{HTS} f\,–\,\sharpm f vom Grundton
+    der S zur Terz der DD.\quad (3) Diatonischer \acr{HTS} \naturalm h\,–\,c von
+    der Terz der D zum Grundton der T.\quad (4) Kleiner \acr{GTS}
+    g\,–\,\naturalm a von der Quinte der T zur Terz der S.\quad (5) Großer
+    \acr{GTS} \naturalm a\,–\,\naturalm h von der Terz der S zur Terz der
+    D.}\label{fig:steps}
+\end{figure}
+
+\begin{table}
+  \centering
+  \begin{tabular}{lr@{\hspace*{1.6px}}lr@{\hspace*{2.4px}}lr}
+    \toprule
+    \thl{Bezeichnung} & \multicolumn{2}{c}{\thl{Beispiel}} & \multicolumn{2}{c}{\thl{Verhältnis}} & \thl{Größe in ct}\\
+    \midrule
+    kleiner chromatischer \acr{HTS} & \hspace{3mm}c\,&–\,\sharpmm c & $24$ & $:25$ & $70{,}67$\\
+    großer chromatischer \acr{HTS} & f\,&–\,\sharpm f & \hspace*{3mm}$128$ & $:135$ & $92{,}18$\\
+    diatonischer \acr{HTS} & \naturalm h\,&–\,c & $15$ & $:16$ & $111{,}73$\\
+    kleiner \acr{GTS} & g\,&–\,\naturalm a & $9$ & $:10$ & $182{,}40$\\
+    großer \acr{GTS} & f\,&–\,g & $8$ & $:9$ & $203{,}91$\\
+    \bottomrule
+  \end{tabular}
+  \caption{Verschiedene Schritte und ihre Größen}\label{tab:steps}
+\end{table}
+
+\subsection{Quintfälle}
+
+Ein weiteres wichtiges horizontales Intervall ist die Quinte (bzw. komplementär
+dazu: die Quarte), denn oft setzen sich Basslinien aus ihnen in Form sogenannter
+\emph{Quintfälle} zusammen, vgl. \cite[{}12.3]{Skript}. Wir bemerken, dass in
+einer üblichen Akkordfolge so ein Quintfall nicht ausschließlich das für
+vertikale Intervalle so erstrebenswerte Verhältnis $2:3$ nutzt, sondern zumeist
+wenigstens einmal ein Komma abgezogen (bzw. zur Quarte hinzuaddiert) wird, siehe
+\cref{fig:5fall}.
+
+Dies ist aber auch nicht besonders tragisch: Ein üblicher Quintfall muss sogar
+wenigstens eine \emph{verminderte} Quinte enthalten, um nicht zu modulieren
+(hier: von \naturalp f auf h), weswegen man derartige Abweichungen gewohnt ist.
+
+\begin{figure}
+  \centering
+  \LY{b-5fall}
+  \includegraphics{ly/b-5fall}
+  \caption{Ein Quintfall im Bass, bei der der Sprung d\,–\,\naturalp g um ein
+    syntonisches Komma größer als die reine Quarte $3:4$ ist.  Der Akkord
+    h\,:\,\naturalp f\,:\,d\,:\,a im letzten Takt ist die Subdominante mit Sexte
+    im Bass, deren Ausstimmung in \cref{sec:sixte} erklärt wird.}\label{fig:5fall}
+\end{figure}
 
 \subsection{Leittöne}
 \label{sec:ln}
 
 Wir weisen darauf hin, dass die Terz im Dreiklang, die zur Dominante (oder einer
 Zwischendominante) gehört, ebenfalls um ein syntonisches Komma abgesenkt wird,
-was der gängigen Praxis widerspricht, Leittöne etwas höher zu intonieren, um die
-Spannung zu erhöhen, siehe z.\,B. […]\todo{Literatur FK}. Wir sind der
-Überzeugung, dass die Dominante ein eigenständiger, stabiler Dur-Dreiklang sein
-sollte, aber in dieser Frage kann man anderer Meinung sein als wir. In diesem
-Fall schlagen wir vor, den Leitton um ein syntonisches Komma zu erhöhen, wodurch
-der Dreiklang die pythagoreische Stimmung $64:81:96$ erhält. (Im Hörbeispiel
-hören wir zwei Versionen einer Kadenz, eine mit einem rein intonierten Leitton,
-eine mit einem pythagoreischen Leitton). Wir halten uns jedoch an die
-Konvention, alle Dreiklänge, auch solche, die eine Dominantenfunktion haben, so
-zu intonieren, dass sie eine reine Terz haben.
+was dem häufig im Instrumentalunterricht vermittelten Ideal widerspricht, den
+Leitton (also den Ton, der eine kleine Sekunde unter dem Grundton liegt) höher
+zu intonieren, um die „Spannung zu erhöhen“: In unserer mathematischen
+Beschreibung liegt der Leitton um einen diatonischen \acr{HTS} und damit
+$111{,}73\ct$ unter dem Grundton, was \emph{tiefer} als der gleichstufige
+Leitton ist.
 
-\subsection{Halbtonschritte}
-\label{sec:semi}
+Dieser Widerspruch wurde auch in \cite[211]{viitasaari} benannt und
+diskutiert, mit dem Ergebnis, dass es stark auf den Kontext ankommt: In
+homophonen Sätzen, bei denen die \emph{vertikale} Struktur der Musik im
+Vordergrund steht, sollte die Dominante ein eigenständiger, stabiler
+Dur-Dreiklang sein und der Leitton somit tief intoniert werden. Steht hingegen
+die melodische Bewegung einzelner Stimmen, also die \emph{horizontale} Struktur
+im Vordergrund (wir merken an, dass dies in keinem unserer bisherigen Beispiele
+der Fall war), so kann man in Erwägung ziehen, den Leitton pythagoreisch zu
+intonieren, wodurch er nur noch $90{,}22\ct$ unter dem Grundton und damit über
+dem gleichstufigen Leitton läge. Der entstehende vertikale Dominantdreiklang
+hätte dann das Verhältnis $64:81:96$. In \cref{fig:lead} hören wir zwei
+Versionen einer Kadenz, eine mit einem rein intonierten Leitton, eine mit einem
+pythagoreischen Leitton.
 
 \begin{figure}
   \centering
   \LY{b-lead}
   \includegraphics{ly/b-lead}
-  \caption{Zwei Arten, eine Vollkadenz zu intonieren: Einmal mit reiner
-  	Intonation aller Dur-Dreiklänge und einmal mit einem pythagoreischen
-  	Leitton.}\label{fig:lead}
+  \caption{Zwei Arten, eine Kadenz zu intonieren: Einmal mit reiner
+    Intonation aller Dreiklänge und einmal, in einem bewegteren Kontext, mit
+    einem pythagoreischen Leitton.}\label{fig:lead}
+\end{figure}
+
+\subsection{Sinnvoll abwägen}
+
+Die Diskussion um den Leitton aus dem vorherigen Abschnitt ist nur ein Beispiel
+eines allgemeineren Priorisierungsproblems, das wir bisher absichtsvoll umgangen
+sind: Alle bisherigen Beispiele haben homophone Sätze betrachtet, bei denen der
+Aspekt der \emph{Bewegung} der einzelnen Stimmen komplett nachrangig
+war. Außerdem haben wir unsere Beispiele stets langsam genug gespielt, um uns
+Zeit zu geben, wahrzunehmen, wie die Akkorde einrasten. Dies ist dadurch
+gerechtfertigt, dass tatsächlich ein gehöriger Teil klassischer Chormusik auf
+diese Weise gedacht ist und musiziert wird; insbesondere \emph{enden} viele
+Stücke auf diese Weise. Es blendet allerdings aus, dass auch Vokalmusik ganz
+anders konzipiert sein kann.
+
+Als extremes Gegenbeispiel mag \cref{fig:melody} dienen, bei der – obwohl auf
+den einzelnen Schlägen vertikal funktionale Harmonien klar erkennbar sind – die
+Stimmen ständig in Bewegung sind und dem Akkord gar keine Zeit gegeben wird,
+einzurasten. Außerdem bekommen die aufsteigenden Linien eine „Richtung“, durch
+die (zumindest unserer\todo{so far: meiner. FK} Meinung nach) eine abgesenkte
+Sexte oder Septime künstlich wirkt.  In solchen Situationen ist es
+empfehlenswert, auf entsprechende syntonische Kommata zu verzichten und
+stattdessen stellenweise komplett pythagoreisch zu intonieren.  Wir empfehlen,
+die Alt- oder Bassstimme einmal selbst zu singen und mit den Hörbeispielen zu
+vergleichen.  Man könnte nun fragen, warum wir dann nicht direkt gleichstufig
+intonieren.  Unser Hauptgrund, pythagoreisch zu intonieren, ist, dass es uns
+ermöglicht, an \emph{ausgewählten} Stellen doch Kommata zu verwenden, um sie
+rein zu stimmen – hier die letzten beiden Akkorde, bei denen eine Kadenz
+erkennbar ist und wo deutlich weniger Bewegung stattfindet.
+
+\begin{figure}
+  \centering
+  \LY{b-melody}
+  \includegraphics{ly/b-melody}
+  \caption{Eine melodisch gedachter Abschnitt, einmal
+    vollständig rein ausgestimmt (nicht empfohlen) und einmal über weite
+    Strecken pythagoreisch gestimmt.}\label{fig:melody}
+\end{figure}
+
+Wieder anders sieht die Situation in \cref{fig:inter} aus: Dieses Beispiel ist
+im Wesentlichen homophon und langsam – nur vereinzelt gibt es Zwischennoten
+(hier: Durchgangsnoten und angesprungene Nebennoten). Hier empfiehlt es sich,
+zunächst die Akkorde rein zu stimmen und sich erst dann mit den Zwischennoten zu
+befassen. Um ihre Kommahöhe zu ermitteln, scheinen uns folgende Kriterien
+sinnvoll, mit absteigender Priorisierung:
+\begin{enumerate}
+\item Alle auftretenden Schritte sollten entweder pythagoreisch oder in \cref{tab:steps}
+  gelistet sein.
+\item Es sollte keine Abfolge $x$\,–\,$y$\,–\,$x$ von Noten entstehen, bei der
+  die beiden Instanzen von $x$ unterschiedlich syntonisiert sind.
+\item Die Zwischennote sollte von der vorherigen Note aus durch ein
+  pythagoreisches Intervall erreicht werden.
+\end{enumerate}
+So würde Kriterium 3 in obigem Beispiel für die erste Durchgangsnote h im Bass
+die gleiche Kommahöhe wie beim c nahelegen; dies wird aber von Kriterium 1
+verunmöglicht,weil dadurch der Ganztonschritt zum \naturalm a zu groß würde. Die
+zweite Zwischennote, das g im Alt, wird vom \naturalm e aus erreicht, weswegen
+Kriterium 3 \naturalm g nahelegt. Dies ist vereinbar mit den Kriterien 1 und 2,
+da der darauffolgende Schritt zum f ein kleiner Ganztonschritt ist. Die dritte
+Zwischennote, das c im Sopran, taucht nach zur einem weiteren Ton (dem \naturalm
+h) ohne Mikroalteration auf. Daher legt Kriterium 2 \natural c nahe, was mit
+Kriterium 1 vereinbar ist.
+
+\begin{figure}
+  \centering
+  \LY{b-inter}
+  \includegraphics{ly/b-inter}
+  \caption{Ein im Wesentlichen homophoner Satz, mit vereinzelten
+    Zwischennoten. Die Akkorde sind rein gestimmt; für die Zwischennoten gibt
+    es unterschiedliche Anhaltspunkte.}\label{fig:inter}
 \end{figure}
 
 %%% Local Variables:

@@ -3,23 +3,20 @@
 \include "layout.ily"
 
 %% Just leading tone
-JL = \relative c'' { r1  r  bM r  } % Leading tone twice as loud
 JS = \relative c'' { c1  c  bM c  }
 JA = \relative c'' { g1  aM g  g  } 
 JT = \relative c'  { eM1 f  d  eM }
 
 %% Pythagorean leading tone
-PL = \relative c'' { r1  r  b r  } % Leading tone twice as loud
-PS = \relative c'' { c1  c  b c  }
-PA = \relative c'' { g1  aM g g  } 
-PT = \relative c'  { eM1 f  d eM }
+PS = \relative c'' { c2  c4 d c b c2  }
+PA = \relative c'' { g2  aM   g   g  } 
+PT = \relative c'  { eM2 f    d   eM }
 
 %% MIDI Just
 \book {
   \bookOutputSuffix "just"
   \score {
     <<
-      \new Staff \with {midiInstrument = #"oboe"} << \JL >>
       \new Staff \with {midiInstrument = #"oboe"} << \JS >>
       \new Staff \with {midiInstrument = #"oboe"} << \JA >>
       \new Staff \with {midiInstrument = #"oboe"} << \JT >>
@@ -33,7 +30,6 @@ PT = \relative c'  { eM1 f  d eM }
   \bookOutputSuffix "pyth"
   \score {
     <<
-      \new Staff \with {midiInstrument = #"oboe"} << \PL >>
       \new Staff \with {midiInstrument = #"oboe"} << \PS >>
       \new Staff \with {midiInstrument = #"oboe"} << \PA >>
       \new Staff \with {midiInstrument = #"oboe"} << \PT >>
@@ -48,7 +44,7 @@ PT = \relative c'  { eM1 f  d eM }
     \omit Staff.TimeSignature
     \time 4/1
     { << \JS \JA \JT >> \bar "||"
-      << \PS \PA \PT >> \bar "|." }
+      << {\voiceOne \PS } \new Voice {\voiceTwo << \PA \PT >> } >> \bar "|." }
   >>
   \layout{}
 }
