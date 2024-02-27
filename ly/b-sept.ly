@@ -15,16 +15,16 @@ YT = \relative c'  { fisM,2     \oS gS   fisM1   }
 YB = \relative c   { a1                  <d d,>1 }
 
 %% Content 3
-ZS = \relative c'' { g4   c      bM2 c1  }
-ZA = \relative c'' { c,4  c      f2  eM1 }
-ZT = \relative c'  { g4   aM     a2  g1  }
-ZB = \relative c   { eM4  f      d2  eM1 }
+ZS = \relative c'' { c2  d  c1  }
+ZA = \relative c'  { eM2 f2 eM1 }
+ZT = \relative c'  { g2  a  g1  }
+ZB = \relative c   { c2  bM c1  }
 
 %% Content 4
-AS = \relative c'' { g4   c      bM2 c1  }
-AA = \relative c'' { c,4  c  \oS fS2 eM1 }
-AT = \relative c'  { g4   aM     a2  g1  }
-AB = \relative c   { eM4  f      d2  eM1 }
+AS = \relative c'' { c2      d   c1  }
+AA = \relative c'  { eM2 \oS fS2 eM1 }
+AT = \relative c'  { g2      a   g1  }
+AB = \relative c   { c2      bM  c1  }
 
 %% MIDI 1
 \book {
