@@ -3,28 +3,28 @@
 \include "layout.ily"
 
 %% Content 1
-XS = \relative c'' { <fisM, d>2 <e cisM> d1      }
-XA = \relative c'' { a,1                 a       }
-XT = \relative c'  { fisM,2     g        fisM1   }
-XB = \relative c   { a1                  <d d,>1 }
+XS = \relative c'' { c2     bM2   c1  }
+XA = \relative c'' { g4  aM g4  f eM1 } 
+XT = \relative c'  { eM4 f  d2    c1  }
+XB = \relative c   { c4  f  g2    c,1 }
 
 %% Content 2
-YS = \relative c'' { <fisM, d>2 <e cisM> d1      }
-YA = \relative c'' { a,1                 a       }
-YT = \relative c'  { fisM,2     \oS gS   fisM1   }
-YB = \relative c   { a1                  <d d,>1 }
+YS = \relative c'' { a2   b    cP1  }
+YA = \relative c'' { cP,2 d    cP1 }
+YT = \relative c'  { e,2  fP   e1  }
+YB = \relative c   { a2   gisM a1  }
 
 %% Content 3
-ZS = \relative c'' { g4   c      bM2 c1  }
-ZA = \relative c'' { c,4  c      f2  eM1 }
-ZT = \relative c'  { g4   aM     a2  g1  }
-ZB = \relative c   { eM4  f      d2  eM1 }
+ZS = \relative c'' { besP2       besP a    g    }
+ZA = \relative c'' { g2          g    fisM d    }
+ZT = \relative c'  { d2          cisM d    besP }
+ZB = \relative c   { r8 g besP d esP2 d    g    }
 
 %% Content 4
-AS = \relative c'' { g4   c      bM2 c1  }
-AA = \relative c'' { c,4  c  \oS fS2 eM1 }
-AT = \relative c'  { g4   aM     a2  g1  }
-AB = \relative c   { eM4  f      d2  eM1 }
+AS = \relative c'' { c4    bes a2 g1  }
+AA = \relative c'' { dM,2(     d) eM1 } 
+AT = \relative c'  { f,1          eM  }
+AB = \relative c   { bes2      bM c1  }
 
 %% MIDI 1
 \book {
