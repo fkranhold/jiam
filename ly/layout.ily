@@ -9,8 +9,8 @@
       (/ myStaffSize 20)))
   
   indent       = #0
-  left-margin  = #40.5  % 1.5/8*210mm
-  right-margin = #40.5
+  left-margin  = #37  % 1.5/8*210mm
+  right-margin = #37
 }
 
 \header {
