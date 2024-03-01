@@ -33,20 +33,20 @@ Es hängt vom harmonischen Kontext ab, ob eine Tonhöhe alteriert werden muss
 oder nicht, und das lässt sich leider nicht aus dem bloßen (enharmonisch
 präzisen) Tonnamen herauslesen.\looseness-1
 
-Bei einer Partitur fügen wir die zusätzliche Information, dass bestimmte Noten
-um ein oder mehrere syntonische Kommata abgesenkt oder angehoben werden müssen,
-durch das Hinzufügen von Pfeilen an die schon existenten Versetzungszeichen in
-der Tradition von Helmholtz und Ellis \cite{HE} hinzu: Die Versetzungszeichen
-\dsharpp, \sharpp, \naturalp, \flatp, und \dflatp\ bedeuten die Erhöhung des
-Tons um ein syntonisches Komma; genauso bedeuten \dsharppp, \sharppp,
-\naturalpp, \flatpp, und \dflatpp\ zwei Kommata und so weiter. In die andere
-Richtung benutzen wir \dsharpm, \sharpm, \naturalm, \flatm, und \dflatm\ für
-Noten, die um ein syntonisches Komma tiefer erklingen sollen. Ein Beispiel ist
-in \cref{fig:HE} zu sehen. Wie üblich gelten Versetzungszeichen für einen ganzen
-Takt; wenn also ein einzelner Takt erst \naturalm a' und dann \natural a'
-enthält, so müssen beide Versetzungszeichen angegeben werden. Aus Gründen, die
-im nächsten Unterabschnitt erläutert werden, verwenden wir überhaupt keine
-Generalvorzeichen.\looseness-1
+Bei einer Partitur ergänzen wir die zusätzliche Information, dass bestimmte
+Noten um ein oder mehrere syntonische Kommata abgesenkt oder angehoben werden
+müssen, durch das Hinzufügen von Pfeilen an die schon existenten
+Versetzungszeichen in der Tradition von Helmholtz und Ellis \cite{HE} mit den
+Glyphen von \cite{HEJI}: Die Versetzungszeichen \dsharpp, \sharpp, \naturalp,
+\flatp, und \dflatp\ bedeuten also die Erhöhung des Tons um ein syntonisches
+Komma; genauso bedeuten \dsharppp, \sharppp, \naturalpp, \flatpp, und \dflatpp\
+zwei Kommata und so weiter. In die andere Richtung benutzen wir \dsharpm,
+\sharpm, \naturalm, \flatm, und \dflatm\ für Noten, die um ein syntonisches
+Komma tiefer erklingen sollen. Ein Beispiel ist in \cref{fig:HE} zu sehen. Wie
+üblich gelten Versetzungszeichen für einen ganzen Takt; wenn also ein einzelner
+Takt erst \naturalm a' und dann \natural a' enthält, so müssen beide
+Versetzungszeichen angegeben werden. Aus Gründen, die im nächsten Unterabschnitt
+erläutert werden, verwenden wir überhaupt keine Generalvorzeichen.\looseness-1
 
 \begin{figure}\centering
   \includegraphics{ly/p-HE}
@@ -85,6 +85,9 @@ entschieden (wir vermeiden das Wort „Skala“ sogar ganz):
   gibt einige Tonhöhen, die mit einer Tonleiter „eng verwandt“ sind, auch wenn
   sie technisch gesehen nicht zu ihr gehören (z.\,B. das \sharp f in C-Dur, was
   die große Terz der Doppeldominante ist).
+\item Wie wir in \cref{sec:balance} auseinandersetzen werden wirken melodische
+  Linien mit unterschiedlich großen Ganztonschritten unausgewogen, weswegen man
+  in melodisch gedachten Passagen diese Skala nicht verwenden würde.
 % \item Unser Stimmungssystem sollte nicht von der Tonart des Stücks, sondern nur
 %   vom Kammerton abhängen.\todo{Ich bin mir nicht sicher ob ich diesen Punkt verstehe. Das Stimmungssystem ändert sich ja durch die Vorzeichen nicht, oder? Ich bin verwirrt. –T}
 \end{enumerate}
@@ -106,21 +109,16 @@ die Reihenfolge von kleiner und großer Terz vertauscht und die Zwischentöne
 etwas höher als die Ursprungsgerade schreibt. Wir erhalten eine neue
 Quintenreihe, in der alle Frequenzen um ein syntonisches Komma erhöht sind. Wenn
 wir diesen Prozess in beide Richtungen wiederholen, erhalten wir ein
-Tonhöhengitter (siehe \cref{fig:latticeExcerpt}), bei dem eine Bewegung der Form
-‚$\to$‘ einer reinen Quinte, ‚$\searrow$‘ einer reinen großen Terz und
-‚$\nearrow$‘ einer reinen kleinen Terz entspricht.
+Tonhöhengitter (siehe \cref{fig:latticeExcerpt}), in dem benachtbarte Töne im
+Verhältnis einer reinen Quinte, reinen großen Terz oder reinen kleinen Terz
+stehen.
 
 Jeder (enharmonisch präzise angegebene) Ton kommt (modulo Oktave) in jeder Zeile
 genau einmal vor, sodass ein Knoten im Netz einem Ton zusammen mit einer Anzahl
-von darauf angewandten syntonischen Kommata entspricht. Diese Anzahl der
+von darauf angewendeten syntonischen Kommata entspricht. Diese Anzahl der
 syntonischen Kommata nennen wir die \emph{Kommahöhe} des Knotens. Beispielsweise
 hat \sharppp c die Kommahöhe $+2$. Zwei Knoten haben genau dann die gleiche
-Kommahöhe, wenn sie in der gleichen „Zeile“ des Tonnetzes stehen.\todo{Ist das
-  verständlich? Ich würde ja gern von der „Kommahöhe eines Tones“ sprechen, aber
-  streng logisch ist in diesem Absatz ist ein Ton etwas, auf das man Kommata
-  anwenden kann, nicht etwas, das schon Syntonisierungsinformation
-  enthält. Dafür aber so einen Begriff wie „Helmhholtz-Ellis-Ton“ oder so
-  einzuführen, erschien mir dann ein bisschen \emph{overkill}. FK}
+Kommahöhe, wenn sie in der gleichen „Zeile“ des Tonnetzes stehen.
 
 \begin{figure}[h]
   \input{tikz/latticeExcerpt}
@@ -131,7 +129,7 @@ Kommahöhe, wenn sie in der gleichen „Zeile“ des Tonnetzes stehen.\todo{Ist 
 
 \subsection{Geometrie im Tonnetz}
 
-In Eulerschen Tonnetz umfasst ein Dreieck der Form $\triangledown$ die
+Im Eulerschen Tonnetz umfasst ein Dreieck der Form $\triangledown$ die
 Bestandteile eines rein intonierten Dur-Akkords ($4:5:6$), während ein Dreieck
 $\vartriangle$ die Bestandteile eines Mollakkords ($10:12:15$)
 erfasst. Benachbarte Dreiecke teilen sich entweder eine Quinte, d.\,h. sie sind
@@ -176,12 +174,14 @@ Kammerton abgeleitet werden sollte. Im Übrigen ist dies auch aus praktischen
 Gesichtspunkten sinnvoll, wenn die Anzahl der Mikroalterationszeichen möglichst
 klein gehalten werden soll.
 
-Wir weisen außerdem darauf hin, dass die „richtige“ Intonation von der
-Interpretation der Funktion abhängt, die der Dreiklang darstellt. Ein
-D-Dur-Dreiklang in C-Dur z.\,B.  wird wohl in den allermeisten Fällen als
-Doppeldominante verstanden werden, in seltenen Fällen aber auch als „dorische“
-Subdominante der Tonikaparallele (a-Moll). Im zweiten Fall müsst der Akkord ein
-syntonisches Komma tiefer gespielt werden.
+\wrap{\enlargethispage{\baselineskip}}
+
+Wir bemerken abschließend, dass die „richtige“ Intonation von der Interpretation der
+Funktion, die der Dreiklang darstellt, abhängt. Ein D-Dur-Dreiklang in C-Dur
+z.\,B.  wird wohl in den meisten Fällen als Doppeldominante verstanden werden,
+in seltenen Fällen aber auch als „dorische“ Subdominante der Tonikaparallele
+(a-Moll). Im zweiten Fall müsst der Akkord ein syntonisches Komma tiefer
+gespielt werden.
 
 \begin{figure}
   \centering
@@ -196,20 +196,20 @@ syntonisches Komma tiefer gespielt werden.
 
 \begin{figure}
   \input{tikz/chordsLattice}
-  \caption{Die Dreiklänge die im Notenbeispiel von \cref{fig:triadPiece} auftauchen, verortet im
-  	Eulerschen Tonnetz.}\label{fig:chordsLattice}
+  \caption{Die Dreiklänge die im Notenbeispiel von \cref{fig:triadPiece}
+    auftauchen, verortet im Eulerschen Tonnetz.}\label{fig:chordsLattice}
 \end{figure}
 
 \subsection{Die Kommafalle}
 
-Wenn wir einen erneuten Blick auf den Ausschnitt des Eulerschen Tonnetzes in
-\cref{fig:latticeExcerpt} werfen, so finden wir den Ton d an zwei Stellen in der
-Nähe von c, nämlich \naturalm $\text{d}\,(\frac{10}9)$ and
+Werfen wir einen erneuten Blick auf den Ausschnitt des Eulerschen Tonnetzes in
+\cref{fig:latticeExcerpt}, so finden wir den Ton d an zwei Stellen in der Nähe
+von c, nämlich \naturalm $\text{d}\,(\frac{10}9)$ and
 $\text{d}\,(\frac98)$. Beide erscheinen als Eckpunkte von Dreiecken, die
 Funktionen in C-Dur entsprechen: Der erste als Grundton von d-Moll
 (Subdominantparallele, kurz Sp) und der zweite als Quinte von G-Dur (Dominante,
 kurz D) – dies ist genau das Phänomen, das wir in \cref{subsec:ptol} im Zuge
-unserer Kritik an einer festen mikroalterierten Skala erwähnt haben.
+unserer Kritik an einer festen mikroalterierten Skala erwähnt haben.\looseness-1
 
 Man stelle sich nun ein Stück vor, das die Funktionen Sp und D direkt
 hintereinander enthält, sowie eine Stimme, die den Grundton der Sp hat und hält,
@@ -255,11 +255,11 @@ parallelen Quinten.\footnote{Das Parallelenverbot im klassischen Kontrapunkt ist
   \includegraphics{ly/b-drift}
   \caption{(1) Eine Akkordfolge, bei der alle wiederholten Tonhöhen auf die   
   	gleiche Weise intoniert werden, wodurch eine Detonation um ein syntonisches
-  	Komma entsteht. %
-  	(2) Dieselbe Akkordfolge mit der notwendigen Anpassung (durch eine
+  	Komma entsteht.%
+  	\quad (2) Dieselbe Akkordfolge mit der notwendigen Anpassung (durch eine
   	Zick-Zack-Linie gekennzeichnet): Zwischen dem dritten und dem vierten Akkord
-  	muss der Sopran das d’’ anpassen. %
-  	(3) Eine ähnliche Situation, in der sogar zwei Stimmen eine Anpassung
+  	muss der Sopran das d’’ anpassen.%
+  	\quad (3) Eine ähnliche Situation, in der sogar zwei Stimmen eine Anpassung
   	vornehmen müssen, was eine Komma-Bewegung in „parallelen Quinten“
   	verursacht.\looseness-1}\label{fig:drift}
 \end{figure}
