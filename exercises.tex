@@ -1,0 +1,190 @@
+\documentclass[ngerman,11pt]{scrartcl}
+
+\title     {Theorie der reinen Intonation}
+\author    {Thomas Drögemüller\and Florian Kranhold}
+\subtitle  {Aufgaben}
+
+\input{preamble}
+
+\usepackage{scrlayer-scrpage}
+\lohead{T. Drögemüller, F. Kranhold}
+\cohead{}
+\rohead{Theorie der reinen Intonation}
+\pagestyle{scrheadings}
+
+\begin{document}
+
+\maketitle
+
+\section{Einleitung und Überblick}
+
+\begin{aufg}
+  Bringe Dein Rechengerät dazu, folgende Ergebnisse zu berechnen:
+  \begin{align*}
+    \log_2(\tfrac54) &\approx 0{,}263,\\
+    2^{\frac{11}{12}} &\approx 1{,}887.
+  \end{align*}
+  [\emph{Hinweis:} Zu welcher Basis auch immer der Befehl \texttt{log} den Logarithmus
+  berechnet, \texttt{log(...)/log(2)} berechnet den Logarithmus zur Basis $2$.]
+\end{aufg}
+
+\begin{aufg}
+  Berechne die Frequenzen folgender Töne in gleichstufiger Stimmung: fis’’, E,
+  b, des’ und cis’’.
+\end{aufg}
+
+\begin{aufg}
+  Finde Intervalle, deren Frequenzverhältnis in gleichstufiger Stimmung nah an
+  folgenden Brüchen sind: $\frac43$, $\frac65$, $\frac53$, $\frac98$,
+  $\frac{15}8$. Gib jeweils den Unterschied zwischen gleichstufigem
+  Frequenzverhältnis und dem entsprechenden Bruch in ct an.
+\end{aufg}
+
+\begin{aufg}
+  Finde ein ganzzahliges Verhältnis $a:b:c$, das einem gleichstufigen
+  Molldreiklang sehr nahe kommt.
+\end{aufg}
+
+\section{Reine Quinten und die pythagoreische Stimmung}
+
+\begin{aufg}
+  Berechne das Frequenzverhältnis einer übermäßigen Sekunde (also
+  z.\,B. f\,:\,\sharp g) in pythagoreischer Stimmung (sowohl als Bruch als auch
+  in ct). Vergleiche Dein Ergebnis mit dem Verhältnis für eine kleine Terz
+  (Tabelle 1 im Skript).
+\end{aufg}
+
+\pagebreak 
+\begin{aufg}
+  Fülle die folgende Tabelle weiter aus:
+  \begin{center}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{lrrr}
+      \toprule
+      & gleichst. Frequenz [Hz] & pyth. Frequenz [Hz] & Unterschied [Grad]\\
+      \midrule
+      \flat a’ & $415{,}30$ & $412{,}03$ & $-7$\\
+      \sharp g & $415{,}30$ & $417{,}66$ & $+5$\\
+      \flat a  &  & & \\
+      c & &&\\
+      a’’ &&&\\
+      \sharp c’’ &&&\\
+      \flat d’ &&&\\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  Hierbei muss für die letzte Spalte keine Rechenhilfe verwendet werden.  Einige
+  andere Einträge dieser Tabelle lassen sich ebenfalls durch reines Überlegen und von
+  Hand durchführbare Rechnungen füllen.
+\end{aufg}
+
+\begin{aufg}
+  Finde einen Ton, der mit \dsharp c enharmonisch verwechselt werden könnte
+  (also: „die gleiche Taste auf dem Klavier beschreibt“), aber in
+  pythagoreischer Stimmung ungefähr einen gleichstufigen Viertelton (also $50\ct$)
+  tiefer intoniert wird.
+\end{aufg}
+
+\section{Dreiklänge und das Eulersche Tonnetz}
+
+\begin{aufg}
+  Trage in das untenstehende Tonnetz (in das wir die Tonika T schon
+  eingetragen haben) folgende weiteren Funktionen ein:
+  \begin{enumerate}[itemsep=0em]
+  \item die Subdominante S,
+  \item die Dominante D,
+  \item die Subdominantparallele Sp,
+  \item die Tonikaparallele Tp,
+  \item die Doppeldominante \raisebox{1.5px}{D}\kern-5.5px D,
+  \item die Tonikavariante t,
+  \item die Subdominantvariante s,
+  \item die Zwischendominante zur Subdominantparallele (D)\textsubscript{[Sp]},
+  \item die Variante der Tonikaparallele TP.
+  \end{enumerate}
+  
+  \begin{center}
+    \begin{tikzpicture}[scale=1]
+      \draw (-2,0) -- (6,0);
+      \draw (-1,{sqrt(3)}) -- (5,{sqrt(3)});
+      \draw (-3,{-sqrt(3)}) -- (5,{-sqrt(3)});
+      \draw (-1,{sqrt(3)}) -- (1,{-sqrt(3)});
+      \draw (-1,{-sqrt(3)}) -- (1,{sqrt(3)});
+      \draw (-2,0) -- (-1,{-sqrt(3)});
+      \draw (-3,{-sqrt(3)}) -- (-1,{sqrt(3)});
+      \draw (3,{sqrt(3)}) -- (1,{-sqrt(3)});
+      \draw (3,{-sqrt(3)}) -- (1,{sqrt(3)});
+      \draw (3,{-sqrt(3)}) -- (5,{sqrt(3)});
+      \draw (3,{sqrt(3)}) -- (5,{-sqrt(3)});
+      \node at (1,-.7) {T};
+      \draw (5,{-sqrt(3)}) -- (6,0) -- (5,{sqrt(3)});
+      \draw (-3,{-sqrt(3)}) -- (-2,{-2*sqrt(3)}) -- (2,{-2*sqrt(3)}) -- (3,{-sqrt(3)});
+      \draw (-2,{-2*sqrt(3)}) -- (-1,{-sqrt(3)}) -- (0,{-2*sqrt(3)}) -- (1,{-sqrt(3)}) -- (2,{-2*sqrt(3)});
+      \draw[fill=white] (-2,0) circle (.32);
+      \draw[fill=white] (0,0) circle (.32);
+      \draw[fill=white] (2,0) circle (.32);
+      \draw[fill=white] (4,0) circle (.32);
+      \draw[fill=white] (6,0) circle (.32);
+      \draw[fill=white] (-1,{sqrt(3)}) circle (.32);
+      \draw[fill=white] (1,{sqrt(3)}) circle (.32);
+      \draw[fill=white] (3,{sqrt(3)}) circle (.32);
+      \draw[fill=white] (5,{sqrt(3)}) circle (.32);
+      \draw[fill=white] (-3,{-sqrt(3)}) circle (.32);
+      \draw[fill=white] (-1,{-sqrt(3)}) circle (.32);
+      \draw[fill=white] (1,{-sqrt(3)}) circle (.32);
+      \draw[fill=white] (3,{-sqrt(3)}) circle (.32);
+      \draw[fill=white] (5,{-sqrt(3)}) circle (.32);
+      \draw[fill=white] (-2,{-2*sqrt(3)}) circle (.32);
+      \draw[fill=white] (0,{-2*sqrt(3)}) circle (.32);
+      \draw[fill=white] (2,{-2*sqrt(3)}) circle (.32);
+    \end{tikzpicture}
+  \end{center}%
+  [\emph{Hinweis:} Es könnte helfen, sich für eine Tonart zu entscheiden und in
+  die Knoten die entsprechenden Töne zu schreiben. Dafür gibt es auch die großen
+  Kreise.]
+\end{aufg}
+
+\begin{aufg}
+  Trage in folgenden Chorsatz Helmholtz-Ellis-Zeichen ein, um die Akkorde gemäß
+  ihrer Funktion rein auszustimmen:
+  \begin{center}
+    […]
+  \end{center}
+\end{aufg}
+
+\begin{aufg}
+  Prüfe folgenden Satz auf Kommafallen und gib an, an welchen Stellen eine
+  Stimme „nachjustieren“ muss:
+  \begin{center}
+    […]
+  \end{center}
+  Wäre ein rein intonierendes Ensemble, das die Kommafallen nicht beachtet, am
+  Ende dieses Abschnitts gesunken oder gestiegen? Wenn ja, um wie viel ct?
+\end{aufg}
+
+\section{Die melodische Perspektive}
+
+\begin{aufg}
+  Benenne in folgendem Beispiel alle bei reiner Intonation auftretenden Schritte
+  in der Oberstimme:
+  \begin{center}
+    […]
+  \end{center}
+\end{aufg}
+
+
+\begin{aufg}
+  Stimme im nachfolgenden Beispiel (bei dem die Akkorde selbst schon ausgestimmt
+  sind) die Zwischennoten:
+  \begin{center}
+    […]
+  \end{center}
+\end{aufg}
+
+\section{Komplexere Akkorde}
+
+\section{Naturseptimen}
+
+\appendix
+\section{Primzahlen}
+
+\end{document}

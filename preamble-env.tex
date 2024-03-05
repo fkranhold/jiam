@@ -12,28 +12,9 @@
 %% individual theorem environments.
 \usepackage[capitalise,noabbrev]{cleveref}
 
-\theoremstyle{plain}
-\newtheorem{theo}   {Theorem}[section]
-\newtheorem{thm}    [theo]{Theorem}
-\newtheorem{lem}    [theo]{Lemma}
-\newtheorem{prop}   [theo]{Proposition}
-\newtheorem{cor}    [theo]{Corollary}
-\newtheorem{conj}   [theo]{Conjecture}
-
 \theoremstyle{definition}
-\newtheorem{defi}   [theo]{Definition}
-\newtheorem{probl}  [theo]{Problem}
-\newtheorem{expl}   [theo]{Example}
-\newtheorem{nota}   [theo]{Notation}
-\newtheorem{constr} [theo]{Construction}
-\newtheorem{outl}   [theo]{Outlook}
-\newtheorem{exer}   [theo]{Exercise}
-\newtheorem{rem}    [theo]{Remark} % Only for compatibility with old stuff
-\newtheorem{rmk}    [theo]{Remark}
-\newtheorem{rmd}    [theo]{Reminder}
-\newtheorem{idea}   [theo]{Idea}
-
-\crefname{theo}{Theorem}{Theorems}
+\newtheorem{aufg}{Aufgabe}[section]
+\crefname{aufg}{Aufgabe}{Aufgaben}
 
 %% A command between two environments, which takes effect
 %% somewhere else (e.g. a figure that is placed on top of
