@@ -1,8 +1,6 @@
-Wir haben im letzten Abschnitt gesehen, wie wir innerhalb des Eulerschen
-Tonnetzes diverse Akkorde rein stimmen können.  Allerdings haben wir immer noch
-keine Möglichkeit gesehen, die bereits mehrfach erwähnte kleine Septime der
-Größe $4:7\approx 968{,}83\,\on{ct}$ darzustellen (was, wie gesagt, daran liegt,
-dass das Eulersche Tonnetz nur Primzahlen bis $5$ kennt,
+Wir haben noch immer keine Möglichkeit gesehen, die bereits mehrfach erwähnte
+kleine Septime der Größe $4:7\approx 968{,}83\,\on{ct}$ darzustellen (was wie
+gesagt daran liegt, dass das Eulersche Tonnetz nur Primzahlen bis $5$ kennt,
 vgl. \cref{sec:primes}). Dieses Intervall nennen wir \emph{Naturseptime}, da es
 in der „Naturtonfolge“\footnote{Die Naturtonfolge einer gegebenen Grundfrequenz
   ist gegeben durch ihre positiven ganzzahligen Vielfachen. Das Intervall $4:7$
@@ -10,8 +8,7 @@ in der „Naturtonfolge“\footnote{Die Naturtonfolge einer gegebenen Grundfrequ
 Sie beträgt $968{,}83\,\on{ct}$, ist also fast um \pazofrac13 eines
 gleichstufigen Halbtons kleiner als die gleichstufige kleine Septime und klingt
 deshalb auch deutlich anders, wie in dem bereits in \cref{sec:int} erwähnten
-Audiobeispiel nachzuhören ist\LY{m-4567} (zuerst erklingt ein gleichstufiger
-Dominantseptakkord, dann einer mit dem Frequenzverhältnis $4:5:6:7$).\looseness-1
+Audiobeispiel nachzuhören ist\LY{m-4567}.\looseness-1
 
 \subsection{Das septimale Komma}
 
@@ -21,6 +18,8 @@ sehen wir, dass die pythagoreische kleine Septime
 $9:16=36:64\approx 996{,}09\,\on{ct}$ um $\frac{64}{63}\approx 27{,}26\,\on{ct}$
 größer ist als die Naturseptime. Diesen Unterschied bezeichnen wir als
 \emph{septimales Komma}.
+
+\enlargethispage{\baselineskip}
 
 Die Tiefalteration einer gegebenen Note um ein septimales Komma notieren wir wie
 in \cite{HEJI} mit dem Symbol \septimal.  Dieses wird wie ein Versetzungszeichen
@@ -33,15 +32,14 @@ einführen.% (Die naheliegende Wahl wäre, das Symbol einer
 % horizontalen Achse zu spiegeln; so wird das auch in Situationen, wo dies
 % erforderlich ist, getan.)
 
-\begin{figure}
+\begin{figure}[h]
   \centering
-  \LY{b-sept}
-  \includegraphics{ly/b-sept}
-  \caption{(1)~Eine Schlusskadenz mit Dominantseptakkord. Die Septime im
-    Tenor wird pythagoreisch intoniert.
-    \quad(2)~Die gleiche Kadenz mit Naturseptime.
-    \quad(3)~Ein Beispiel mit Septnonakkord ohne Naturseptime.
-    \quad(4)~Das gleiche Beispiel mit Naturseptime.}\label{fig:sept}
+  \LY{b-harm7}
+  \includegraphics{ly/b-harm7}
+  \caption{(1+2)~Eine Schlusskadenz mit Dominantseptakkord; einmal mit
+    pythagoreischer Septime und einmal mit Naturseptime. \quad(3+4)~Ein Beispiel
+    mit Septnonakkord, wieder einmal ohne und einmal mit ohne
+    Naturseptime.}\label{fig:harm7}
 \end{figure}
 
 \subsection{Septakkorde}
@@ -85,8 +83,8 @@ auszustimmen.  Dabei müssen wir gar nicht so viel ändern:
   taucht nun eine sehr große große Terz auf, nämlich $7:9\approx 435{,}08\ct$
   (\septimal f\,:\,a).
 \end{enumerate}
-Wir halten fest, dass die Absenkung der Septime in diesen beiden Akkorden
-deutlich hörbar ist, weil die Naturseptime wirklich \emph{viel} tiefer als die
+Wir bemerken, dass die Absenkung der Septime in diesen beiden Akkorden deutlich
+hörbar ist, weil die Naturseptime wirklich \emph{viel} tiefer als die
 pythagoreische und erst recht als die mittlerweile wohl sehr gewohnte
 gleichstufige ist.
 
@@ -98,20 +96,20 @@ Intervalle und vor allem interessante bis unbrauchbare Schritte entstehen:
 
 \begin{enumerate}
 \item \emph{Septimaler (diatonischer) Halbton}\\
-  Wird die Naturseptime im Dominantseptakkord abwärts in die Durterz der Tonika
+  Wird die Naturseptime des Dominantseptakkords abwärts in die Durterz der Tonika
   aufgelöst (in C-Dur: \septimal f\,–\,\naturalm e), so entsteht ein
   diatonischer Halbton der Größe $20:21\approx 84{,}47\ct$.  Dies ist der
   kleinste diatonische Halbton, den wir kennen; allerdings ist er größer als der
   kleine chromatische Halbton.
 \item \emph{Kleiner septimaler Ganzton}\\
-  Wird die Naturseptime im Dominantseptakkord abwärts in die Mollterz der Tonika
+  Wird die Naturseptime des Dominantseptakkords abwärts in die Mollterz der Tonika
   aufgelöst (in c-Moll: \septimal f\,–\,\flatp e), so entsteht ein Ganzton der
   Größe $32:35\approx 155{,}14\ct$.  Dieser ist extrem klein; er liegt fast in der
   \emph{Mitte} zwischen einem gleichstufigen Halbton und einem gleichstufigen
   Ganzton.\looseness-1
 \item \emph{Großer septimaler Ganzton}\\
   Wird die Naturseptime von oben (z.\,B. vom Grundton der Dominante) aus
-  erreicht (in C-Dur: g\,-\,\septimal f), so entsteht ein Ganzton der Größe
+  erreicht (in C-Dur: g\,–\,\septimal f), so entsteht ein Ganzton der Größe
   $7:8\approx 231{,}17\ct$. Dies ist der größte Ganzton, den wir kennen, und für
   die klassische Musik als Schritt eigentlich unbrauchbar,
   siehe \cref{sec:septmel}.
@@ -155,7 +153,7 @@ Stücks. Dies hat im Wesentlichen drei Gründe:
 \item Der Einsatz des septimalen Kommas verstärkt in melodisch gedachten
   Passagen das in \cref{sec:balance} besprochene Problem unterschiedlich großer
   Schritte.
-\item Septimale Ganztöne sind melodisch sehr unpassend, da unser Gehör sie nicht
+\item Septimale Ganztöne sind melodisch sehr unpassend, weil unser Gehör sie nicht
   einfach als das erkennen kann, was sie sein sollen. Der kleine septimale
   Ganzton ist so klein, dass er fast einen Viertelton tiefer als der
   gleichstufige Ganzton und damit weder als Halb- noch als Ganzton erkennbar
@@ -174,7 +172,7 @@ Stücks. Dies hat im Wesentlichen drei Gründe:
   vorenthalten und ohne Anpassung zum Quartvorhalt wird, ist die entstehende
   Quarte $16:21 \approx 470{,}78\ct$ sehr unrein.  Es ist dann also
   unerlässlich, die Tonhöhe um ein septimales Komma nach \emph{oben}
-  anzupassen. Wie schon in \cref{sec:49} argumentiert unterläuft dies aber die
+  anzupassen. Wie schon in \cref{sec:49} argumentiert unterminiert dies aber die
   Idee einer konsonanten Einführung von Vorhaltetönen und sollte daher vermieden
   werden.\looseness-1
 \end{enumerate}
@@ -184,28 +182,28 @@ Auflösung der Naturseptime mit diesem Halbton in eine Durterz ist, weil der
 Schritt kleiner ist als sonst, eventuell etwas spannungsreicher (vergleichbar
 mit dem höheren Leitton in \cref{sec:ln}, nur von oben und ohne harmonische
 Abstriche) und deshalb bei eindeutiger Kadenzbildung womöglich sogar willkommen.
-
 Wenn wir Naturseptimen einsetzen wollen, sollten also folgende Bedingungen
-erfüllt sein (priorisiert von oben nach unten):
+allesamt erfüllt sein:\looseness-1
 
-\begin{enumerate}
+\enlargethispage{\baselineskip}
+
+\begin{enumerate}[itemsep=4px]
 \item Wir befinden uns in einer eindeutigen vertikal gedachten Kadenz.
 \item Die Septime wird durch einen Halbton von unten oder durch einen Sprung
-  erreicht.\todo{Oder durch Halten? TD} (Dies heißt gerade, dass durch den Einsatz
-  der Naturseptime an dieser Stelle kein septimaler Ganzton entsteht und auch
-  keine Anpassung um ein septimales Komma vonnöten ist.)
-\item Die Septime wird in eine Durterz aufgelöst. (Das heißt gerade, dass durch
-  den Einsatz der Naturseptime zum Zeitpunkt der Auflösung kein septimaler
-  Ganzton entsteht.)
+  erreicht. (Dies heißt, dass die Naturseptime nicht durch einen septimalen
+  Ganzton oder eine septimale Nachjustierung erreicht wird.)
+\item Die Septime wird in eine Durterz aufgelöst. (Das heißt, dass durch den
+  Einsatz der Naturseptime bei der Auflösung kein septimaler Ganzton
+  entsteht.)\looseness-1
 \item Die Septime wird nicht zu einem Quartvorhalt gehalten.
 \item Die zu stimmende Septime befindet sich nicht in der Melodiestimme.
 \end{enumerate}
 %
-Als besonders abschreckendes Beispiel möge \cref{fig:bad7} dienen, das fast alle
-diese Regeln missachtet. Insgesamt stellen wir also fest, dass es in der
+Als besonders abschreckendes Beispiel möge \cref{fig:bad7} dienen, wo fast alle
+diese Regeln missachtet werden. Insgesamt stellen wir also fest, dass es in der
 klassischen Musik nur sehr wenige Situationen gibt, in denen man den Einsatz der
 Naturseptime erwägen könnte.  Es wird wohl nicht wenige Musiker:innen geben, die
-von ihrer Verwendung im klassischen Kontext komplett abraten.
+von ihrer Verwendung im klassischen Kontext komplett abraten.\looseness-1
 
 \begin{figure}
   \centering

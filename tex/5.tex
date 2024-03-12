@@ -2,7 +2,8 @@ In \cref{sec:tri} haben wir gelernt, wie man Stücke stimmt, bei denen jede Note
 Teil eines „vertikalen“ Dur- oder Molldreiklangs ist. Akkorde haben jedoch sehr
 oft andere Bestandteile als nur Grundton, Terz und Quinte. In diesem Abschnitt
 besprechen wir die wichtigsten Variationen von Dur- und Moll-Akkorden und wie
-sie gestimmt werden können.
+sie gestimmt werden können. (Zur quantitativen Bewertung der entstehenden
+Frequenzverhältnisse sei wieder auf \cref{sec:kgv} verwiesen.)
 
 \subsection{Quart(sext)vorhalt und erweiterter Nonakkord}
 \label{sec:49}
@@ -16,7 +17,7 @@ Verhältnis $6:8:9$ und benötigt keine Korrektur durch ein syntonisches Komma
 optimal gestimmt und Quarten dazu komplementär sind).  Wir weisen noch auf zwei
 horizontale Intervalle hin:
 \begin{enumerate}
-\item Die Quarte des Akkordes muss \emph{konsonant eingeführt werden},
+\item Die Quarte des Akkordes muss \emph{konsonant eingeführt} werden,
   d.\,h. dieselbe Note tauchte im vorherigen regulär Akkord auf und ist durch
   den Harmoniewechsel zur Quarte geworden. Stellt man sich z.\,B. die
   Akkordverbindung T\,–\,D\textsuperscript{$4$–$3$} vor, bei der der Grundton
@@ -43,7 +44,7 @@ Akkord entspricht dem Verhältnis $4:5:6:9$ in Dur und $20:24:30:45$ in Moll. Wi
 stellen fest, dass die kleine Sekunde zwischen der großen None und der Mollterz
 (plus eine Oktave) ein reiner diatonischer Halbton ($15:16$) ist.
 
-In \cref{fig:chordLines} haben wir die obigen Akkorde als ins Eulerschen Tonnetz
+In \cref{fig:chordLines} haben wir die obigen Akkorde im Eulerschen Tonnetz
 eingezeichnet. Dabei markieren wir nicht nur die Eckpunkte, sondern auch alle
 direkten Kanten zwischen ihnen, da jede Kante für eine Beziehung der Form $2:3$,
 $4:5$ oder $5:6$ innerhalb des jeweiligen Akkordes steht. Pfeile stehen für die
@@ -139,20 +140,19 @@ f) entscheidende Vorteile:
 \item Oft bleibt die Septime der Dominante beim Harmoniewechsel
   D\textsuperscript{$7$}\,–\,T\textsuperscript{$4$–$3$} liegen und wird zur
   Quarte der Tonika.  Wird hierbei die empfohlene Intonation der Septime
-  verwendet, so ist hierbei keine Anpassung nötig.
-\item Gleiches gilt, wenn beim Harmoniewechsel S\,–\,D\textsuperscript{$7$} der
-  Grundton der Subdominante liegen bleibt und zur Septime der Dominante wird.
+  verwendet, so ist hierbei keine Anpassung nötig. Gleiches gilt, wenn beim
+  Harmoniewechsel S\,–\,D\textsuperscript{$7$} der Grundton der Subdominante
+  liegen bleibt und zur Septime der Dominante wird.
 \item Taucht die Septime wie in \cref{fig:inter} als Zwischennote auf, so wird
   sie ebenfalls pythagoreisch intoniert.
 \end{enumerate}
 Der so entstehende Vierklang hat das Frequenzverhältnis $36:45:54:64$. Die
 verminderte Quinte (Tritonus) zwischen der großen Terz und der kleinen Septime
-ist $45:64\approx 609{,}78\ct$ groß, also genauso groß wie der im Sixte
-ajoutée in Moll. Die Auflösung der Septime der Dominante in die große bzw.
-kleine Terz der Tonika erfolgt wie beim Quartvorhalt (siehe \cref{sec:49}) mit
-einem reinen diatonischen Halbton bzw. einem kleinen Ganzton. In
-\cref{fig:chordLinessevenths} findet sich eine Verortung dieses Akkords im
-Tonnetz.
+ist wieder $45:64\approx 609{,}78\ct$ groß. Die Auflösung der Septime der
+Dominante in die große bzw.  kleine Terz der Tonika erfolgt wie beim
+Quartvorhalt (siehe \cref{sec:49}) mit einem reinen diatonischen Halbton
+bzw. einem kleinen Ganzton. In \cref{fig:chordLinessevenths} findet sich eine
+Verortung im Tonnetz.
 
 Wir halten abschließend noch fest, dass der Dominantseptakkord auch
 \emph{verkürzt}, d.\,h. ohne Grundton (in C-Dur: \naturalm h\,:\,d\,:\,f)
@@ -163,7 +163,6 @@ Mollparallele (in C-Dur entspreche das a-Moll, dessen Subdominante d-Moll ist).
 Unsere Kommaverteilung liefert allerdings verschiedene Ausstimmungen, wie
 \cref{tab:s6D7} zeigt. Die Intonation hängt also von der Interpretation der
 Harmonie ab.
-
 
 \begin{table}[h]
   \centering
@@ -231,6 +230,14 @@ Abfolge.)
     großen diatonischen Halbton zwischen \naturalm d und \flatp e rechtfertigt.}\label{fig:6v7}
 \end{figure}
 
+\begin{figure}[h]
+  \centering
+  \input{tikz/chordLinessevenths}
+  \caption{Dominantseptakkord und verminderter Septakkord, eingezeichnet im Eulerschen
+    Tonnetz. Die Pfeile zeigen die Auflösungsrichtung der einzelnen Töne
+    an.}\label{fig:chordLinessevenths}
+\end{figure}
+
 \subsection{Septnonakkord}
 \label{sec:dom79syn}
 
@@ -244,27 +251,23 @@ klären.  Die None ist entweder als große Terz über der Septime oder als Quint
 interpretierbar.  Zweiteres ist aus folgenden Gründen sinnvoller:
 \begin{enumerate}
   \item Diese None ist verträglich mit der aus \cref{sec:49}.
-  \item Die Septime ist in dem Dominantakkord ein spannungsreicher Ton.  Ein zu
-    ihr reines Intervall erzeugt tendenziell weniger Konsonanz als reine Quinten
-    über dem Grundton.
+  \item Die Septime im Dominantakkord ist ein spannungsreicher Ton.  Ein zu ihr
+    reines Intervall erzeugt weniger Konsonanz als eines zur reinen Quinte.
   \item Die Auflösung der None erfolgt mit einem Ganzton abwärts in den Grundton
   der Tonika; hierbei ist der große, pythagoreische Ganzton ($8:9$) dem kleinen
   Ganzton ($9:10$) melodisch vorzuziehen, siehe \cref{sec:melody}.
 \end{enumerate}
 Der Dominantseptnonakkord entspricht also dem Verhältnis $45:54:64:81$ (in \flat
 E-Dur: \naturalm d\,:\,f\,:\,\flat a\,:\,c) und lässt sich im Eulerschen Tonnetz
-wie in \cref{fig:chordLinessevenths} zeichnen (wir haben den Grundton der
-Übersichtlichkeit halber auch eingezeichnet). Der einzige Nachteil dieser
+wie in \cref{fig:chordLinessevenths2} zeichnen. Der einzige Nachteil dieser
 Ausstimmung ist, dass, wenn z.\,B. die Terz der Subdominante vorher erklingt,
 liegen bleibt und zur None wird, eine Syntonisierungsanpassung nötig wird (siehe
-\cref{fig:sevchords}).
+\cref{fig:7chords}).
 
 Wir merken an, dass unter Verwendung der Primzahl $7$ auch die Ausstimmung
-$5:6:7:9$ in Betracht kommt, die vor allem deswegen witzig ist, weil Septime und
-None den Faktoren $7$ und $9$ entsprechen.  Wie schon beim Dominantseptakkord
-ist dieses Verhältnis aber eher von akademischem Interesse und im Kontext
-klassischer Musik meistens unbrauchbar. Wir klammern diese Möglichkeit hier also
-aus und verweisen wieder auf \cref{sec:sept}.
+$5:6:7:9$ in Betracht kommt.  Wie schon beim Dominantseptakkord ist dieses
+Verhältnis im Kontext klassischer Musik aber meistens unbrauchbar. Wir klammern
+diese Möglichkeit hier also aus und verweisen wieder auf \cref{sec:sept}.
 
 Abschließend weisen wir noch auf eine Besonderheit des Dominantseptnonakkords
 hin: Er setzt sich aus den gleichen Tönen zusammen wie der Sixte ajoutée der
@@ -291,22 +294,22 @@ f\,:\,c und \naturalm f\,:\,\naturalm c unterscheiden sich um ein Komma.
 
 Der letzte Akkord, den wir in diesem Abschnitt behandeln, ist eine spezielle
 Abwandlung des verminderten Septakkordes (\cref{sec:dim7syn}), die (fast)
-ausschließlich als Variation der Doppeldominante auftritt: Bei ihr ist
-zusätzlich die Quinte tiefalteriert (in C-Dur oder c-Moll: \sharp f\,:\,\flat
-a\,:\,c\,:\,\flat e), vgl. \cite[{}11.2]{Skript}.  Alle Töne haben eine
-Spannung, die sie mit einem Halbton zur Dominante auflösen: die Terz
-(\sharp f) nach oben und alle anderen Töne nach unten.
+ausschließlich als Variation der Doppeldominante auftritt: Bei ihr ist die
+Quinte tiefalteriert (in C-Dur oder c-Moll: \sharp f\,:\,\flat a\,:\,c\,:\,\flat
+e), vgl. \cite[{}11.2]{Skript}.  Alle Töne werden über einen Halbton zur
+Dominante aufgelöst: die Terz (\sharp f) nach oben und die übrigen Töne nach
+unten.
 
 Wenn wir die Intonation der Terz, Septime und None von \cref{sec:dim7syn}
 übernehmen, so gibt es eine unausweichliche Intonation für die tiefalterierte
-Quinte: eine syntonische Ebene höher als das tonale Zentrum, denn dann ist der
-Durdreiklang aus Quinte, Septime und None rein und alle Töne lösen sich mit
-einem reinen diatonischen Halbton $15:16$ auf. In C-Dur (oder c-Moll) ist der
-Akkord also \sharpm f\,:\,\flatp a\,:\,c\,:\,\flatp e, was dem Verhältnis
-$225:256:320:384$ entspricht. Die verminderte Terz zwischen großer Terz und
-verminderter Quinte ist $225:256 \approx 223{,}46\ct$ groß.  Auch diesen
-Akkord mitsamt seinen Auflösungsrichtungen haben wir in
-\cref{fig:chordLinessevenths} ins Tonnetz eingezeichnet.
+Quinte: auf der gleichen Kommahöhe wie die None, denn dann ist der Durdreiklang
+aus Quinte, Septime und None rein und alle Töne lösen sich mit einem reinen
+diatonischen Halbton $15:16$ auf, vgl. \cref{fig:chordLinessevenths2}. In C-Dur
+(oder c-Moll) ist der Akkord also \sharpm f\,:\,\flatp a\,:\,c\,:\,\flatp e,
+was $225:256:320:384$ entspricht. Die verminderte Terz zwischen großer Terz und
+verminderter Quinte ist $225:256 \approx 223{,}46\ct$ groß.
+
+\enlargethispage{\baselineskip}
 
 Wir bemerken abschließend, dass dieser Vierklang enharmonisch umgedeutet werden
 kann zu einem Dominantseptkkord in einer völlig anderen Tonart (im Beispiel:
@@ -317,20 +320,23 @@ $19{,}55\ct$ höher.
 
 \begin{figure}
   \centering
-  \input{tikz/chordLinessevenths}
-  \caption{Verschiedene Septakkorde im Eulerschen Tonnetz. Die Pfeile zeigen die
-    Auflösungsrichtung einzelner Töne an.}\label{fig:chordLinessevenths}
+  \input{tikz/chordLinessevenths2}
+  \caption{Dominantseptnonakkord und verminderter Septakkord mit tiefalterierter
+    Quinte, eingezeichnet im Eulerschen Tonnetz, mit charakteristischen
+    Auflösungsrichtungen.}\label{fig:chordLinessevenths2}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
-	\LY{b-sevchords}
-	\includegraphics{ly/b-sevchords}
-	\caption{(1) Ein Dominantseptakkord in einer kurzen C-Dur-Kadenz.\quad (2) Ein
-    verminderter Septakkord der Dominante in einer kurzen a-Moll-Kadenz.\quad
-    (3) Ein Doppeldominantseptnonakkord in F-Dur.\quad (4) Ein verminderter
-    Septakkord der Doppeldominante mit tiefalterierter Quinte in einer Kadenz in
-    g-Moll.}\label{fig:sevchords}
+	\LY{b-7chords}
+	\includegraphics{ly/b-7chords}
+	\caption{Verschiedene rein gestimmte Septakkorde:\\
+    \hspace*{3mm}(1) Ein Dominantseptakkord in einer kurzen C-Dur-Kadenz.\\
+    \hspace*{3mm}(2) Ein verminderter Septakkord der Dominante in einer kurzen a-Moll-Kadenz.\\
+    \hspace*{3mm}(3) Ein Doppeldominantseptnonakkord in F-Dur.\\
+    \hspace*{3mm}(4) Ein verminderter Septakkord der
+    \raisebox{1px}{D}\hspace*{-4.5px}D mit tiefalterierter Quinte in
+    g-Moll.}\label{fig:7chords}
 \end{figure}
 
 %%% Local Variables:

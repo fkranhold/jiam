@@ -5,7 +5,7 @@ einer reinen Quinte ($2:3$) beschäftigen. Die Differenz zur gleichstufigen
 Quinte,
 \[1{.}200\ct\cdot \log_2(\tfrac32) - 700\ct \approx
   1{,}96\ct\]%
-wird \emph{Grad} genannt und ist sehr klein (etwa $\frac1{50}$ eines
+wird \emph{Grad} genannt und ist sehr klein (etwa \pazofrac1{50} eines
 gleichstufigen Halbtons), aber dennoch etwas, das wir korrigieren
 wollen.
 
@@ -13,14 +13,13 @@ wollen.
 
 Ohne die Einschränkungen eines Instruments mit diskreten Tonhöhen kann das Grad
 leicht korrigiert werden, sofern wir akzeptieren, dass enharmonisch
-unterschiedene Tonhöhen (wie etwa \sharp g und \flat a) verschiedenen Frequenzen
-entsprechen können.  Dies mag auf den ersten Blick seltsam erscheinen, aber das
-Beispiel aus \cref{fig:enhContext} mag skeptische Leser:innen vielleicht
-überzeugen (das Audiobeispiel ist in gleichstufiger Stimmung): In beiden Fällen
-ist das resultierende Intervall acht Halbtöne groß (\flat e’\,–\,h’ und
-\sharp d’\,–\,h’), aber im ersten Fall klingt es dissonant, da der Kontext
-nahelegt, dass es aus vier Ganztönen besteht, während es im zweiten Fall
-konsonant klingt.
+unterscheidbare Tonhöhen (wie etwa \sharp g und \flat a) verschiedenen
+Frequenzen entsprechen können.  Dies mag auf den ersten Blick seltsam
+erscheinen, wirkt aber vielleicht durch das Beispiel aus \cref{fig:enhContext}
+etwas plausibler: In beiden Fällen ist das resultierende Intervall acht Halbtöne
+groß (\flat e’\,–\,h’ und \sharp d’\,–\,h’), aber im ersten Fall klingt es
+dissonant, da der Kontext nahelegt, dass es aus vier Ganztönen besteht, während
+es im zweiten Fall, wahrgenommen als kleine Sexte, konsonant klingt.
 
 \begin{figure}[h]
   \centering
@@ -33,32 +32,34 @@ konsonant klingt.
 \label{sec:pythTuning}
 
 \noindent Akzeptierend, dass Enharmonik eine Rolle spielt, machen wir uns die
-Tatsache zunutze, dass es für jede enharmonisch verschiedene Tonhöhe (c’, \sharp
-h und \dflat d’ sind drei unterschiedliche Beispiele!) eindeutig bestimmte ganze
-Zahlen $p,q\in\Z$ gibt, für die die gegebene Tonhöhe von a’ aus erreicht werden
-kann, indem man $p$ reine Quinten und $q$ Oktaven nach oben geht (eine negative
-Zahl bedeutet, dass man nach unten geht). Setzen wir den Kammerton auf $440\Hz$,
-so ordnen wir der Tonhöhe die Frequenz $(\frac32)^p\cdot 2^q\cdot 440\Hz$
-zu. Ein Beispiel:
+Tatsache zunutze, dass es für jede enharmonisch präzise angegebene Tonhöhe (c’,
+\sharp h und \dflat d’ sind drei unterschiedliche Beispiele!) eindeutig
+bestimmte ganze Zahlen $p,q\in\Z$ gibt, für die die gegebene Tonhöhe von a’ aus
+erreicht werden kann, indem man $p$ reine Quinten und $q$ Oktaven nach oben geht
+(eine negative Zahl bedeutet, dass man nach unten geht). Setzen wir den
+Kammerton auf $440\Hz$, so ordnen wir der Tonhöhe die Frequenz
+$(\frac32)^p\cdot 2^q\cdot 440\Hz$ zu. Ein Beispiel:
 \begin{align*}
   \text{\sharp g’}&\equiv(\tfrac32)^5\cdot 2^{-3}\cdot 440\Hz\approx 417{,}66\Hz,\\
   \text{\flat a’} &\equiv(\tfrac32)^{-7}\cdot 2^4\cdot 440\Hz\approx 412{,}03\Hz.
 \end{align*}
 
 \subsection{Das pythagoreische Komma und die Wolfsquinte}
+\label{sec:pythComma}
 
 Der Unterschied zwischen den obigen Frequenzen für \sharp g’ und \flat a’ heißt
 \emph{pythagoreisches Komma} und beträgt
-$3^{12}\cdot 2^{-19}\approx 23{,}46\ct$. Wir bemerken, dass das
-pythagoreische Komma genau $12$ Grad groß ist
-($12\cdot 1{,}96\,\om{ct}\approx 23{,}46\om{ct}$), was daran liegt, dass die
-beiden enharmonisch verwechselten Töne genau $12$ Quinten (und einige Oktaven)
-auseinanderliegen.
+$3^{12}\cdot 2^{-19}\approx 23{,}46\ct$, also etwa \pazofrac14\ eines
+gleichstufigen Halbtons. Wir bemerken, dass das pythagoreische Komma genau $12$
+Grad groß ist ($12\cdot 1{,}96\,\om{ct}\approx 23{,}46\om{ct}$), was daran
+liegt, dass die beiden enharmonisch verwechselten Töne genau $12$ Quinten (und
+einige Oktaven) auseinanderliegen.
 
 Eine verminderte Sexte unterscheidet sich von einer reinen Quinte
 notwendigerweise um genau dieses pythagoreische Komma. Eine verminderte Sexte
-wird in der pythagoreischen Stimmung manchmal als „Wolfsintervall“ bezeichnet,
-da sie sehr verstimmt klingt, siehe \cref{fig:pythComma}:2.
+wird in der pythagoreischen Stimmung manchmal als \emph{Wolfsintervall} (oder
+unpräziserweise als „Wolfsquinte“) bezeichnet, da sie sehr verstimmt
+klingt, siehe \cref{fig:pythComma}\,(2).\looseness-1
 
 \subsection{Die Quintenspirale}
 
@@ -139,14 +140,12 @@ durch kontextabhängige Mikroalterationen leider verloren gehen wird.  Daher
 liegt es bei melodisch gedachten Passagen mit vielen horizontalen Schritten oft
 nahe, sie pythagoreisch zu intonieren.\looseness-1
 
-Der entscheidende Nachteil der pythagoreischen Stimmung, der nichts mit der
-Realisierbarkeit auf einem diskretisierenden Instrument zu tun hat, sondern rein
-theoretischer Natur ist, ist allerdings die Tatsache, dass sie die Unreinheit
-der Terzen in einem Dreiklang im Vergleich zur gleichstufigen Stimmung sogar
-noch erhöht: Der Unterschied zwischen einer pythagoreischen großen Terz
-($407{,}82\ct$) und dem oben erwähnten Verhältnis $4:5$
-($386{,}31\ct$) beträgt $21{,}51\ct$. Dieser Fehler ist Gegenstand
-des nächsten Abschnitts.
+Der entscheidende Nachteil der pythagoreischen Stimmung ist allerdings die
+Tatsache, dass sie die Unreinheit der Terzen in einem Dreiklang im Vergleich zur
+gleichstufigen Stimmung sogar noch erhöht: Der Unterschied zwischen einer
+pythagoreischen großen Terz ($407{,}82\ct$) und dem oben erwähnten Verhältnis
+$4:5$ ($386{,}31\ct$) beträgt $21{,}51\ct$. Dieser Fehler ist Gegenstand des
+nächsten Abschnitts.
 
 %%% Local Variables:
 %%% mode: latex

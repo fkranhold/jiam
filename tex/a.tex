@@ -1,4 +1,86 @@
+Wir wollen die \emph{Konsonanz} eines gegebenen Akkords noch besser
+quantifizieren, denn bisher ist unser einziges qualitatives Maß „kleine
+ganzzahlige Verhältnisse“. Folgen wir Helmholtz’ Schwebungstheorie
+\cite[§\,10–12]{HE}, so sollte Konsonanz quantitativ ausgedrückt werden durch die
+Menge an Überschneidungen der Obertonspektren der gegebenen Töne. Für eine
+gegebene Frequenz $f\in\R_{>0}$ ist sein Obertonspektrum die Menge aller Töne der
+Naturtonreihe, also alle positiven ganzzahligen Vielfachen von $f$:
+\[\on{Spek}(f) \coloneqq \{n\cdot f;\,n\in\Z_{>0}\}\subset \R_{>0}.\]
+Haben wir also einen Akkord, der dem Zahlenverhältnis $k_1:\dotsb:k_r$
+entspricht, so heißt dies, dass es eine Grundfrequenz $f_0$ (auch
+\emph{imaginierter Grundton} genannt) gibt, für die die Töne des vorliegenden
+Akkords genau $k_1\cdot f_0,\dotsc,k_r\cdot f_0$ sind. Der Schnitt ihrer
+Obertonspektren ist also gegeben durch
+\[{\text{Spek}(k_1\cdot f_0)}\cap\dotsb\cap{\text{Spek}(k_r\cdot f_0)}\]%
+und unendlich groß: Es enthält genau die Vielfachen von
+$\on{kgV}(k_1,\dotsc,k_r)\cdot f_0$, wobei $\on{kgV}$ das kleinste gemeinsame
+Vielfache bezeichnet. Wir können also nicht einfach zählen, wie viele
+Überschneidungen es gibt. Stattdessen können wir schauen, wie \emph{dicht}
+dieser Schnitt ist; d.\,h. die Menge der Überschneidungen ist größer, wenn die
+Schrittweite $\on{kgV}(k_1,\dotsc,k_r)\cdot f_0$ möglichst klein ist.  Dies kann
+natürlich leicht erreicht werden, indem man den Akkord sehr tief spielt und
+dadurch $f_0$ sehr klein macht. Allerdings sollte unser Maß für Konsonanz
+\emph{translationsinvariant} sein, also nicht von der Höhe, in der der Akkord
+gespielt wird, abhängen (z.\,B. sollen c’\,:\,\naturalm e’\,:\,g’ und
+c’’\,:\,\naturalm e’’\,:\,g’’ gleich konsonant sein). Weil Translation den
+imaginierten Grundton $f_0$ verschiebt, aber das kgV invariant lässt, scheint
+uns also das kleinste gemeinsame Vielfache der am Verhältnis beteiligten Töne
+ein geeignetes Maß für Konsonanz zu sein, und je kleiner diese Zahl ist, desto
+konsonanter der Akkord. Ähnliche Überlegungen, bei denen die Konsonanz in
+Abhängigkeit des kgV ausgedrückt wird, finden sich bereits bei Euler
+\cite{Euler}.
 
+\begin{table}
+  \centering
+  \begin{tabular}{lcr}
+    \toprule
+    \thl{Akkord} & \thl{Verhältnis} & \thl{kgV}\\
+    \midrule
+    Quartvorhalt & $6:8:9$ & $72$\\
+    pythagoreischer Durdreiklang & $64:81:96$ & $5{.}184$\\
+    pythagoreischer Molldreiklang & $54:64:81$ & $5{.}184$\\
+    \midrule
+    Durdreiklang & $4:5:6$ & $60$\\
+    Molldreiklang & $10:12:15$ & $60$\\
+    Erweiterter Nonakkord (Dur) & $4:5:6:9$ & $180$\\
+    Erweiterer Nonakkord (Moll) & $20:24:30:45$ & $360$\\
+    Sixte ajoutée (Dur) & $12:15:18:20$ & $180$\\
+    Septakkord  & $36:45:54:64$ & $8{.}640$\\
+    Septnonakkord & $45:54:64:81$ & ~~$25{.}920$\\
+    \midrule
+    Septakkord mit Naturseptime & $4:5:6:7$ & $420$\\
+    Septnonakkord mit Naturseptime & $5:6:7:9$ &  $630$\\
+    \bottomrule
+  \end{tabular}
+  \caption{Einige im Skript besprochene Akkorde und das kgV ihrer Faktoren. Im
+    ersten Block verwenden wir nur die pythagoreische Stimmung; im zweiten das
+    Tonnetz und im dritten zusätzlich noch die Naturseptime.}\label{tab:kgV}
+\end{table}
+Berechnen wir für einige im Skript vorgestellten Akkorde das kleinste gemeinsame
+Vielfache ihrer Faktoren, so ergibt sich \cref{tab:kgV}. Hierbei fällt ins Auge,
+dass die kgV von Dur- und Molldreiklängen (sowohl pythagoreisch als auch im
+Tonnetz) gleich sind. Dies ist kein Zufall: Diese Akkorde stimmen bis auf
+vertikale Spiegelung überein. Auf der Ebene von Frequenzverhältnisse schickt
+vertikale Spiegelung $k_1:\dotsb:k_r$ auf das ebenfalls gekürzte Verhältnis
+$k_r':\dotsb:k_1'$, wobei
+\[k_i'=\frac{\on{kgV}(k_1,\dotsc,k_r)}{k_{i}}\]%
+gilt. Es ist nun eine einfache mathematische Überlegung,\footnote{Seien
+  $c\coloneqq\on{kgV}(k_1,\dotsc,k_r)$ und
+  $c'\coloneqq \on{kgV}(k_1',\dotsc,k_r')$. Zunächst bemerken wir, dass auch
+  $k_1':\dotsb:k_r'$ vollständig gekürzt ist, denn falls ein $d>1$ alle $k_i'$
+  teilte, so wäre $k_i'/d\cdot k_i=c/d<c$ ein kleineres gemeinsames Vielfaches
+  von $k_1,\dotsc,k_r$, Widerspruch. Ferner ist $c$ ein Vielfaches von allen
+  $k_i'=c/k_i$, weswegen $c'\mid c$ gilt. Daher gibt es ein $l\ge 1$ mit
+  $c=l\cdot c'$, und wir sehen $k_i=c/k_i'=l\cdot c'/k_i'$. Also sind alle $k_i$ durch
+  $l$ teilbar. Weil $k_1:\dotsb:k_r$ vollständig gekürzt war, folgt $l=1$ und
+  $c=c'$.} dass die so berechneten $k_1',\dotsc,k_r'$ dasselbe kgV haben.
+
+Abschließend sehen wir, dass „kleine Zahlen“ trügerisch sein können: Nutzte man
+im Mollakkord die „septimale kleine Terz“ $6:7$, so entstünde der Dreiklang
+$6:7:9$, der zwar übersichtlicher als $10:12:15$ ist, allerdings ein kgV von
+$126$ hat.
+
+\enlargethispage{\baselineskip}
 
 %%% Local Variables:
 %%% mode: latex
